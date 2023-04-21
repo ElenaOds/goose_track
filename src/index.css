@@ -1,12 +1,34 @@
 @import-normalize; /* bring in normalize.css styles */
+:root {
+  --primary-bgd-color: #FFFFFF;
+  --secondary-bgd-color: #EAEAEA;
+  --register-bgd-color: #DCEBF7;
+  --dark-primary-bgd-color: #13151A;
+  --dark-secondary-bgd-color: #21222C;
+  --button-bgd-color: #3E85F3;
+  --primary-text-color: #111111;
+  --secondary-text-color: #84828A;
+  --placeholder-text-color: #DCE3E5;
+  --date-text-color: #343434;
+  --day-text-color: #616161;
+  --dark-day-text-color: #FAFAFA;
+  --low-priority-color: #72C2F8;
+  --medium-priority-color: #F3B249;
+  --high-priority-color: #EA3D65;
+  --high-priority-bgd: #FFD2DD;
+  --medium-priority-bgd: #FCF0D4;
+  --low-priority-bgd: #CEEEFD;
+  --task-button-color: #E3F3FF;
+  --active-calendar-color: #CAE8FF;
+}
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif, 'Libre Bodoni', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--primary-bgd-color);
+  color: var(--primary-text-color);
 }
 
 code {
@@ -14,3 +36,21 @@ code {
     monospace;
 }
 
+button {
+  background-color: var(--button-bgd-color);
+  color: var(--primary-bgd-color);
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
