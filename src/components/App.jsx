@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
-import Account from 'pages/Account';
-import Calendar from 'pages/Calendar';
-import Login from 'pages/Login';
-import Register from 'pages/Register';
+import Account from 'pages/Account/Account';
+import Calendar from 'pages/Calendar/Calendar';
+import Login from 'pages/Login/Login';
+import Register from 'pages/Register/Register';
 import MainLayout from './MainLayout/MainLayout';
 
 const App = () => {
