@@ -1,0 +1,31 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+    margin: 40px;
+}
+
+
+.flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+
+};
+
+/* добавить медиазапросы */
+.menu{    
+    border: medium none;
+    background-image: none; 
+    background: transparent;
+    float: left;
+    background-color: transparent;
+   
+}
+.logo{
+    display:none;
+}
+
+
