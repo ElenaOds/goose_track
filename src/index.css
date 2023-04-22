@@ -24,8 +24,7 @@
 
 html[data-theme='dark']{
   --primary-bgd-color: #13151A;
-  --primary-text-color:#FFFFFF;
-   
+  --primary-text-color:#FFFFFF;   
 }
 
 html[data-theme='light']{
