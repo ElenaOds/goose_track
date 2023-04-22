@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.css": "/goose_track/static/css/main.3ffd35a3.css",
-    "main.js": "/goose_track/static/js/main.890e2999.js",
+    "main.css": "/goose_track/static/css/main.f3c02d60.css",
+    "main.js": "/goose_track/static/js/main.c5ef9dbb.js",
+    "static/media/goose.png": "/goose_track/static/media/goose.d6de881a5b820f50f3d1.png",
     "index.html": "/goose_track/index.html",
+    "static/media/log-in-01.svg": "/goose_track/static/media/log-in-01.6b7cd95e83a23d4402cfb6cb07627de9.svg",
     "static/media/icon_login.svg": "/goose_track/static/media/icon_login.023fdfdffec2b43c232c1941d7d1f222.svg",
     "static/media/menu.svg": "/goose_track/static/media/menu.0b3959003550186b18ef627be4506852.svg",
-    "main.3ffd35a3.css.map": "/goose_track/static/css/main.3ffd35a3.css.map",
-    "main.890e2999.js.map": "/goose_track/static/js/main.890e2999.js.map"
+    "main.f3c02d60.css.map": "/goose_track/static/css/main.f3c02d60.css.map",
+    "main.c5ef9dbb.js.map": "/goose_track/static/js/main.c5ef9dbb.js.map"
   },
   "entrypoints": [
-    "static/css/main.3ffd35a3.css",
-    "static/js/main.890e2999.js"
+    "static/css/main.f3c02d60.css",
+    "static/js/main.c5ef9dbb.js"
   ]
 }
