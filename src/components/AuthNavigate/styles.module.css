@@ -10,7 +10,7 @@
     
         text-decoration-line: underline;
     
-        color: #3E85F3;
+        color: var(--button-bgd-color);
         border: none;
         background-color: inherit;
     

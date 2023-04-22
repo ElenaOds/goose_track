@@ -2,15 +2,14 @@
 .container {
     width: 375px;
 
-    background: #FFF;
-
-    border-radius: 8px;
+    background: var(--primary-bgd-color);
 
     margin-right: auto;
     margin-left: auto;
+    padding: 40px;
 
     box-sizing: border-box;
-    padding: 40px;
+    border-radius: 8px;
 }
 
 @media screen and (min-width: 768px) {
@@ -35,7 +34,7 @@
     font-size: 24px;
     line-height: 24px;
     
-    color: #3E85F3;
+    color: var(--button-bgd-color);
 }
 
 .form {
@@ -43,11 +42,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-
 }
 
 .label {
-
+    display: inline-block;
     margin-bottom: 8px;
 
     font-family: 'Inter';
@@ -56,11 +54,10 @@
     font-size: 14px;
     line-height: 17px;
 
-    color: #111111;
+    color: var(--primary-text-color);
 }
 
 .input {
-    
     height: 54px;
     width: 100%;
 
@@ -79,21 +76,20 @@
 }
 
 .inputError {
-
     height: 54px;
-        width: 100%;
+    width: 100%;
     
-        box-sizing: border-box;
-        padding-left: 10px;
-        margin-bottom: 18px;
-        border: 1px solid red;
-        border-radius: 8px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    margin-bottom: 18px;
+    border: 1px solid rgb(180, 9, 9);
+    border-radius: 8px;
     
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 18px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
 }
 
 
@@ -108,7 +104,7 @@
     padding: 16px;
 
     border: none;
-    background: #3E85F3;
+    background: var(--button-bgd-color);
     box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
     border-radius: 16px;
 

@@ -1,9 +1,7 @@
 .container {
     height: 100vh;
-    /* padding-top: 10%;
-    padding-bottom: 10%; */
-    
-    background: #EAEAEA;
+    /* background: #EAEAEA; */
+    background: var(--secondary-bgd-color);
 
     display: flex;
     flex-direction: column;
