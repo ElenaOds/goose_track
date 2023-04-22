@@ -1,6 +1,4 @@
-@import-normalize;
-
-/* bring in normalize.css styles */
+@import-normalize; /* bring in normalize.css styles */
 :root {
   --primary-bgd-color: #FFFFFF;
   --secondary-bgd-color: #EAEAEA;
