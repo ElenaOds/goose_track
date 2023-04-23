@@ -6,7 +6,7 @@ const Register = () => {
   return (
     <div className={styles.container}>
       <RegisterForm />
-      <AuthNavigate route={'/login'} pageName={'Log In'} />
+      <AuthNavigate route={'/auth/login'} pageName={'Log In'} />
     </div>
   );
 };

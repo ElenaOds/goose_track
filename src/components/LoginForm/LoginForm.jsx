@@ -9,6 +9,9 @@ import { login } from 'redux/auth/auth.operations';
 import { selectIsRefreshing } from 'redux/auth/auth.selectors';
 
 export const LoginForm = () => {
+  const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsRefreshing);
+
   const onSubmit = async (values, actions) => {
     console.log(values);
 
