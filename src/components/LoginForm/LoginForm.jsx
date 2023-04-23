@@ -4,13 +4,21 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import styles from './styles.module.css';
 import { ReactComponent as Logo } from './icon_login.svg';
+// import { ReactComponent as Loader } from './goose-gif.gif';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from 'redux/auth/auth.operations';
+import { selectIsRefreshing } from 'redux/auth/auth.selectors';
 
 const LoginForm = () => {
+  const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsRefreshing);
+
+  console.log(isLoading);
+
   const onSubmit = async (values, actions) => {
     console.log(values);
-    await new Promise(resolve => setTimeout(resolve, 1000));
 
-    toast.success('form has been submited');
+    dispatch(login(values));
 
     actions.resetForm();
   };
@@ -66,8 +74,14 @@ const LoginForm = () => {
           type="submit"
           className={styles.button}
         >
-          Log in
-          <Logo className={styles.logo} />
+          {isLoading ? (
+            <p>Loading...</p>
+          ) : (
+            <>
+              Log in
+              <Logo className={styles.logo} />
+            </>
+          )}
         </button>
       </form>
     </div>
