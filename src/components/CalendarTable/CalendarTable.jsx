@@ -48,8 +48,8 @@ export default function CalendarTable() {
       <p className = {styles.Days_text}>Wed</p>
       <p className = {styles.Days_text}>Thu</p>
       <p className = {styles.Days_text}>Fri</p>
-      <p className = {styles.Days_text}>Sat</p>
-      <p className = {styles.Days_text}>Sun</p>
+      <p className = {styles.Days_weekends}>Sat</p>
+      <p className = {styles.Days_weekends}>Sun</p>
     </div>
     <div className={styles.datesInCalendar}>
         {weeksList.map((week) => {
@@ -58,7 +58,13 @@ export default function CalendarTable() {
               {week.map((day) => { //! add a key
                 return (
                   <div className={styles.OneDay}>  
-                    {day ? <p className={styles.datesInCalendar_date}>{getDate(day)}</p> : null} 
+                  
+                    {day ? <div><p className={styles.datesInCalendar_date}>{getDate(day)}</p>
+                      <div className={styles.Task}>
+                        <p className={styles.Task_text}>Learn how to use the forms</p>  
+                        </div>
+                      </div> 
+                      : null} 
                   </div>
                 );
               })}

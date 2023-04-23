@@ -32,17 +32,35 @@
     border-radius: 8px;
     padding: 14px;
     display: flex;
-    justify-content: space-around;
+    gap: 122px;
     margin-bottom: 15px;
 }
 
 .Days_text {
-    gap: 122;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.12;
+    text-transform: uppercase;
+    color: var(--day-text-color);
+}
+
+.Days_weekends {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.12;
+    text-transform: uppercase;
+    color: var(--button-bgd-color);
+
 }
 
 .datesInCalendar {
     display: flex;
     flex-direction: column;
+    text-align: right;
 }
 
 .datesInCalendar_date {
@@ -55,8 +73,8 @@
     line-height: 1.12;
     text-transform: uppercase;
     color: var(--date-text-color);
-
 }
+
 
 .Week {
     display: flex;
@@ -64,7 +82,34 @@
 
 .OneDay {
     border: 1px solid rgba(220, 227, 229, 0.8);
-    width: 14%;
+    width: 150px;
     height: 125px;
-    text-align: right;
+
+
+}
+
+.Task {
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    background: var(--low-priority-bgd);
+    border-radius: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 22px;
+}
+
+
+.Task_text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.29;
+    color: var(--button-bgd-color);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
 }
