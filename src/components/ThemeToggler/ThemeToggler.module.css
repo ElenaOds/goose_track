@@ -1,3 +1,6 @@
-.buttonTheme{    
-    margin-right:20px;
-};
+.button {    
+    border: none;
+    background: rgba(0, 0, 0, 0);
+    cursor: pointer; 
+    margin-right:16px;   
+}
