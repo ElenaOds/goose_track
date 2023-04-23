@@ -3,29 +3,60 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center; 
-    margin: 40px;
+    padding-top: 24px;
+    padding-bottom: 64px;
+    background-color: var( --second-bdg-color);
+    font-size: 32px; 
 }
-
-
 .flex{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center; 
-
+    align-items: center;
+    
 };
 
-/* добавить медиазапросы */
+.logo{
+    margin-right: 8px;
+}
+.text{
+    margin-top: 8px;
+    font-size: 14px;
+}
+.textinline{
+    color: #3E85F3;  
+}
 .menu{    
     border: medium none;
     background-image: none; 
     background: transparent;
     float: left;
-    background-color: transparent;
-   
+    background-color: transparent;   
 }
-.logo{
-    display:none;
+.button {    
+    border: none;
+    background: rgba(0, 0, 0, 0);
+    cursor: pointer;     
 }
-
+@media screen and (min-width: 768px) {
+    .button {
+        display: none;
+    }
+    .header{
+        padding-top: 40px;
+        padding-bottom: 32px;
+    }
+}
+@media screen and (max-width: 768px) {
+   .titel{
+    display: none;    
+    } 
+    .logo{
+        display: none;  
+    }   
+}
+.burger {
+    stroke:var(--basic-text-color);
+}
+ 
 

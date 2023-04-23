@@ -1,8 +1,20 @@
 .avatar{   
-    margin-left: 20px;
+    margin-left: 14px;
     height: 32px;
     width: 32px;
     border-radius: 50px;
     border: 1.8px solid #3E85F3; 
-    text-align: center;   
+    text-align: center;     
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.name{
+    font-size: 18px;
+}
+
+@media screen and (max-width: 375px) {
+    .name {
+        font-size: 14px;
+    }
 }
