@@ -119,8 +119,14 @@
   border-color: var(--button-bgd-color);
 }
 
+.passwordContainer {
+  position: relative;
+}
+
 .togle {
   position: absolute;
+  right: 12px;
+  top: 10px;
 }
 
 .redirect {
