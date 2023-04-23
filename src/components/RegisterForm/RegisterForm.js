@@ -1,33 +1,15 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/auth.operations';
-import * as Yup from 'yup';
-import { ReactComponent as Icon } from '../../icons/log-in-01.svg';
-import goose from '../../icons/goose.png';
-import cloud from '../../icons/message.png';
-
+import { validationSchema } from './validationSvhema';
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
+import goose from '../../icons/goose.png';
+import cloud from '../../icons/message.png';
+import { ReactComponent as Icon } from '../../icons/log-in-01.svg';
+import { ReactComponent as Show } from '../../icons/showicon.svg';
+import { ReactComponent as Hide } from '../../icons/hideicon.svg';
 
 import style from './RegisterForm.module.css';
-
-const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{5,20}$/;
-// min 5 max 20 characters , 1 upper case letter, 1 lower case letter, 1 numeric digit
-
-const validationSchema = Yup.object().shape({
-  name: Yup.string()
-    .required('Name is required')
-    .min(3, 'Name is too short')
-    .max(64, 'Name is too long'),
-  email: Yup.string().email('Invalid email').required('Required'),
-  password: Yup.string()
-    .min(5, 'Password is too short')
-    .max(20, 'Password is too long')
-    .matches(
-      passwordRules,
-      'Password must contain uppper case letter and numbers'
-    )
-    .required('Required'),
-});
 
 export const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -49,7 +31,7 @@ export const RegisterForm = () => {
         register({
           name: values.name,
           email: values.email,
-          password: values.email,
+          password: values.password,
         })
       );
       resetForm();
@@ -109,29 +91,35 @@ export const RegisterForm = () => {
         <label className={style.label} htmlFor="password">
           Password
         </label>
-        <input
-          className={`${style.input} ${
-            formik.touched.password && formik.errors.password
-              ? style.errorInput
-              : formik.touched.password && !formik.errors.password
-              ? style.success
-              : ''
-          }`}
-          id="password"
-          name="password"
-          type={showPassword ? 'text' : 'password'}
-          placeholder="Enter password"
-          onBlur={formik.onBlur}
-          onChange={formik.handleChange}
-          value={formik.values.password}
-        />
-        <button
-          className={style.togle}
-          type="button"
-          onClick={handleShowPassword}
-        >
-          {showPassword ? 'Hide' : 'Show'}
-        </button>
+        <div className={style.passwordContainer}>
+          <input
+            className={`${style.input} ${
+              formik.touched.password && formik.errors.password
+                ? style.errorInput
+                : formik.touched.password && !formik.errors.password
+                ? style.success
+                : ''
+            }`}
+            id="password"
+            name="password"
+            type={showPassword ? 'text' : 'password'}
+            placeholder="Enter password"
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
+            value={formik.values.password}
+          />
+          <span
+            className={style.togle}
+            type="button"
+            onClick={handleShowPassword}
+          >
+            {showPassword ? (
+              <Show className={style.icon} />
+            ) : (
+              <Hide className={style.icon} />
+            )}
+          </span>
+        </div>
 
         {formik.touched.password && formik.errors.password ? (
           <div className={style.errorLabel}>{formik.errors.password}</div>
