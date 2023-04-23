@@ -3,8 +3,8 @@ import { register } from 'redux/auth/auth.operations';
 import { validationSchema } from './validationSvhema';
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
-import goose from '../../icons/goose.png';
-import cloud from '../../icons/message.png';
+import goose from '../../images/goose.png';
+import message from '../../images/message.png';
 import { ReactComponent as Icon } from '../../icons/log-in-01.svg';
 import { ReactComponent as Show } from '../../icons/showicon.svg';
 import { ReactComponent as Hide } from '../../icons/hideicon.svg';
@@ -138,7 +138,7 @@ export const RegisterForm = () => {
         <p className={style.imgText}>
           Quickly register and familiarize yourself with the application!
         </p>
-        <img className={style.imgMessage} src={cloud} alt="message" />
+        <img className={style.imgMessage} src={message} alt="message" />
         <img src={goose} alt="goose" />
       </div>
     </div>

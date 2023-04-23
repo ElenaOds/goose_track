@@ -127,6 +127,7 @@
   position: absolute;
   right: 12px;
   top: 10px;
+  cursor: pointer;
 }
 
 .redirect {
