@@ -23,13 +23,15 @@
 }
 
 html[data-theme='dark']{
-  --primary-bgd-color: #13151A;
-  --primary-text-color:#FFFFFF;   
+  --basic-bgd-color: #13151A;
+  --second-bdg-color:#13151A;
+  --basic-text-color:#FFFFFF;   
 }
 
 html[data-theme='light']{
-  --primary-bgd-color:#FFFFFF; 
-  --primary-text-color:#13151A;   
+  --basic-bgd-color:#FFFFFF;
+  --second-bdg-color: #EAEAEA; 
+  --basic-text-color:#13151A;   
 }
 
 
@@ -38,8 +40,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif, 'Libre Bodoni', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--primary-bgd-color);
-  color: var(--primary-text-color);
+  background-color: var(--basic-bgd-color);
+  color: var(--basic-text-color);
 }
 
 code {
