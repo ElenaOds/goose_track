@@ -2,7 +2,7 @@
 .container {
     width: 375px;
 
-    background: var(--primary-bgd-color);
+    background: var(--white-color);
 
     margin-right: auto;
     margin-left: auto;
