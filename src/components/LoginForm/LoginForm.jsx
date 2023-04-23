@@ -1,5 +1,6 @@
 import { useFormik } from 'formik';
 import LoginSchema from './LoginSchema';
+// import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import styles from './LoginForm.module.css';
 import { ReactComponent as Logo } from '../../icons/icon-login.svg';
@@ -8,10 +9,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { login } from 'redux/auth/auth.operations';
 import { selectIsRefreshing } from 'redux/auth/auth.selectors';
 
-export const LoginForm = () => {
+const LoginForm = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsRefreshing);
 
+  console.log(isLoading);
+  
   const onSubmit = async (values, actions) => {
     console.log(values);
 
@@ -19,7 +22,6 @@ export const LoginForm = () => {
 
     actions.resetForm();
   };
-
   const formik = useFormik({
     initialValues: {
       email: '',
@@ -28,7 +30,6 @@ export const LoginForm = () => {
     validationSchema: LoginSchema,
     onSubmit,
   });
-
   return (
     <div className={styles.container}>
       <h1 className={styles.heading}>Log in</h1>
@@ -49,7 +50,6 @@ export const LoginForm = () => {
               : styles.input
           }
         />
-
         <label htmlFor="password" className={styles.label}>
           Password
         </label>
@@ -84,3 +84,4 @@ export const LoginForm = () => {
     </div>
   );
 };
+export default LoginForm;
