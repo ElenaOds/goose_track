@@ -8,8 +8,8 @@ import MainLayout from './MainLayout/MainLayout';
 const App = () => {
   return (
     <Routes>
-      <Route path="/register" element={<Register />} />
-      <Route path="/login" element={<Login />} />
+      <Route path="/auth/register" element={<Register />} />
+      <Route path="/auth/login" element={<Login />} />
       <Route path="/" element={<MainLayout />}>
         <Route path="/account" element={<Account />} />
         <Route path="/calendar" element={<Calendar />} />

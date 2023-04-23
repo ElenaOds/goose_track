@@ -2,10 +2,10 @@ import { useFormik } from 'formik';
 import LoginSchema from './LoginSchema';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import styles from './styles.module.css';
-import { ReactComponent as Logo } from './icon_login.svg';
+import styles from './LoginForm.module.css';
+import { ReactComponent as Logo } from '../../icons/icon-login.svg';
 
-const LoginForm = () => {
+export const LoginForm = () => {
   const onSubmit = async (values, actions) => {
     console.log(values);
     await new Promise(resolve => setTimeout(resolve, 1000));
@@ -74,5 +74,3 @@ const LoginForm = () => {
     </div>
   );
 };
-
-export default LoginForm;
