@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import styles from './AuthNavigate.module.css';
 
 export const AuthNavigate = ({ route, pageName }) => {
-  console.log(route);
-  console.log(pageName);
   return (
     <>
       <button type="button" className={styles.button}>

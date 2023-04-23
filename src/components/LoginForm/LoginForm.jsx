@@ -1,16 +1,18 @@
 import { useFormik } from 'formik';
 import LoginSchema from './LoginSchema';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import styles from './LoginForm.module.css';
 import { ReactComponent as Logo } from '../../icons/icon-login.svg';
+// import { ReactComponent as Loader } from './goose-gif.gif';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from 'redux/auth/auth.operations';
+import { selectIsRefreshing } from 'redux/auth/auth.selectors';
 
 export const LoginForm = () => {
   const onSubmit = async (values, actions) => {
     console.log(values);
-    await new Promise(resolve => setTimeout(resolve, 1000));
 
-    toast.success('form has been submited');
+    dispatch(login(values));
 
     actions.resetForm();
   };
@@ -66,11 +68,16 @@ export const LoginForm = () => {
           type="submit"
           className={styles.button}
         >
-          Log in
-          <Logo className={styles.logo} />
+          {isLoading ? (
+            <p>Loading...</p>
+          ) : (
+            <>
+              Log in
+              <Logo className={styles.logo} />
+            </>
+          )}
         </button>
       </form>
-      <ToastContainer />
     </div>
   );
 };
