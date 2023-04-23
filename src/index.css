@@ -1,12 +1,12 @@
 @import-normalize; /* bring in normalize.css styles */
 :root {
-  --primary-bgd-color: #FFFFFF;
+  /* --primary-bgd-color: #FFFFFF; */
   --secondary-bgd-color: #EAEAEA;
   --register-bgd-color: #DCEBF7;
-  --dark-primary-bgd-color: #13151A;
+  /* --dark-primary-bgd-color: #13151A; */
   --dark-secondary-bgd-color: #21222C;
   --button-bgd-color: #3E85F3;
-  --primary-text-color: #111111;
+  /* --primary-text-color: #111111; */
   --secondary-text-color: #84828A;
   --placeholder-text-color: #DCE3E5;
   --date-text-color: #343434;
