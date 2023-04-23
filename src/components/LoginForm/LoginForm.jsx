@@ -1,6 +1,6 @@
 import { useFormik } from 'formik';
 import LoginSchema from './LoginSchema';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import styles from './styles.module.css';
 import { ReactComponent as Logo } from './icon_login.svg';
@@ -70,7 +70,6 @@ const LoginForm = () => {
           <Logo className={styles.logo} />
         </button>
       </form>
-      <ToastContainer />
     </div>
   );
 };
