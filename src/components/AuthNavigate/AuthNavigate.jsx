@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import styles from './styles.module.css';
+import styles from './AuthNavigate.module.css';
 
-const AuthNavigate = ({ route, pageName }) => {
+export const AuthNavigate = ({ route, pageName }) => {
   return (
     <>
       <button type="button" className={styles.button}>
@@ -10,5 +10,3 @@ const AuthNavigate = ({ route, pageName }) => {
     </>
   );
 };
-
-export default AuthNavigate;

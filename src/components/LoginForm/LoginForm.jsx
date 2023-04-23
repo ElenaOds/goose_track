@@ -1,20 +1,14 @@
 import { useFormik } from 'formik';
 import LoginSchema from './LoginSchema';
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import styles from './styles.module.css';
-import { ReactComponent as Logo } from './icon_login.svg';
+import styles from './LoginForm.module.css';
+import { ReactComponent as Logo } from '../../icons/icon-login.svg';
 // import { ReactComponent as Loader } from './goose-gif.gif';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from 'redux/auth/auth.operations';
 import { selectIsRefreshing } from 'redux/auth/auth.selectors';
 
-const LoginForm = () => {
-  const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsRefreshing);
-
-  console.log(isLoading);
-
+export const LoginForm = () => {
   const onSubmit = async (values, actions) => {
     console.log(values);
 
@@ -87,5 +81,3 @@ const LoginForm = () => {
     </div>
   );
 };
-
-export default LoginForm;

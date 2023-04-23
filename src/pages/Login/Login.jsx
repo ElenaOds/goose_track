@@ -1,7 +1,6 @@
-
-import LoginForm from 'components/LoginForm/LoginForm';
-import AuthNavigate from 'components/AuthNavigate/AuthNavigate';
-import styles from './styles.module.css';
+import { LoginForm } from 'components/LoginForm/LoginForm';
+import { AuthNavigate } from 'components/AuthNavigate/AuthNavigate';
+import styles from './Login.module.css';
 
 const Login = () => {
   return (
@@ -9,7 +8,7 @@ const Login = () => {
       <LoginForm />
       <AuthNavigate route={'/auth/signup'} pageName={'Sign up'} />
     </div>
-  )
-}
+  );
+};
 
 export default Login;

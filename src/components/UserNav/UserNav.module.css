@@ -1,0 +1,79 @@
+.userNav {
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: var(--secondary-text-color);
+    
+}
+
+.heading {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    
+    color: var(--secondary-text-color);
+}
+
+
+
+.navLink {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration: none;
+
+    padding: 12px;
+    gap: 8px;
+}
+
+.activeLink {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        text-decoration: none;
+  
+    padding: 12px;
+    gap: 8px;
+
+    color: var(--button-bgd-color)!important;
+
+    background: var(--task-button-color);
+    border-radius: 8px;
+}
+
+.icon {
+    color: var(--secondary-text-color);
+    margin-right: 10px;
+}
+
+.activeIcon {
+    background: var(--task-button-color);
+    margin-right: 10px;
+}
+
+
+
