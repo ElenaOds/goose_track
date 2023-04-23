@@ -1,5 +1,5 @@
 import { RegisterForm } from 'components/RegisterForm/RegisterForm';
-import AuthNavigate from 'components/AuthNavigate/AuthNavigate';
+import { AuthNavigate } from 'components/AuthNavigate/AuthNavigate';
 import styles from './Register.module.css';
 
 const Register = () => {
