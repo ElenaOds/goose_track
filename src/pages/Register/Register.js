@@ -1,8 +1,13 @@
+import { RegisterForm } from 'components/RegisterForm/RegisterForm';
+import { AuthNavigate } from 'components/AuthNavigate/AuthNavigate';
+import styles from './Register.module.css';
+
 const Register = () => {
   return (
-    <>
-      <h1>Register</h1>
-    </>
+    <div className={styles.container}>
+      <RegisterForm />
+      <AuthNavigate route={'/auth/login'} pageName={'Log In'} />
+    </div>
   );
 };
 

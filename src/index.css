@@ -1,12 +1,12 @@
 @import-normalize; /* bring in normalize.css styles */
 :root {
-  --primary-bgd-color: #FFFFFF;
+  --white-color: #FFFFFF;
   --secondary-bgd-color: #EAEAEA;
   --register-bgd-color: #DCEBF7;
-  --dark-primary-bgd-color: #13151A;
+  --secondary-black-color: #13151A;
   --dark-secondary-bgd-color: #21222C;
   --button-bgd-color: #3E85F3;
-  --primary-text-color: #111111;
+  --primary-black-color: #111111;
   --secondary-text-color: #84828A;
   --placeholder-text-color: #DCE3E5;
   --date-text-color: #343434;
@@ -22,13 +22,26 @@
   --active-calendar-color: #CAE8FF;
 }
 
+html[data-theme='dark']{
+  --basic-bgd-color: #13151A;
+  --second-bdg-color:#13151A;
+  --basic-text-color:#FFFFFF;   
+}
+
+html[data-theme='light']{
+  --basic-bgd-color:#FFFFFF;
+  --second-bdg-color: #EAEAEA; 
+  --basic-text-color:#13151A;   
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif, 'Libre Bodoni', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--primary-bgd-color);
-  color: var(--primary-text-color);
+  background-color: var(--basic-bgd-color);
+  color: var(--basic-text-color);
 }
 
 code {
@@ -54,3 +67,4 @@ h6 {
 p {
   margin: 0;
 }
+
