@@ -22,7 +22,6 @@
     /* color: var(--primary-bgd-color) */
 }
 
-
 .Days {
     border: 1px solid rgba(220, 227, 229, 0.8);
     border-radius: 8px;
@@ -41,6 +40,7 @@
 .datesInCalendar {
     display: flex;
     flex-direction: column;
+    text-align: right;
 }
 
 .datesInCalendar_date {
@@ -55,6 +55,7 @@
     color: var(--basic-text-color);
 }
 
+
 .Week {
     display: flex;
 }
@@ -64,5 +65,5 @@
     width: 15%;
     height: 130px;
     text-align: right;
-    background-color: var(--calendar-bdg-color);  
+    background-color: var(--calendar-bdg-color); 
 }
