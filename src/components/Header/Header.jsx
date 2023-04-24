@@ -3,29 +3,26 @@ import {UserInfo} from '../UserInfo/UserInfo';
 import styles  from './Header.module.css';
 import { ReactComponent as Burger } from '../../icons/menu.svg';
 import { ReactComponent as Goose} from '../../icons/goose.svg';
+import PropTypes from "prop-types";
 
-export const Header = () => {
-  // переделаль на пропсы
-  const titel="Calendar";
-  const isColendar=true;
-
-
-  const openMenu = evt => {     
+export const Header = ({isActivPage}) => {
+ 
+  const openMenu = () => {     
     console.log('Кнопка будет открывать модальное окно с сайтбар')
-  };
-
+  }; 
+  // burger
   return (
     <div className={styles.header}> 
       <div className={styles.flex}>         
-        {isColendar===true
+        {isActivPage===false
         ? <div className={styles.flex}>
-          < Goose className={styles.logo}/>
-          <div className={styles.titel}>
-            <p>{titel}</p>
+          <Goose className={styles.logo}/>
+          <div className={styles.title}>
+            <p>Calendar</p>
             <p className={styles.text}><span className={styles.textinline}>Let go </span>of the past and focus on the present!</p>
           </div>           
         </div>                
-        :<p className={styles.titel}>{titel}</p>}
+        :<p className={styles.titel}>User Profile</p>}
           <button className={styles.button} type="button" onClick={openMenu}>                  
           <Burger className={styles.burger} />        
         </button>            
@@ -37,4 +34,8 @@ export const Header = () => {
     </div>
   );     
 };
+
+Header.propTypes = {        
+  isActivPage: PropTypes.bool  
+}
 
