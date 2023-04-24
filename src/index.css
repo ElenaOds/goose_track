@@ -25,14 +25,14 @@
 html[data-theme='dark']{
   --basic-bgd-color: #13151A;
   --second-bdg-color:#13151A;
-  --colendar-bdg-color: #21222C;
+  --calendar-bdg-color: #21222C;
   --basic-text-color:#FFFFFF;   
 }
 
 html[data-theme='light']{
   --basic-bgd-color:#FFFFFF;
   --second-bdg-color: #EAEAEA; 
-  --colendar-bdg-color: #FFFFFF;
+  --calendar-bdg-color: #FFFFFF;
   --basic-text-color:#13151A;   
 }
 
