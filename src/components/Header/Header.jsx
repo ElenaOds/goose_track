@@ -17,7 +17,7 @@ export const Header = ({isActivPage}) => {
         {isActivPage===false
         ? <div className={styles.flex}>
           <Goose className={styles.logo}/>
-          <div className={styles.titel}>
+          <div className={styles.title}>
             <p>Calendar</p>
             <p className={styles.text}><span className={styles.textinline}>Let go </span>of the past and focus on the present!</p>
           </div>           
