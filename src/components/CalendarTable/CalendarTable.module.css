@@ -31,7 +31,7 @@
     justify-content: space-around;
     margin-top: 40px;
     margin-bottom: 15px;  
-    background-color: var( --colendar-bdg-color);  
+    background-color: var( --calendar-bdg-color);  
 }
 
 .Days_text {    
@@ -64,5 +64,5 @@
     width: 15%;
     height: 130px;
     text-align: right;
-    background-color: var(--colendar-bdg-color);  
+    background-color: var(--calendar-bdg-color);  
 }
