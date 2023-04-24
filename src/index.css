@@ -25,23 +25,26 @@
 html[data-theme='dark']{
   --basic-bgd-color: #13151A;
   --second-bdg-color:#13151A;
+  --colendar-bdg-color: #21222C;
   --basic-text-color:#FFFFFF;   
 }
 
 html[data-theme='light']{
   --basic-bgd-color:#FFFFFF;
   --second-bdg-color: #EAEAEA; 
+  --colendar-bdg-color: #FFFFFF;
   --basic-text-color:#13151A;   
 }
 
 
 body {
+  
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif, 'Libre Bodoni', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--basic-bgd-color);
-  color: var(--basic-text-color);
+  background-color: var(--second-bdg-color);
+  color: var(--basic-text-color); 
 }
 
 code {
