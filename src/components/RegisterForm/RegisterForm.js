@@ -1,6 +1,7 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { register } from 'redux/auth/auth.operations';
 import { validationSchema } from './validationSvhema';
+import { SpinnerCircular } from 'spinners-react';
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import goose from '../../images/goose.png';
@@ -10,9 +11,11 @@ import { ReactComponent as Show } from '../../icons/showicon.svg';
 import { ReactComponent as Hide } from '../../icons/hideicon.svg';
 
 import style from './RegisterForm.module.css';
+import { selectIsRefreshing } from 'redux/auth/auth.selectors';
 
 export const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const isLoading = useSelector(selectIsRefreshing);
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -40,6 +43,16 @@ export const RegisterForm = () => {
 
   return (
     <div className={style.container}>
+      {isLoading && (
+        <SpinnerCircular
+          className={style.spinner}
+          size={50}
+          thickness={100}
+          speed={100}
+          color="#FFFFFF"
+          secondaryColor="#3E85F3"
+        />
+      )}
       <form className={style.form} onSubmit={formik.handleSubmit}>
         <h1 className={style.title}>Sign Up</h1>
         <label className={style.label} htmlFor="name">
