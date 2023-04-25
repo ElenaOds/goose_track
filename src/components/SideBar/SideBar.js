@@ -3,8 +3,9 @@ import LogoutBtn from 'components/LogoutBtn/LogoutBtn';
 import styles from './SideBar.module.css';
 import { ReactComponent as GooseLogo } from '../../icons/goose-logo.svg';
 import { ReactComponent as IconClose } from '../../icons/icon-close.svg';
+import PropTypes from "prop-types";
 
-const SideBar = () => {
+const SideBar = ({changePage}) => {  
   return (
     <div className={styles.container}>
       <div>
@@ -18,12 +19,16 @@ const SideBar = () => {
           <IconClose className={styles.close} />
         </div>
 
-        <UserNav />
+        <UserNav changePage={changePage}/>
       </div>
 
-      <LogoutBtn className={styles.lgButton} />
+      <LogoutBtn className={styles.lgButton}/>
     </div>
   );
 };
 
 export default SideBar;
+
+SideBar.propTypes = {        
+  changePage: PropTypes.array 
+}

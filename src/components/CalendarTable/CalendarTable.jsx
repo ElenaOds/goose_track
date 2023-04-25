@@ -1,40 +1,41 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import styles from './CalendarTable.module.css';
-import { createCalendarDays } from './createCalendarDays';
-import { daysList, nextMonth } from './getDays';
-import { splitIntoWeeks } from './splitWeeks';
-const { getDate, format, addMonths } = require("date-fns");
+// import { createCalendarDays } from './createCalendarDays';
+// import { daysList, nextMonth } from './getDays';
+// import { splitIntoWeeks } from './splitWeeks';
+const { getDate, format } = require("date-fns");
 
 
 
 
 
 
-export default function CalendarTable() {
-  const [weeksList, setWeeksList] = useState([]);
-  const [month, setMonth] = useState(0);
-  const [currentDate, setCurrentDate] = useState(new Date());
+export default function CalendarTable({currentDate,handleRightClick,handleLeftClick,weeksList}) {
+  // const [weeksList, setWeeksList] = useState([]);
+  // const [month, setMonth] = useState(0); //! take out
+  // const [currentDate, setCurrentDate] = useState(new Date());
   
-  useEffect(() => {
-    const days = month === 0 ? daysList : nextMonth(month);
-    console.log('days: ', days);
-    const calendarDays = createCalendarDays(days);
-    const weeksList = splitIntoWeeks(calendarDays);
-    setWeeksList(weeksList);
-  }, [month]);
-  
-  
-  const handleLeftClick = () => {
-    setCurrentDate((prevMonth) => addMonths(prevMonth, -1));
-    setMonth(month - 1)
+  // useEffect(() => {
+  //   const days = month === 0 ? daysList : nextMonth(month);
     
-  }
-  const handleRightClick = () => {
-    setCurrentDate((prevMonth) => addMonths(prevMonth, +1));
-
-    setMonth(month + 1)
+  //   const calendarDays = createCalendarDays(days);
+  //   const weeksList = splitIntoWeeks(calendarDays);
+  //   setWeeksList(weeksList);
     
-  }
+  // }, [month]);
+  
+  
+  // const handleLeftClick = () => {
+  //   setCurrentDate((prevMonth) => addMonths(prevMonth, -1));
+  //   setMonth(month - 1)
+    
+  // }
+  // const handleRightClick = () => {
+  //   setCurrentDate((prevMonth) => addMonths(prevMonth, +1));
+
+  //   setMonth(month + 1)
+    
+  // }
   return (
     <div className = {styles.container}>
     <div className={styles.Month}>
@@ -48,8 +49,8 @@ export default function CalendarTable() {
       <p className = {styles.Days_text}>Wed</p>
       <p className = {styles.Days_text}>Thu</p>
       <p className = {styles.Days_text}>Fri</p>
-      <p className = {styles.Days_text}>Sat</p>
-      <p className = {styles.Days_text}>Sun</p>
+      <p className = {styles.Days_weekends}>Sat</p>
+      <p className = {styles.Days_weekends}>Sun</p>
     </div>
     <div className={styles.datesInCalendar}>
         {weeksList.map((week) => {
@@ -58,7 +59,13 @@ export default function CalendarTable() {
               {week.map((day) => { //! add a key
                 return (
                   <div className={styles.OneDay}>  
-                    {day ? <p className={styles.datesInCalendar_date}>{getDate(day)}</p> : null} 
+                  
+                    {day ? <div><p className={styles.datesInCalendar_date}>{getDate(day)}</p>
+                      <div className={styles.Task}>
+                        <p className={styles.Task_text}>Learn how to use the forms</p>  
+                        </div>
+                      </div> 
+                      : null} 
                   </div>
                 );
               })}
@@ -70,3 +77,7 @@ export default function CalendarTable() {
    
   );
 }
+
+/*
+  weeklist  i need //! dayslist, nextMonth, createCalendarDays,splitIntoWeeks
+*/
