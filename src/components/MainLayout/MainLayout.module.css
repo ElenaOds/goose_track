@@ -1,6 +1,6 @@
 .flex {
   display: flex;
+  flex-direction: row;
   margin: 0;
   /* justify-content: center; */
-  width: 100%;
 }

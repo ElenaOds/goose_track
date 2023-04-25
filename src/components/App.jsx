@@ -10,6 +10,7 @@ import { RestrictedRoute } from './RestrictedRoute';
 const App = () => {
   return (
     <>
+      <div id="user-modal"></div>
       <Routes>
         <Route
           path="auth/register"
@@ -27,7 +28,6 @@ const App = () => {
           <Route path="/account" element={<Account />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/calendar/:month/:day" element={<Calendar />} />
-
         </Route>
       </Routes>
       <ToastContainer />
