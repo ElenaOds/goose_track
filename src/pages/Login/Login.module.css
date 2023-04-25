@@ -1,5 +1,5 @@
 .container {
-    height: 100vh;
+    min-height: 100vh;
     /* background: #EAEAEA; */
     background: var(--secondary-bgd-color);
 
@@ -7,4 +7,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
