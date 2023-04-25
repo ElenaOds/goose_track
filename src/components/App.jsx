@@ -6,11 +6,17 @@ import Register from 'pages/Register/Register';
 import MainLayout from './MainLayout/MainLayout';
 import { ToastContainer } from 'react-toastify';
 import { RestrictedRoute } from './RestrictedRoute';
+import { setAuthHeader } from 'redux/auth/auth.operations';
+import { useSelector } from 'react-redux';
+import { selectToken } from 'redux/auth/auth.selectors';
 
 const App = () => {
+  const token = useSelector(selectToken);
+  setAuthHeader(token);
+
   return (
     <>
-      <div id="user-modal"></div>
+    <div id="user-modal"></div>
       <Routes>
         <Route
           path="auth/register"
