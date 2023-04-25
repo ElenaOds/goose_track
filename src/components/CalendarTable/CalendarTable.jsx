@@ -3,6 +3,8 @@ import styles from './CalendarTable.module.css';
 // import { createCalendarDays } from './createCalendarDays';
 // import { daysList, nextMonth } from './getDays';
 // import { splitIntoWeeks } from './splitWeeks';
+import {AddTaskBtn} from 'components/AddTaskBtn/AddTaskBtn';
+
 const { getDate, format } = require("date-fns");
 
 
@@ -73,6 +75,7 @@ export default function CalendarTable({currentDate,handleRightClick,handleLeftCl
           );
         })}
       </div>
+      <AddTaskBtn/>
     </div>
    
   );
