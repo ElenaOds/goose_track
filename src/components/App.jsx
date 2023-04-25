@@ -16,6 +16,7 @@ const App = () => {
 
   return (
     <>
+    <div id="user-modal"></div>
       <Routes>
         <Route
           path="auth/register"

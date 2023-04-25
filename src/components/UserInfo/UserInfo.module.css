@@ -18,3 +18,7 @@
     font-size: 14px;
   }
 }
+
+.container {
+  cursor: pointer;
+}
