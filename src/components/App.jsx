@@ -1,9 +1,10 @@
-import { Route, Routes } from 'react-router-dom';
 import Account from 'pages/Account/Account';
 import Calendar from 'pages/Calendar/Calendar';
 import Login from 'pages/Login/Login';
 import Register from 'pages/Register/Register';
 import MainLayout from './MainLayout/MainLayout';
+import Home from 'pages/Home/Home';
+import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { RestrictedRoute } from './RestrictedRoute';
 import { setAuthHeader } from 'redux/auth/auth.operations';
@@ -18,6 +19,7 @@ const App = () => {
     <>
       <div id="user-modal"></div>
       <Routes>
+        <Route path="home" element={<Home />} />
         <Route
           path="register"
           element={
