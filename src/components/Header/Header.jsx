@@ -5,10 +5,13 @@ import { ReactComponent as Burger } from '../../icons/menu.svg';
 import { ReactComponent as Goose } from '../../icons/goose.svg';
 import PropTypes from 'prop-types';
 
-export const Header = ({ isActivPage }) => {
-  const openMenu = () => {
-    console.log('Кнопка будет открывать модальное окно с сайтбар');
-  };
+
+export const Header = ({isActivPage}) => {
+ 
+  const openMenu = () => {     
+    console.log('Кнопка будет открывать модальное окно с сайтбар')
+  }; 
+
   // burger
   return (
     <div className={styles.header}>
