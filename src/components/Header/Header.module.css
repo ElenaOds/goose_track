@@ -1,65 +1,62 @@
-.header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center; 
-    padding-top: 24px;
-    padding-bottom: 64px;
-    background-color: var( --second-bdg-color);
-    font-size: 32px; 
-    width: 1200px;
-    padding-left: 32px;
-    padding-right: 32px;
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 64px;
+  background-color: var(--second-bdg-color);
+  font-size: 32px;
+  width: 100%;
+  padding-left: 32px;
+  padding-right: 32px;
 }
-.flex{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    
-};
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 
-.logo{
-    margin-right: 8px;
+.logo {
+  margin-right: 8px;
 }
-.text{
-    margin-top: 8px;
-    font-size: 14px;
+.text {
+  margin-top: 8px;
+  font-size: 14px;
 }
-.textinline{
-    color: #3E85F3;  
+.textinline {
+  color: #3e85f3;
 }
-.menu{    
-    border: medium none;
-    background-image: none; 
-    background: transparent;
-    float: left;
-    background-color: transparent;   
+.menu {
+  border: medium none;
+  background-image: none;
+  background: transparent;
+  float: left;
+  background-color: transparent;
 }
-.button {    
-    border: none;
-    background: rgba(0, 0, 0, 0);
-    cursor: pointer;     
+.button {
+  border: none;
+  background: rgba(0, 0, 0, 0);
+  cursor: pointer;
 }
 @media screen and (min-width: 768px) {
-    .button {
-        display: none;
-    }
-    .header{
-        padding-top: 40px;
-        padding-bottom: 32px;
-    }
+  .button {
+    display: none;
+  }
+  .header {
+    padding-top: 40px;
+    padding-bottom: 32px;
+  }
 }
 @media screen and (max-width: 768px) {
-   .title{
-    display: none;    
-    } 
-    .logo{
-        display: none;  
-    }   
+  .title {
+    display: none;
+  }
+  .logo {
+    display: none;
+  }
 }
 .burger {
-    stroke:var(--basic-text-color);
+  stroke: var(--basic-text-color);
 }
- 
-
