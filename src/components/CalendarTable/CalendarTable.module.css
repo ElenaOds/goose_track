@@ -66,3 +66,27 @@
   text-align: right;
   background-color: var(--calendar-bdg-color);
 }
+
+.Task {
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+  background: var(--low-priority-bgd);
+  border-radius: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.Task_text {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  color: var(--button-bgd-color);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80px;
+}

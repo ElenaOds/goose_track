@@ -1,40 +1,41 @@
-import { useEffect, useState } from 'react';
+// import { useEffect, useState } from 'react';
 import styles from './CalendarTable.module.css';
-import { createCalendarDays } from './createCalendarDays';
-import { daysList, nextMonth } from './getDays';
-import { splitIntoWeeks } from './splitWeeks';
-const { getDate, format, addMonths } = require("date-fns");
+// import { createCalendarDays } from './createCalendarDays';
+// import { daysList, nextMonth } from './getDays';
+// import { splitIntoWeeks } from './splitWeeks';
+const { getDate, format } = require("date-fns");
 
 
 
 
 
 
-export default function CalendarTable() {
-  const [weeksList, setWeeksList] = useState([]);
-  const [month, setMonth] = useState(0);
-  const [currentDate, setCurrentDate] = useState(new Date());
+export default function CalendarTable({currentDate,handleRightClick,handleLeftClick,weeksList}) {
+  // const [weeksList, setWeeksList] = useState([]);
+  // const [month, setMonth] = useState(0); //! take out
+  // const [currentDate, setCurrentDate] = useState(new Date());
   
-  useEffect(() => {
-    const days = month === 0 ? daysList : nextMonth(month);
-    console.log('days: ', days);
-    const calendarDays = createCalendarDays(days);
-    const weeksList = splitIntoWeeks(calendarDays);
-    setWeeksList(weeksList);
-  }, [month]);
-  
-  
-  const handleLeftClick = () => {
-    setCurrentDate((prevMonth) => addMonths(prevMonth, -1));
-    setMonth(month - 1)
+  // useEffect(() => {
+  //   const days = month === 0 ? daysList : nextMonth(month);
     
-  }
-  const handleRightClick = () => {
-    setCurrentDate((prevMonth) => addMonths(prevMonth, +1));
-
-    setMonth(month + 1)
+  //   const calendarDays = createCalendarDays(days);
+  //   const weeksList = splitIntoWeeks(calendarDays);
+  //   setWeeksList(weeksList);
     
-  }
+  // }, [month]);
+  
+  
+  // const handleLeftClick = () => {
+  //   setCurrentDate((prevMonth) => addMonths(prevMonth, -1));
+  //   setMonth(month - 1)
+    
+  // }
+  // const handleRightClick = () => {
+  //   setCurrentDate((prevMonth) => addMonths(prevMonth, +1));
+
+  //   setMonth(month + 1)
+    
+  // }
   return (
     <div className = {styles.container}>
     <div className={styles.Month}>
@@ -76,3 +77,7 @@ export default function CalendarTable() {
    
   );
 }
+
+/*
+  weeklist  i need //! dayslist, nextMonth, createCalendarDays,splitIntoWeeks
+*/

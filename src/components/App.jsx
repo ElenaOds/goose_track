@@ -26,6 +26,8 @@ const App = () => {
         <Route path="/" element={<MainLayout />}>
           <Route path="/account" element={<Account />} />
           <Route path="/calendar" element={<Calendar />} />
+          <Route path="/calendar/:month/:day" element={<Calendar />} />
+
         </Route>
       </Routes>
       <ToastContainer />
