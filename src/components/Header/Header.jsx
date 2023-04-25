@@ -5,6 +5,7 @@ import { ReactComponent as Burger } from '../../icons/menu.svg';
 import { ReactComponent as Goose} from '../../icons/goose.svg';
 import PropTypes from "prop-types";
 
+
 export const Header = ({isActivPage}) => {
  
   const openMenu = () => {     
