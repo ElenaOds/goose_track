@@ -6,8 +6,14 @@ import Register from 'pages/Register/Register';
 import MainLayout from './MainLayout/MainLayout';
 import { ToastContainer } from 'react-toastify';
 import { RestrictedRoute } from './RestrictedRoute';
+import { setAuthHeader } from 'redux/auth/auth.operations';
+import { useSelector } from 'react-redux';
+import { selectToken } from 'redux/auth/auth.selectors';
 
 const App = () => {
+  const token = useSelector(selectToken);
+  setAuthHeader(token);
+
   return (
     <>
       <Routes>
@@ -27,7 +33,6 @@ const App = () => {
           <Route path="/account" element={<Account />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/calendar/:month/:day" element={<Calendar />} />
-
         </Route>
       </Routes>
       <ToastContainer />

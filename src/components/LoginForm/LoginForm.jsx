@@ -23,8 +23,6 @@ const LoginForm = () => {
   };
 
   const onSubmit = async (values, actions) => {
-    console.log(values);
-
     dispatch(login(values));
 
     actions.resetForm();

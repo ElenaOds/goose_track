@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { registerUser, loginUser, logoutUser } from 'services/todoAPI/authAPI';
 
-const setAuthHeader = token => {
+export const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
@@ -33,10 +33,10 @@ export const login = createAsyncThunk(
     try {
       const { data } = await loginUser(credentials);
       setAuthHeader(data.token);
-      toast.success('Successfully logged in');
+      toast.success('Log in successful');
       return data;
     } catch (error) {
-      toast.error('Log in attempt error');
+      toast.error('Log in error');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -46,8 +46,9 @@ export const logout = createAsyncThunk('auth/logOut', async () => {
   try {
     await logoutUser();
     clearAuthHeader();
-    toast.success('Successfully logged out');
+    toast.success('Log out successful');
   } catch (error) {
     console.log(error.message);
+    toast.error('Log out error');
   }
 });
