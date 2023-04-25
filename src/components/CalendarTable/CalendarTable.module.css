@@ -1,92 +1,93 @@
 .Month {
-  font-family: sans-serif;
-  text-align: left;
-  display: flex;
-  align-items: center;
+    font-family: sans-serif;
+    text-align: left;
+    display: flex;
+    align-items: center;
 }
 
 .Month_buttons {
-  width: 50px;
-  margin: 5px;
-  height: 100%;
+    width: 50px;
+    margin: 5px;
+    height: 100%;
 }
 
 .Month_name {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.12;
-  text-align: center;
-  text-transform: uppercase;
-  /* color: var(--primary-bgd-color) */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.12;
+    text-align: center;
+    text-transform: uppercase;
+    /* color: var(--primary-bgd-color) */
 }
 
 .Days {
-  border: 1px solid rgba(220, 227, 229, 0.8);
-  border-radius: 8px;
-  padding: 14px;
-  display: flex;
-  justify-content: space-around;
-  margin-top: 40px;
-  margin-bottom: 15px;
-  background-color: var(--calendar-bdg-color);
+    border: 1px solid rgba(220, 227, 229, 0.8);
+    border-radius: 8px;
+    padding: 14px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    background-color: var(--calendar-bdg-color);
 }
 
 .Days_text {
-  gap: 122;
+    gap: 122;
 }
 
 .datesInCalendar {
-  display: flex;
-  flex-direction: column;
-  text-align: right;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
 }
 
 .datesInCalendar_date {
-  margin-top: 18px;
-  margin-right: 22px;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 1.12;
-  text-transform: uppercase;
-  color: var(--basic-text-color);
+    margin-top: 18px;
+    margin-right: 22px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.12;
+    text-transform: uppercase;
+    color: var(--basic-text-color);
 }
 
+
 .Week {
-  display: flex;
+    display: flex;
 }
 
 .OneDay {
-  border: 1px solid rgba(220, 227, 229, 0.8);
-  width: 15%;
-  height: 130px;
-  text-align: right;
-  background-color: var(--calendar-bdg-color);
+    border: 1px solid rgba(220, 227, 229, 0.8);
+    width: 15%;
+    height: 130px;
+    text-align: right;
+    background-color: var(--calendar-bdg-color);
 }
 
 .Task {
-  margin-top: 22px;
-  display: flex;
-  justify-content: center;
-  background: var(--low-priority-bgd);
-  border-radius: 8px;
-  margin-left: 8px;
-  margin-right: 8px;
+    margin-top: 22px;
+    display: flex;
+    justify-content: center;
+    background: var(--low-priority-bgd);
+    border-radius: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
 .Task_text {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.29;
-  color: var(--button-bgd-color);
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 80px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.29;
+    color: var(--button-bgd-color);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80px;
 }
