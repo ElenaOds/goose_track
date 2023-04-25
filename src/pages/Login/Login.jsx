@@ -6,7 +6,7 @@ const Login = () => {
   return (
     <div className={styles.container}>
       <LoginForm />
-      <AuthNavigate route={'/auth/register'} pageName={'Register'} />
+      <AuthNavigate route={'/register'} pageName={'Register'} />
     </div>
   );
 };

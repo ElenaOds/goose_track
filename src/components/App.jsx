@@ -16,16 +16,16 @@ const App = () => {
 
   return (
     <>
-    <div id="user-modal"></div>
+      <div id="user-modal"></div>
       <Routes>
         <Route
-          path="auth/register"
+          path="register"
           element={
             <RestrictedRoute redirectTo="/calendar" component={<Register />} />
           }
         />
         <Route
-          path="auth/login"
+          path="login"
           element={
             <RestrictedRoute redirectTo="/calendar" component={<Login />} />
           }
