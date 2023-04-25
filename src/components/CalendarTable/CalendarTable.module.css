@@ -2,7 +2,7 @@
     font-family: sans-serif;
     text-align: left;
     display: flex;
-    align-items: center;    
+    align-items: center;
 }
 
 .Month_buttons {
@@ -29,11 +29,11 @@
     display: flex;
     justify-content: space-around;
     margin-top: 40px;
-    margin-bottom: 15px;  
-    background-color: var( --calendar-bdg-color);  
+    margin-bottom: 15px;
+    background-color: var(--calendar-bdg-color);
 }
 
-.Days_text {    
+.Days_text {
     gap: 122;
 }
 
@@ -65,5 +65,29 @@
     width: 15%;
     height: 130px;
     text-align: right;
-    background-color: var(--calendar-bdg-color); 
+    background-color: var(--calendar-bdg-color);
+}
+
+.Task {
+    margin-top: 22px;
+    display: flex;
+    justify-content: center;
+    background: var(--low-priority-bgd);
+    border-radius: 8px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.Task_text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.29;
+    color: var(--button-bgd-color);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80px;
 }
