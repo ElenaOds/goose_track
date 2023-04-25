@@ -8,7 +8,7 @@ export const validationSchema = Yup.object().shape({
     .required('Name is required')
     .min(3, 'Name is too short')
     .max(64, 'Name is too long'),
-  email: Yup.string().email('Invalid email').required('Required'),
+  email: Yup.string().email('Invalid email').required('Email is required'),
   password: Yup.string()
     .min(5, 'Password is too short')
     .max(20, 'Password is too long')
@@ -16,5 +16,5 @@ export const validationSchema = Yup.object().shape({
       passwordRules,
       'Password must contain uppper case letter and numbers'
     )
-    .required('Required'),
+    .required('Password is required'),
 });

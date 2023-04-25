@@ -1,8 +1,8 @@
-const { Navigate } = require('react-router-dom');
+const { Navigate, Outlet } = require('react-router-dom');
 const { useAuth } = require('../hooks/useAuth');
 
-export const RestrictedRoute = ({ component: Component, redirectTo = '/' }) => {
+export const RestrictedRoute = () => {
   const { isLoggedIn } = useAuth();
 
-  return isLoggedIn ? <Navigate to={redirectTo} /> : Component;
+  return isLoggedIn ? <Navigate to="/calendar" /> : <Outlet />;
 };

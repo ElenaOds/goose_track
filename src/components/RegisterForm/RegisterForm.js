@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/auth.operations';
-import { validationSchema } from './validationSvhema';
+import { validationSchema } from './validationSchema';
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import goose from '../../images/goose.png';
@@ -8,11 +8,13 @@ import message from '../../images/message.png';
 import { ReactComponent as Icon } from '../../icons/log-in-01.svg';
 import { ReactComponent as Show } from '../../icons/showicon.svg';
 import { ReactComponent as Hide } from '../../icons/hideicon.svg';
+import { ReactComponent as Load } from '../../icons/load.svg';
 
 import style from './RegisterForm.module.css';
 
 export const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -26,14 +28,16 @@ export const RegisterForm = () => {
       password: '',
     },
     validationSchema: validationSchema,
-    onSubmit: (values, { resetForm }) => {
-      dispatch(
+    onSubmit: async (values, { resetForm }) => {
+      setIsLoading(true);
+      await dispatch(
         register({
           name: values.name,
           email: values.email,
           password: values.password,
         })
       );
+      setIsLoading(false);
       resetForm();
     },
   });
@@ -130,8 +134,17 @@ export const RegisterForm = () => {
           type="submit"
           disabled={!formik.isValid || !formik.dirty}
         >
-          Sign Up
-          <Icon className={style.icon} />
+          {isLoading ? (
+            <>
+              Sign Up
+              <Load className={style.load} />
+            </>
+          ) : (
+            <>
+              Sign Up
+              <Icon className={style.icon} />
+            </>
+          )}
         </button>
       </form>
       <div className={style.imgContainer}>

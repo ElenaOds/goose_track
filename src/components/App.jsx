@@ -6,28 +6,34 @@ import Register from 'pages/Register/Register';
 import MainLayout from './MainLayout/MainLayout';
 import { ToastContainer } from 'react-toastify';
 import { RestrictedRoute } from './RestrictedRoute';
+import { PrivateRoute } from './PrivateRoute';
+import { useDispatch } from 'react-redux';
+import { useAuth } from 'hooks/useAuth';
+import { useEffect } from 'react';
+import { refreshUser } from 'redux/auth/auth.operations';
 
 const App = () => {
-  return (
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
+
+  useEffect(() => {
+    dispatch(refreshUser());
+  }, [dispatch]);
+  return isRefreshing ? (
+    <p>Loader</p>
+  ) : (
     <>
       <Routes>
-        <Route
-          path="auth/register"
-          element={
-            <RestrictedRoute redirectTo="/calendar" component={<Register />} />
-          }
-        />
-        <Route
-          path="auth/login"
-          element={
-            <RestrictedRoute redirectTo="/calendar" component={<Login />} />
-          }
-        />
-        <Route path="/" element={<MainLayout />}>
-          <Route path="/account" element={<Account />} />
-          <Route path="/calendar" element={<Calendar />} />
-          <Route path="/calendar/:month/:day" element={<Calendar />} />
-
+        <Route path="" element={<RestrictedRoute />}>
+          <Route path="auth/login" element={<Login />} />
+          <Route path="auth/register" element={<Register />} />
+        </Route>
+        <Route path="" element={<PrivateRoute />}>
+          <Route path="/" element={<MainLayout />}>
+            <Route path="/calendar" element={<Calendar />} />
+            <Route path="/account" element={<Account />} />
+            <Route path="/calendar/:month/:day" element={<Calendar />} />
+          </Route>
         </Route>
       </Routes>
       <ToastContainer />
