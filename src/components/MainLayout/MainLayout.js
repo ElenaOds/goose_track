@@ -6,7 +6,7 @@ import styles from './MainLayout.module.css';
 import { useState } from 'react';
 
 const MainLayout = () => {
-  const [isActivPage, setisActivPage] = useState(true);
+  const [isActivPage, setisActivPage] = useState(false);
 
   const changePageFalse = () => {
     setisActivPage(false);
