@@ -25,7 +25,7 @@ const tasksSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(get.fulfilled, (state, action) => {
-        state.taskList = action.payload;
+        state.taskList = [...action.payload.tasks];
         state.isLoading = false;
       })
       .addCase(get.rejected, (state, _) => {

@@ -18,8 +18,8 @@ export const updateUserInfo = data => axios.patch('/user/info', data); // name, 
 
 // TASKS endpoints
 
-export const getTasks = (startDate, endDate) =>
-  axios.get(`/tasks/?dateFrom=${startDate}&dateTo=${endDate}`);
+export const getTasks = date =>
+  axios.get(`/tasks/?dateFrom=${date.from}&dateTo=${date.to}`);
 
 export const createTask = data => axios.post('/tasks/', data); // data = {title, date, start, end, priority}
 

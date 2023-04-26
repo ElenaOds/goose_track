@@ -1,8 +1,10 @@
-import { useDispatch } from 'react-redux';
-import { create } from 'redux/tasks/tasks.operations';
+import { useDispatch, useSelector } from 'react-redux';
+import { create, get } from 'redux/tasks/tasks.operations';
+import { selectTaskList } from 'redux/tasks/tasks.selectors';
 
 export const TestTaskRequests = () => {
   const dispatch = useDispatch();
+  const tasks = useSelector(selectTaskList);
 
   const handleCreate = () => {
     console.log('handleCreate');
@@ -16,12 +18,18 @@ export const TestTaskRequests = () => {
     };
 
     console.log(newTask);
-
     dispatch(create(newTask));
   };
 
   const handleGet = () => {
     console.log('handleGet');
+
+    const date = {
+      from: '2023-04-01',
+      to: '2023-04-30',
+    };
+
+    dispatch(get(date));
   };
 
   const handleDelete = () => {
