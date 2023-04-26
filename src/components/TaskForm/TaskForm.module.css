@@ -1,0 +1,77 @@
+.container{ 
+    position: relative;   
+    margin: 40px 28px;  
+    background-color: var(--basic-bgd-color);
+    font-size:14px;
+    font-weight: 600;
+    line-height: 18px;
+}
+.flex{
+    display: flex;
+    margin-top: 18px;
+}
+.start{
+    margin-right: 14px;
+}
+.label{
+    color: var(--label-text-color);
+    text-align: left;
+}
+.input{
+    width: 100%;
+    padding: 14px;
+    padding-left: 18px;
+    margin-top: 8px;
+    border: 1px solid #F7F7F7;
+    color: var(--input-text-color);  
+    background-color: var(--input-bdg-color); 
+    border-radius: 8px;
+}
+.check{
+    margin-left: 6px;       
+}
+
+.checkbox{
+    margin-left: 18px;
+    
+}
+
+.btn_close{
+    position: absolute;
+    top:-22px;
+    right:-5px;
+    stroke:var(--basic-text-color)
+}
+
+
+.button {    
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    padding: 16px;
+    width: 100%;
+    cursor: pointer;
+
+    border: none;
+    background: var(--button-bgd-color);
+    box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
+    border-radius: 8px;
+
+    Font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    color: white;
+
+    cursor: pointer;
+}
+
+.button:disabled {
+    opacity: 0.35;
+}
+
+.logo {
+    margin-right: 10px;
+}

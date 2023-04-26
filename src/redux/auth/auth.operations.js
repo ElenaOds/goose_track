@@ -2,9 +2,14 @@ import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { registerUser, loginUser, logoutUser } from 'services/todoAPI/authAPI';
+import {
+  registerUser,
+  loginUser,
+  logoutUser,
+  refresh,
+} from 'services/todoAPI/authAPI';
 
-const setAuthHeader = token => {
+export const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
@@ -33,10 +38,10 @@ export const login = createAsyncThunk(
     try {
       const { data } = await loginUser(credentials);
       setAuthHeader(data.token);
-      toast.success('Successfully logged in');
+      toast.success('Log in successful');
       return data;
     } catch (error) {
-      toast.error('Log in attempt error');
+      toast.error('Log in error');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -46,8 +51,29 @@ export const logout = createAsyncThunk('auth/logOut', async () => {
   try {
     await logoutUser();
     clearAuthHeader();
-    toast.success('Successfully logged out');
+    toast.success('Log out successful');
   } catch (error) {
     console.log(error.message);
+    toast.error('Log out error');
   }
 });
+
+export const refreshUser = createAsyncThunk(
+  'auth/refresh',
+  async (_, thunkAPI) => {
+    const state = thunkAPI.getState();
+    const persistedToken = state.auth.token;
+
+    if (persistedToken === null) {
+      return thunkAPI.rejectWithValue('Unable to fetch user');
+    }
+
+    try {
+      setAuthHeader(persistedToken);
+      const res = await refresh();
+      return res.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

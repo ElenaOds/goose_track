@@ -1,65 +1,87 @@
-.header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center; 
-    padding-top: 24px;
-    padding-bottom: 64px;
-    background-color: var( --second-bdg-color);
-    font-size: 32px; 
-    width: 1200px;
-    padding-left: 32px;
-    padding-right: 32px;
-}
-.flex{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    
-};
-
-.logo{
-    margin-right: 8px;
-}
-.text{
-    margin-top: 8px;
-    font-size: 14px;
-}
-.textinline{
-    color: #3E85F3;  
-}
-.menu{    
-    border: medium none;
-    background-image: none; 
-    background: transparent;
-    float: left;
-    background-color: transparent;   
-}
-.button {    
-    border: none;
-    background: rgba(0, 0, 0, 0);
-    cursor: pointer;     
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 64px;
+  background-color: var(--second-bdg-color);
+  font-size: 32px;
+  width: 100%;
+  padding-left: 32px;
+  padding-right: 32px;
+  margin-top: -90px;
 }
 @media screen and (min-width: 768px) {
-    .button {
-        display: none;
-    }
-    .header{
-        padding-top: 40px;
-        padding-bottom: 32px;
-    }
+  .header {
+    margin-top: 0px;
+  }
 }
-@media screen and (max-width: 768px) {
-   .title{
-    display: none;    
-    } 
-    .logo{
-        display: none;  
-    }   
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
-.burger {
-    stroke:var(--basic-text-color);
-}
- 
 
+@media screen and (min-width: 768px) {
+  .flex {
+    margin-left: 289px;
+  }
+}
+
+.logo {
+  margin-right: 8px;
+}
+.text {
+  margin-top: 8px;
+  font-size: 14px;
+}
+.textinline {
+  color: #3e85f3;
+}
+.menu {
+  border: medium none;
+  background-image: none;
+  background: transparent;
+  float: left;
+  background-color: transparent;
+}
+/* .button {
+  border: none;
+  background: rgba(0, 0, 0, 0);
+  cursor: pointer;
+} */
+
+.title {
+  display: none;
+}
+
+.logo {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .title {
+    display: flex;
+    flex-direction: column;
+  }
+  .logo {
+    display: flex;
+  }
+}
+/* .burger {
+  stroke: var(--basic-text-color);
+} */
+
+.inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .profile {
+    display: none;
+  }
+}

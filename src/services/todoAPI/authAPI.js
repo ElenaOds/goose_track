@@ -7,3 +7,5 @@ export const registerUser = data => axios.post('/api/auth/register', data);
 export const loginUser = data => axios.post('/api/auth/login', data);
 
 export const logoutUser = () => axios.post('/api/user/logout');
+
+export const refresh = () => axios.get('/api/user/current');

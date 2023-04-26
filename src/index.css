@@ -26,15 +26,22 @@ html[data-theme='dark']{
   --basic-bgd-color: #13151A;
   --second-bdg-color:#13151A;
   --calendar-bdg-color: #21222C;
-  --basic-text-color:#FFFFFF;   
+  --input-bdg-color: #13151A;  
+  --basic-text-color:#FFFFFF;  
+  --input-text-color: #FFFFFF; 
+  --label-text-color: #616161;
 }
 
 html[data-theme='light']{
   --basic-bgd-color:#FFFFFF;
   --second-bdg-color: #EAEAEA; 
   --calendar-bdg-color: #FFFFFF;
-  --basic-text-color:#13151A;   
+  --input-bdg-color: #F7F7F7;
+  --basic-text-color:#13151A; 
+  --input-text-color: #616161;
+  --label-text-color: #13151A;
 }
+
 
 
 body {

@@ -20,9 +20,14 @@
     
     letter-spacing: -0.02em;
     
-    color: var(--primary-bgd-color);
+    color: var(--basic-bgd-color);
 }
 
 .lgButton_icon {
     margin-left: 10px;
+}
+
+.spinner {
+    position: absolute;
+    
 }

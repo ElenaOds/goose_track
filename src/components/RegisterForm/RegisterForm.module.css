@@ -175,3 +175,8 @@
   top: -60px;
   right: 130px;
 }
+
+.spinner {
+  position: absolute;
+  z-index: 3;
+}
