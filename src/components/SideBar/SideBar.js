@@ -1,7 +1,7 @@
 import { UserNav } from 'components/UserNav/UserNav';
 import LogoutBtn from 'components/LogoutBtn/LogoutBtn';
 import styles from './SideBar.module.css';
-import { ReactComponent as GooseLogo } from '../../icons/goose-logo.svg';
+import { ReactComponent as GooseLogo } from '../../icons/goosesidebar.svg';
 import { ReactComponent as IconClose } from '../../icons/icon-close.svg';
 import PropTypes from "prop-types";
 
