@@ -52,4 +52,4 @@ const tasksSlice = createSlice({
       }),
 });
 
-export const authReducer = tasksSlice.reducer;
+export const tasksReducer = tasksSlice.reducer;

@@ -1,0 +1,46 @@
+import { useDispatch } from 'react-redux';
+import { create } from 'redux/tasks/tasks.operations';
+
+export const TestTaskRequests = () => {
+  const dispatch = useDispatch();
+
+  const handleCreate = () => {
+    console.log('handleCreate');
+
+    const newTask = {
+      title: 'Task to test requests',
+      date: '2023-04-25',
+      start: '21:00',
+      end: '22:00',
+      priority: 'low',
+    };
+
+    console.log(newTask);
+
+    dispatch(create(newTask));
+  };
+
+  const handleGet = () => {
+    console.log('handleGet');
+  };
+
+  const handleDelete = () => {
+    console.log('handleDelete');
+  };
+
+  return (
+    <>
+      <h4>TEST REQUESTS FOR TASKS</h4>
+
+      <button type="button" onClick={handleCreate}>
+        Create task
+      </button>
+      <button type="button" onClick={handleGet}>
+        Get tasks
+      </button>
+      <button type="button" onClick={handleDelete}>
+        Delete task
+      </button>
+    </>
+  );
+};
