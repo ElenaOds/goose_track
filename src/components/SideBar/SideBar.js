@@ -3,32 +3,53 @@ import LogoutBtn from 'components/LogoutBtn/LogoutBtn';
 import styles from './SideBar.module.css';
 import { ReactComponent as GooseLogo } from '../../icons/goose-logo.svg';
 import { ReactComponent as IconClose } from '../../icons/icon-close.svg';
-import PropTypes from "prop-types";
+import { ReactComponent as Burger } from '../../icons/menu.svg';
+import PropTypes from 'prop-types';
+import { useState } from 'react';
 
-const SideBar = ({changePage}) => {  
+const SideBar = ({ changePage }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+  
+  const className = isOpen ? styles.container_1 : styles.container_2;
+
   return (
-    <div className={styles.container}>
-      <div>
-        <div className={styles.header}>
-          <div className={styles.logoContainer}>
-            <GooseLogo className={styles.logo} />
-            <h1 className={styles.heading}>
-              G<span className={styles.headingSpecial}>oo</span>seTrack
-            </h1>
+    <>
+      <button className={styles.button} type="button" onClick={toggleSidebar}>
+        <Burger className={styles.burger} />
+      </button>
+      <div className={className}>
+        <div>
+          <div className={styles.header}>
+            <div className={styles.logoContainer}>
+              <GooseLogo className={styles.logo} />
+              <h1 className={styles.heading}>
+                G<span className={styles.headingSpecial}>oo</span>seTrack
+              </h1>
+            </div>
+            <button
+              className={styles.button}
+              type="button"
+              onClick={toggleSidebar}
+            >
+              <IconClose className={styles.close} />
+            </button>
           </div>
-          <IconClose className={styles.close} />
+
+          <UserNav changePage={changePage} />
         </div>
 
-        <UserNav changePage={changePage}/>
+        <LogoutBtn className={styles.lgButton} />
       </div>
-
-      <LogoutBtn className={styles.lgButton}/>
-    </div>
+    </>
   );
 };
 
 export default SideBar;
 
-SideBar.propTypes = {        
-  changePage: PropTypes.array 
-}
+SideBar.propTypes = {
+  changePage: PropTypes.array,
+};
