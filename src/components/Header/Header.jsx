@@ -1,24 +1,36 @@
 import { ThemeToggler } from '../ThemeToggler/ThemeToggler';
 import { UserInfo } from '../UserInfo/UserInfo';
 import styles from './Header.module.css';
-import { ReactComponent as Burger } from '../../icons/menu.svg';
-import { ReactComponent as Goose } from '../../icons/goose.svg';
+// import { ReactComponent as Burger } from '../../icons/menu.svg';
+
+import { ReactComponent as LogoHeader} from '../../icons/logoheader.svg';
 import PropTypes from 'prop-types';
 
+export const Header = ({ isActivPage }) => {
 
-export const Header = ({isActivPage}) => {
- 
-  const openMenu = () => {     
-    console.log('Кнопка будет открывать модальное окно с сайтбар')
-  }; 
+
+// const openMenu = () => {
+  //   console.log('Кнопка будет открывать модальное окно с сайтбар')
+  // };
+
+
+  // const [isOpen, setIsOpen] = useState(false);
+
+  // const toggleSidebar = () => {
+  //   setIsOpen(!isOpen);
+  // };
 
   // burger
+
+  const task='';
+
   return (
-    <div className={styles.header}>
-      <div className={styles.flex}>
-        {isActivPage === false ? (
-          <div className={styles.flex}>
-            <Goose className={styles.logo} />
+    <div className={styles.header}>      
+      <div className={styles.flex}>        
+        {isActivPage === false 
+        ?( task===null
+          ?<div className={styles.flex}>
+            <LogoHeader className={styles.logo} />
             <div className={styles.title}>
               <p>Calendar</p>
               <p className={styles.text}>
@@ -27,17 +39,16 @@ export const Header = ({isActivPage}) => {
               </p>
             </div>
           </div>
-        ) : (
-          <p className={styles.titel}>User Profile</p>
-        )}
-        <button className={styles.button} type="button" onClick={openMenu}>
+          :<p>Calendar</p>) 
+        : (<p className={styles.titel}>User Profiler</p>)}
+        {/* <button className={styles.button} type="button">
           <Burger className={styles.burger} />
-        </button>
+        </button> */}
       </div>
-      <div className={styles.flex}>
+      <div className={styles.inner}>
         <ThemeToggler />
         <UserInfo />
-      </div>
+      </div>      
     </div>
   );
 };

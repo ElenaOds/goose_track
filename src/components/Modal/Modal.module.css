@@ -33,7 +33,7 @@
   width: 30%;
   height: 50%; 
   text-align: center; 
-  /* background-color: (--); */  
+  border:1px solid var(--label-text-color); 
   }
   
   .image {  
