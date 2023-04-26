@@ -1,4 +1,4 @@
-import { ReactComponent as GooseLogo } from '../../icons/goose-logo.svg';
+import { ReactComponent as GooseLogo } from '../../icons/goosesidebar.svg';
 
 import style from './Home.module.css';
 
