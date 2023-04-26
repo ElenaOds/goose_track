@@ -55,7 +55,7 @@ const Home = () => {
               quick and convenient way to view your upcoming events and tasks.
             </p>
             <figure>
-              <img src="#" alt="Picture of the side bar of this app" />
+              <img src="#" alt="side bar of this app" />
             </figure>
           </li>
           <li className={style.feature_item}>
@@ -69,7 +69,7 @@ const Home = () => {
               GooseTrack.
             </p>
             <figure>
-              <img src="#" alt="Picture of the task page of this app" />
+              <img src="#" alt="task page of this app" />
             </figure>
           </li>
         </ul>
