@@ -3,7 +3,7 @@
   height: 100%;
   position: fixed;
   top: 0;
-  left: -100px;
+  left: 0;
   background-color: transparent;
   overflow-y: auto;
 }
@@ -19,6 +19,7 @@
   border:1px solid var(--label-text-color);
   top: 100px;
   left: 950px;
+
 }
 .avatar {
   height: 32px;

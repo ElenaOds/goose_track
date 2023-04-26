@@ -2,9 +2,9 @@ import { NavLink } from 'react-router-dom';
 import { ReactComponent as IconUser } from '../../icons/icon-user.svg';
 import { ReactComponent as IconCalendar } from '../../icons/icon-calendar.svg';
 import styles from './UserNav.module.css';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
-export const UserNav = ({changePage}) => {
+export const UserNav = ({ changePage }) => {
   return (
     <>
       <h3 className={styles.heading}>User Panel</h3>
@@ -44,6 +44,6 @@ export const UserNav = ({changePage}) => {
   );
 };
 
-UserNav.propTypes = {        
-  changePage: PropTypes.array  
-}
+UserNav.propTypes = {
+  changePage: PropTypes.array,
+};

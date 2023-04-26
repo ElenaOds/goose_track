@@ -2,16 +2,17 @@ import { ThemeToggler } from '../ThemeToggler/ThemeToggler';
 import { UserInfo } from '../UserInfo/UserInfo';
 import styles from './Header.module.css';
 // import { ReactComponent as Burger } from '../../icons/menu.svg';
+
 import { ReactComponent as LogoHeader} from '../../icons/logoheader.svg';
 import PropTypes from 'prop-types';
 
+export const Header = ({ isActivPage }) => {
 
 
-
-export const Header = ({isActivPage}) => {
 // const openMenu = () => {
   //   console.log('Кнопка будет открывать модальное окно с сайтбар')
   // };
+
 
   // const [isOpen, setIsOpen] = useState(false);
 
@@ -44,7 +45,7 @@ export const Header = ({isActivPage}) => {
           <Burger className={styles.burger} />
         </button> */}
       </div>
-      <div className={styles.flex}>
+      <div className={styles.inner}>
         <ThemeToggler />
         <UserInfo />
       </div>      
