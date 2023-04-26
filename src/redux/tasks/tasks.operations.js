@@ -1,78 +1,64 @@
-import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
-  registerUser,
-  loginUser,
-  logoutUser,
-  refresh,
+  getTasks,
+  createTask,
+  updateTask,
+  deleteTask,
 } from 'services/gooseTrackAPI';
 
-export const setAuthHeader = token => {
-  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
-};
-
-export const clearAuthHeader = () => {
-  axios.defaults.headers.common.Authorization = '';
-};
-
-export const register = createAsyncThunk(
-  'auth/register',
-  async (credentials, thunkAPI) => {
+export const create = createAsyncThunk(
+  'tasks/create',
+  async (task, thunkAPI) => {
     try {
-      const { data } = await registerUser(credentials);
-      setAuthHeader(data.token);
-      toast.success('Registration successful');
+      const { data } = await createTask(task);
+      toast.success('New task has been created');
       return data;
     } catch (error) {
-      toast.error('Registration error');
+      toast.error('Cannot create the task');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
 
-export const login = createAsyncThunk(
-  'auth/login',
-  async (credentials, thunkAPI) => {
+export const get = createAsyncThunk(
+  'tasks/get',
+  async (startDate, endDate, thunkAPI) => {
     try {
-      const { data } = await loginUser(credentials);
-      setAuthHeader(data.token);
-      toast.success('Log in successful');
+      const { data } = await getTasks(startDate, endDate);
+      toast.success('Success');
       return data;
     } catch (error) {
-      toast.error('Log in error');
+      toast.error('Error');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
 
-export const logout = createAsyncThunk('auth/logOut', async () => {
-  try {
-    await logoutUser();
-    clearAuthHeader();
-    toast.success('Log out successful');
-  } catch (error) {
-    console.log(error.message);
-    toast.error('Log out error');
-  }
-});
-
-export const refreshUser = createAsyncThunk(
-  'auth/refresh',
-  async (_, thunkAPI) => {
-    const state = thunkAPI.getState();
-    const persistedToken = state.auth.token;
-
-    if (persistedToken === null) {
-      return thunkAPI.rejectWithValue('Unable to fetch user');
-    }
-
+export const update = createAsyncThunk(
+  'tasks/update',
+  async (task, thunkAPI) => {
     try {
-      setAuthHeader(persistedToken);
-      const res = await refresh();
-      return res.data;
+      const { data } = await updateTask(task);
+      toast.success('Task has been updated');
+      return data;
     } catch (error) {
+      toast.error('Cannot update the task');
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const deleteItem = createAsyncThunk(
+  'tasks/delete',
+  async (id, thunkAPI) => {
+    try {
+      const { data } = await deleteTask(id);
+      toast.success('Task has been deleted');
+      return data;
+    } catch (error) {
+      toast.error('Cannot delete the task');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
