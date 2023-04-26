@@ -28,13 +28,13 @@
     border-radius: 8px;
 }
 .check{
-    margin-left: 6px;       
+    margin-right: 18px;         
+}
+.checkbox{
+    margin-right: 6px;
+     
 }
 
-.checkbox{
-    margin-left: 18px;
-    
-}
 
 .btn_close{
     position: absolute;
@@ -64,6 +64,31 @@
     line-height: 24px;
     letter-spacing: -0.02em;
     color: white;
+
+    cursor: pointer;
+}
+
+.btn_cansel{
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 14px;
+    padding: 16px;
+    width: 100%;
+    cursor: pointer;
+
+    border: 2px solid var(--button-bgd-color);
+    background: white;
+    box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
+    border-radius: 8px;
+
+    Font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    color:black;
 
     cursor: pointer;
 }

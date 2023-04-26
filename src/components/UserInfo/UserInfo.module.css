@@ -18,10 +18,9 @@
     font-size: 14px;
   }
 }
-
 .container {
   cursor: pointer;
   display: flex;
-  flex-direction: row;
+  text-align: center;
   align-items: center;
 }

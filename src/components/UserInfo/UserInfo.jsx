@@ -11,12 +11,9 @@ export const UserInfo = () => {
   const [showModal, setShowModal] = useState(false);
 
   const toggleModal = () => {
-    setShowModal(!showModal);
-    console.log(showModal);
+    setShowModal(!showModal);   
   };
-
-  // const {email}=user;
-  // console.log(email);
+    
   const url = null;
   const name = profile.name;
   const firstLetter = name[0].toLocaleUpperCase();
