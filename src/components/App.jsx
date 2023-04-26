@@ -46,3 +46,10 @@ const App = () => {
 };
 
 export default App;
+
+// const Home = lazy(() => import('../pages/Home'));
+// const Account = lazy(() => import('./pages/Account/Account'));
+// const Calendar = lazy(() => import('./pages/Calendar/Calendar'));
+// const Login = lazy(() => import('./pages/Login/Login'));
+// const Register = lazy(() => import('./pages/Register/Register'));
+// const MainLayout = lazy(() => import('./MainLayout/MainLayout'));

@@ -1,18 +1,30 @@
-.Month {
+.container {
+  margin-left: 0; /* ширина Sidebar */
+  width: calc(100%);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    margin-left: 289px; /* ширина Sidebar */
+    width: calc(100% - 289px);
+  }
+}
+
+.month {
     font-family: sans-serif;
     text-align: left;
     display: flex;
     align-items: center;
 }
-
-.Month_buttons {
+.month_buttons {
     width: 50px;
     margin: 5px;
     height: 100%;
 }
-
-.Month_name {
-    font-family: 'Inter';
+.month_name {
+    font-family: ‘Inter’;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -21,8 +33,7 @@
     text-transform: uppercase;
     /* color: var(--primary-bgd-color) */
 }
-
-.Days {
+.days {
     border: 1px solid rgba(220, 227, 229, 0.8);
     border-radius: 8px;
     padding: 14px;
@@ -32,21 +43,73 @@
     margin-bottom: 15px;
     background-color: var(--calendar-bdg-color);
 }
-
-.Days_text {
-    gap: 122;
+.days_text {
+    display: none;
+    font-family: ‘Inter’;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.12;
+    text-transform: uppercase;
+    color: var(--day-text-color);
 }
-
+@media (min-width: 600px) {
+    .days_text {
+        display: block;
+    }
+}
+.days_small_text {
+    font-family: ‘Inter’;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.12;
+    text-transform: uppercase;
+    color: var(--day-text-color);
+}
+@media (min-width: 600px) {
+    .days_small_text {
+        display: none;
+    }
+}
+.days_small_weekends {
+    font-family: ‘Inter’;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.12;
+    text-transform: uppercase;
+    color: var(--button-bgd-color);
+}
+@media (min-width: 600px) {
+    .days_small_weekends {
+        display: none;
+    }
+}
+.days_weekends {
+    display: none;
+    font-family: ‘Inter’;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.12;
+    text-transform: uppercase;
+    color: var(--button-bgd-color);
+}
+@media (min-width: 600px) {
+    .days_weekends {
+        display: block;
+    }
+}
 .datesInCalendar {
     display: flex;
     flex-direction: column;
     text-align: right;
 }
-
 .datesInCalendar_date {
     margin-top: 18px;
     margin-right: 22px;
-    font-family: 'Inter';
+    font-family: ‘Inter’;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -54,21 +117,29 @@
     text-transform: uppercase;
     color: var(--basic-text-color);
 }
-
-
-.Week {
+.week {
     display: flex;
 }
-
-.OneDay {
+.oneDay {
     border: 1px solid rgba(220, 227, 229, 0.8);
-    width: 15%;
-    height: 130px;
+    width: 48px;
+    height: 94px;
     text-align: right;
     background-color: var(--calendar-bdg-color);
 }
-
-.Task {
+@media (min-width: 600px) {
+    .oneDay {
+        width: 102px;
+        height: 144px;
+    }
+}
+@media (min-width: 1279px) {
+    .oneDay {
+        width: 156px;
+        height: 125px;
+    }
+}
+.task {
     margin-top: 22px;
     display: flex;
     justify-content: center;
@@ -77,9 +148,8 @@
     margin-left: 8px;
     margin-right: 8px;
 }
-
-.Task_text {
-    font-family: 'Inter';
+.task_text {
+    font-family: ‘Inter’;
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
@@ -90,4 +160,4 @@
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 80px;
-}
+    }
