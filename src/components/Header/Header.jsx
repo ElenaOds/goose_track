@@ -40,7 +40,7 @@ export const Header = ({ isActivPage }) => {
             </div>
           </div>
           :<p>Calendar</p>) 
-        : (<p className={styles.titel}>User Profiler</p>)}
+        : (<p className={styles.titel}>User Profile</p>)}
         {/* <button className={styles.button} type="button">
           <Burger className={styles.burger} />
         </button> */}
