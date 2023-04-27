@@ -6,22 +6,25 @@ import styles from './MainLayout.module.css';
 import { useState } from 'react';
 
 const MainLayout = () => {
-  const [isActivPage, setisActivPage] = useState(false);
+  const [isActivPage, setActivPage] = useState(false);
+  const [isOpenSidebarMobile, setIsOpenSidebarMobile] = useState(false);
 
-  const changePageFalse = () => {
-    setisActivPage(false);
-  };
-  const changePageTrue = () => {
-    setisActivPage(true);
+  const toggleSidebar = () => {
+    setIsOpenSidebarMobile(!isOpenSidebarMobile);   
   };
 
-  const changePage = [changePageFalse, changePageTrue];
+  const doActiveCalendar = () => {
+    setActivPage(false);
+  };
+  const doActiveAccount= () => {
+    setActivPage(true);
+  };  
 
   return (
     <div className={styles.flex}>
-      <SideBar changePage={changePage} />
+      <SideBar doActiveCalendar={doActiveCalendar} doActiveAccount={doActiveAccount} toggleSidebar={toggleSidebar} isOpenSidebarMobile={isOpenSidebarMobile} />
       <div>
-        <Header isActivPage={isActivPage} />
+        <Header isActivPage={isActivPage} toggleSidebar={toggleSidebar}/>
         <Suspense>
           <Outlet />
         </Suspense>
