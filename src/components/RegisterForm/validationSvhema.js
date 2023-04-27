@@ -14,7 +14,7 @@ export const validationSchema = Yup.object().shape({
     .max(20, 'Password is too long')
     .matches(
       passwordRules,
-      'Password must contain lowecase letters, uppercase letter and numbers'
+      'Password must contain lowecase letters, uppercase letters and numbers'
     )
     .required('Required'),
 });

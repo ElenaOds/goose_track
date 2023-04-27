@@ -1,8 +1,9 @@
 import {  format } from "date-fns";
-import { useEffect} from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, Suspense} from "react";
+import { useNavigate, Outlet  } from "react-router-dom";
 import CalendarToolbar from "../../components/CalendarToolbar/CalendarToolbar";
 import styles from './Calendar.module.css';
+
 
 const Calendar = () => {
  
@@ -18,6 +19,9 @@ const Calendar = () => {
   return (
     <div className={styles.container}>
        <CalendarToolbar/>  
+       <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };
