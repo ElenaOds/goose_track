@@ -10,7 +10,7 @@ const LoginSchema = Yup.object().shape({
     .max(20, 'Password is too long')
     .matches(
       passwordRules,
-      'Password must contain uppper case letter and numbers'
+      'Password must contain lowecase letters, uppercase letter and numbers'
     )
     .required('Required'),
 });
