@@ -6,7 +6,7 @@ import { ReactComponent as IconClose } from '../../icons/icon-close.svg';
 import { ReactComponent as Burger } from '../../icons/menu.svg';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { TestTaskRequests } from 'components/TestTasksRequests/TestTasksRequests';
+// import { TestTaskRequests } from 'components/TestTasksRequests/TestTasksRequests';
 
 const SideBar = ({ changePage }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +43,7 @@ const SideBar = ({ changePage }) => {
           <UserNav changePage={changePage} />
         </div>
 
-        <TestTaskRequests />
+        {/* <TestTaskRequests /> */}
 
         <LogoutBtn className={styles.lgButton} />
       </div>
