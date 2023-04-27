@@ -32,7 +32,7 @@ export const Header = ({isActivPage,toggleSidebar}) => {
           </div>          
         </div>
           :<p className={styles.title}>Calendar</p>) 
-        : (<p className={styles.title} >User Profiler</p>)}
+        : (<p className={styles.title} >User Profile</p>)}
                    
       <div className={styles.flex}>
         <ThemeToggler />
