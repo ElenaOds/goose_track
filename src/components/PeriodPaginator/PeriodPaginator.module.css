@@ -1,0 +1,24 @@
+.month {
+    font-family: sans-serif;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    color: var(----white-color);
+}
+
+.month_buttons {
+    width: 50px;
+    margin: 5px;
+    height: 100%;
+}
+
+.month_name {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.12;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--white-color);
+}

@@ -1,8 +1,9 @@
+import { useLocation, Link } from "react-router-dom";
 import { ReactComponent as GooseLogo } from '../../icons/goosesidebar.svg';
-
 import style from './Home.module.css';
 
 const Home = () => {
+  const location = useLocation();
   return (
     <container className={style.container}>
       <section className={style.hero}>
@@ -13,15 +14,21 @@ const Home = () => {
 
         <div className={style.heroBtns}>
           <button className={`${style.btn} ${style.btn_login}`} type="button">
-            Log in
+          <Link to='login' state={location.state}>
+          Log in
+          </Link>
+            
           </button>
 
           <button
             className={`${style.btn} ${style.btn_register}`}
             type="button"
           >
+            <Link to='register' state={location.state}>
             Register
+            </Link>
           </button>
+          
         </div>
       </section>
 
