@@ -1,18 +1,101 @@
-.userform {
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--calendar-bdg-color);
+  padding: 40px 18px;
+  height: 100%;
 }
 
-.userform__userPhoto {
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px 50px;
+  padding: 40px 18px;
+}
+
+.uploader {
   display: none;
 }
 
-.userform__userPhoto__label {
-  display: inline-block;
+.uploader__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 50%;
   border: 2px solid var(--button-bgd-color);
-  color: #fff;
   width: 72px;
   height: 72px;
   cursor: pointer;
-  min-width: 72px;
   overflow: hidden;
+  margin-bottom: 18px;
+}
+
+.userPhoto {
+  width: 72px;
+  height: 72px;
+}
+
+.userletter {
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--button-bgd-color);
+  opacity: 0.18;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input {
+  height: 46px;
+  width: 299px;
+  padding: 14px;
+  border: 1px solid rgba(17, 17, 17, 0.15);
+  border-radius: 8px;
+}
+
+.button {
+  height: 46px;
+  width: 195px;
+  border: none;
+  border-radius: 16px;
+  color: var(--white-color);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 40px 175px;
+  }
+  .input {
+    width: 354px;
+  }
+  .button {
+    width: 262px;
+  }
+  .userPhoto {
+    width: 124px;
+    height: 124px;
+  }
+  .uploader__label {
+    width: 124px;
+    height: 124px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    padding: 40px 164px 80px;
+  }
 }
