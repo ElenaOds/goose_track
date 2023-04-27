@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 import { selectUser } from 'redux/auth/auth.selectors';
-import { useFormik } from 'formik';
 import css from './UserForm.module.css';
 
 const UserForm = () => {
