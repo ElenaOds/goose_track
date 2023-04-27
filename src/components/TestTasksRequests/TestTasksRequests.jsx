@@ -1,54 +1,83 @@
-// import { useDispatch} from 'react-redux';
-// import { create, get } from 'redux/tasks/tasks.operations';
-// import { selectTaskList } from 'redux/tasks/tasks.selectors';
+import { useDispatch, useSelector } from 'react-redux';
+import { create, deleteItem, get, update } from 'redux/tasks/tasks.operations';
+import { selectTaskList } from 'redux/tasks/tasks.selectors';
 
-// export const TestTaskRequests = () => {
-//   const dispatch = useDispatch();
-  // const tasks = useSelector(selectTaskList);
+export const TestTaskRequests = () => {
+  const dispatch = useDispatch();
+  const tasks = useSelector(selectTaskList);
 
-//   const handleCreate = () => {
-//     console.log('handleCreate');
+  const handleCreate = () => {
+    console.log('handleCreate');
 
-//     const newTask = {
-//       title: 'Task to test requests',
-//       date: '2023-04-25', 
-//       start: '21:00',
-//       end: '22:00',
-//       priority: 'low',
-//     };
+    // imitates new task
+    const newTask = {
+      title: 'Task to test requests',
+      date: '2023-04-25',
+      start: '21:00',
+      end: '22:00',
+      priority: 'low',
+    };
 
-//     console.log(newTask);
-//     dispatch(create(newTask));
-//   };
+    console.log(newTask);
+    dispatch(create(newTask));
+  };
 
-//   const handleGet = () => {
-//     console.log('handleGet');
+  const handleGet = () => {
+    console.log('handleGet');
 
-//     const date = {
-//       from: '2023-04-01',
-//       to: '2023-04-30',
-//     };
+    // imitates query search parameters
+    // and show how to pass to the request
 
-//     dispatch(get(date));
-//   };
+    const date = {
+      from: '2023-04-01',
+      to: '2023-04-30',
+    };
 
-//   const handleDelete = () => {
-//     console.log('handleDelete');
-//   };
+    dispatch(get(date));
+  };
 
-//   return (
-//     <>
-//       <h4>TEST REQUESTS FOR TASKS</h4>
+  const handleUpdate = () => {
+    console.log('handleDelete');
 
-//       <button type="button" onClick={handleCreate}>
-//         Create task
-//       </button>
-//       <button type="button" onClick={handleGet}>
-//         Get tasks
-//       </button>
-//       <button type="button" onClick={handleDelete}>
-//         Delete task
-//       </button>
-//     </>
-//   );
-// };
+    // imitates id that we need to get from query params
+    const id = tasks[0]._id;
+    const updatedTask = {
+      title: 'Updated title',
+    };
+    // this is the format to pass data into the update function
+    const updateData = {
+      id,
+      updatedTask,
+    };
+
+    dispatch(update(updateData));
+  };
+
+  const handleDelete = () => {
+    console.log('handleDelete');
+
+    // imitates id that we need to get from query params
+    const id = tasks[0]._id;
+
+    dispatch(deleteItem(id));
+  };
+
+  return (
+    <>
+      <h4>TEST REQUESTS FOR TASKS</h4>
+
+      <button type="button" onClick={handleCreate}>
+        Create task
+      </button>
+      <button type="button" onClick={handleGet}>
+        Get tasks
+      </button>
+      <button type="button" onClick={handleUpdate}>
+        Update task
+      </button>
+      <button type="button" onClick={handleDelete}>
+        Delete task
+      </button>
+    </>
+  );
+};
