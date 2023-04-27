@@ -4,14 +4,14 @@ import { ReactComponent as IconCalendar } from '../../icons/icon-calendar.svg';
 import styles from './UserNav.module.css';
 import PropTypes from 'prop-types';
 
-export const UserNav = ({ changePage }) => {
+export const UserNav = ({doActiveCalendar,doActiveAccount}) => {
   return (
     <>
       <h3 className={styles.heading}>User Panel</h3>
 
       <div className={styles.userNav}>
         <NavLink
-          onClick={changePage[1]}
+          onClick={doActiveAccount}
           to="/account"
           className={({ isActive }) =>
             isActive ? styles.activeLink : styles.navLink
@@ -26,7 +26,7 @@ export const UserNav = ({ changePage }) => {
         </NavLink>
 
         <NavLink
-          onClick={changePage[0]}
+          onClick={doActiveCalendar}
           to="/calendar"
           className={({ isActive }) =>
             isActive ? styles.activeLink : styles.navLink

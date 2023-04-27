@@ -6,7 +6,7 @@
     background-color: var(--second-bdg-color);
   }
   
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     .container {
       margin-left: 289px;
     }
