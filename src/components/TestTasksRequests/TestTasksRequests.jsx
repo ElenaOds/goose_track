@@ -1,17 +1,17 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { create, get } from 'redux/tasks/tasks.operations';
-import { selectTaskList } from 'redux/tasks/tasks.selectors';
+// import { selectTaskList } from 'redux/tasks/tasks.selectors';
 
 export const TestTaskRequests = () => {
   const dispatch = useDispatch();
-  const tasks = useSelector(selectTaskList);
+  // const tasks = useSelector(selectTaskList);
 
   const handleCreate = () => {
     console.log('handleCreate');
 
     const newTask = {
       title: 'Task to test requests',
-      date: '2023-04-25',
+      date: '2023-04-25', 
       start: '21:00',
       end: '22:00',
       priority: 'low',
