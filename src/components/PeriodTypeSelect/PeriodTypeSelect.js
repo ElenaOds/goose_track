@@ -1,5 +1,4 @@
-import { Link, Outlet  } from "react-router-dom";
-import { Suspense } from 'react';
+import { NavLink  } from "react-router-dom";
 import {  format } from "date-fns";
 
 const PeriodTypeSelect = () => {
@@ -9,11 +8,8 @@ const PeriodTypeSelect = () => {
 
     return (
         <>
-        <button><Link to={`/calendar/month/${currentDate}`}>Month</Link></button>
-        <button><Link to={`/calendar/day/${currentDay}`}>Day</Link></button>
-        <Suspense fallback={null}>
-        <Outlet />
-      </Suspense>
+        <button><NavLink to={`/calendar/month/${currentDate}`}>Month</NavLink></button>
+        <button><NavLink to={`/calendar/day/${currentDay}`}>Day</NavLink></button>
         </>
     )
 }

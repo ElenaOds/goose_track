@@ -35,6 +35,7 @@ export const Header = ({isActivPage,toggleSidebar}) => {
         : (<p className={styles.title} >User Profile</p>)}
                    
       <div className={styles.flex}>
+
         <ThemeToggler />
         <UserInfo />
       </div> 

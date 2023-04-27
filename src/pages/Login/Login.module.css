@@ -1,7 +1,6 @@
 .container {
     min-height: 100vh;
-    /* background: #EAEAEA; */
-    background: var(--secondary-bgd-color);
+    background: var(--register-bgd-color);
 
     display: flex;
     flex-direction: column;
