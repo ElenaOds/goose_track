@@ -7,7 +7,7 @@ import {
   loginUser,
   logoutUser,
   refresh,
-} from 'services/todoAPI/authAPI';
+} from 'services/gooseTrackAPI';
 
 export const setAuthHeader = token => {
   axios.defaults.headers.common.Authorization = `Bearer ${token}`;
