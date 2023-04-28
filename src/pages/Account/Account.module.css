@@ -1,7 +1,14 @@
 .container {
   height: 100vh;
-  padding: 0 32px 50px 32px;
+  padding: 0 30px 50px 30px;
   background-color: var(--second-bdg-color);
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
 
 @media screen and (min-width: 1280px) {

@@ -1,20 +1,37 @@
-import { NavLink  } from "react-router-dom";
-import {  format } from "date-fns";
+import { NavLink } from "react-router-dom";
+import { format } from "date-fns";
+import PropTypes from 'prop-types';
 import styles from "./PeriodTypeSelect.module.css"
 
-const PeriodTypeSelect = () => {
+export const PeriodTypeSelect = ({doActiveMonth, doActiveDate}) => {
   
     const currentDate = format(Date.now(), 'MMMM');
     const currentDay = format(Date.now(), 'ddMMMMyyyy');
 
-  
   return (   
     <div className={styles.periodTypeSelectMarkUp}>
-    <button className={styles.btnMonth}><NavLink to={`/calendar/month/${currentDate}`} className={styles.text}>Month</NavLink></button>
-    <button className={styles.btnDay}><NavLink to={`/calendar/day/${currentDay}`} className={styles.text}>Day</NavLink></button>
+      <NavLink 
+        onClick={doActiveMonth}
+        to={`/calendar/month/${currentDate}`} 
+        className={({ isActive }) =>
+            isActive ? styles.activeLink_month : styles.navLink_month}
+            >
+        Month
+      </NavLink>
+      <NavLink 
+      onClick={doActiveDate}
+      to={`/calendar/day/${currentDay}`} 
+      className={({ isActive }) =>
+            isActive ? styles.activeLink_day : styles.navLink_day}
+            >
+        Day
+        </NavLink>
     </div>   
     )
 }
 
-export default PeriodTypeSelect;
+PeriodTypeSelect.propTypes = {
+  changePage: PropTypes.array,
+};
+
 
