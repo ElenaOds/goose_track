@@ -1,57 +1,59 @@
 @import-normalize; /* bring in normalize.css styles */
 :root {
-  --white-color: #FFFFFF;
-  --secondary-bgd-color: #EAEAEA;
-  --register-bgd-color: #DCEBF7;
-  --secondary-black-color: #13151A;
-  --dark-secondary-bgd-color: #21222C;
-  --button-bgd-color: #3E85F3;
+  --white-color: #ffffff;
+  --secondary-bgd-color: #eaeaea;
+  --register-bgd-color: #dcebf7;
+  --secondary-black-color: #13151a;
+  --dark-secondary-bgd-color: #21222c;
+  --button-bgd-color: #3e85f3;
   --primary-black-color: #111111;
-  --secondary-text-color: #84828A;
-  --placeholder-text-color: #DCE3E5;
+  --secondary-text-color: #84828a;
+  --placeholder-text-color: #dce3e5;
   --date-text-color: #343434;
   --day-text-color: #616161;
-  --dark-day-text-color: #FAFAFA;
-  --low-priority-color: #72C2F8;
-  --medium-priority-color: #F3B249;
-  --high-priority-color: #EA3D65;
-  --high-priority-bgd: #FFD2DD;
-  --medium-priority-bgd: #FCF0D4;
-  --low-priority-bgd: #CEEEFD;
-  --task-button-color: #E3F3FF;
-  --active-calendar-color: #CAE8FF;
+  --dark-day-text-color: #fafafa;
+  --low-priority-color: #72c2f8;
+  --medium-priority-color: #f3b249;
+  --high-priority-color: #ea3d65;
+  --high-priority-bgd: #ffd2dd;
+  --medium-priority-bgd: #fcf0d4;
+  --low-priority-bgd: #ceeefd;
+  --task-button-color: #e3f3ff;
+  --active-calendar-color: #cae8ff;
+  --normal-input-state: rgba(17, 17, 17, 0.15);
+  --error-input-state: #e74a3b;
+  --correct-input-state: #3cbc81;
+  --hover-bgc-submit: #2b78ef;
 }
 
-html[data-theme='dark']{
-  --basic-bgd-color: #13151A;
-  --second-bdg-color:#13151A;
-  --calendar-bdg-color: #21222C;
-  --input-bdg-color: #13151A;  
-  --basic-text-color:#FFFFFF;  
-  --input-text-color: #FFFFFF; 
+html[data-theme='dark'] {
+  --basic-bgd-color: #13151a;
+  --second-bdg-color: #13151a;
+  --calendar-bdg-color: #21222c;
+  --input-bdg-color: #13151a;
+  --basic-text-color: #ffffff;
+  --input-text-color: #ffffff;
   --label-text-color: #616161;
 }
 
-html[data-theme='light']{
-  --basic-bgd-color:#FFFFFF;
-  --second-bdg-color: #EAEAEA; 
-  --calendar-bdg-color: #FFFFFF;
-  --input-bdg-color: #F7F7F7;
-  --basic-text-color:#13151A; 
+html[data-theme='light'] {
+  --basic-bgd-color: #ffffff;
+  --second-bdg-color: #eaeaea;
+  --calendar-bdg-color: #ffffff;
+  --input-bdg-color: #f7f7f7;
+  --basic-text-color: #13151a;
   --input-text-color: #616161;
-  --label-text-color: #13151A;
+  --label-text-color: #13151a;
 }
 
-
-
 body {
-  
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif, 'Libre Bodoni', serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif,
+    'Libre Bodoni', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--second-bdg-color);
-  color: var(--basic-text-color); 
+  color: var(--basic-text-color);
 }
 
 code {
@@ -77,4 +79,3 @@ h6 {
 p {
   margin: 0;
 }
-
