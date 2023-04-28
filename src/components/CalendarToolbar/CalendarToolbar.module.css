@@ -1,0 +1,13 @@
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 18px;
+}
+
+@media screen and (min-width: 768px) {
+    .wrapper{
+    flex-direction: row;
+    justify-content: space-between;
+    }
+}
