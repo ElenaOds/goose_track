@@ -22,25 +22,22 @@ export const create = createAsyncThunk(
   }
 );
 
-export const get = createAsyncThunk(
-  'tasks/get',
-  async (startDate, endDate, thunkAPI) => {
-    try {
-      const { data } = await getTasks(startDate, endDate);
-      toast.success('Success');
-      return data;
-    } catch (error) {
-      toast.error('Error');
-      return thunkAPI.rejectWithValue(error.message);
-    }
+export const get = createAsyncThunk('tasks/get', async (date, thunkAPI) => {
+  try {
+    const { data } = await getTasks(date);
+    toast.success('Success');
+    return data;
+  } catch (error) {
+    toast.error('Error');
+    return thunkAPI.rejectWithValue(error.message);
   }
-);
+});
 
 export const update = createAsyncThunk(
   'tasks/update',
-  async (task, thunkAPI) => {
+  async (id, task, thunkAPI) => {
     try {
-      const { data } = await updateTask(task);
+      const { data } = await updateTask(id, task);
       toast.success('Task has been updated');
       return data;
     } catch (error) {
