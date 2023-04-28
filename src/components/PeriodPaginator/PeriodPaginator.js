@@ -1,9 +1,8 @@
 import {  addMonths,format } from "date-fns";
 import { useState } from "react";
-
-
 import styles from './PeriodPaginator.module.css'
-const PeriodPaginator = () => {
+
+export const PeriodPaginator = () => {
         
   const [month, setMonth] = useState(0); //! take out
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -21,12 +20,13 @@ const PeriodPaginator = () => {
   }
     
     return (
-    <div className={styles.month}>
-      <h1 className={styles.month_name}>{format(currentDate, 'LLLL yyyy')}</h1>
-      <button type='button' className = {styles.month_buttons} onClick ={handleLeftClick} >left</button>
+    <div className={styles.wrapper}>
+      <div><h1 className={styles.month_name}>{format(currentDate, "MMMM Y")}</h1>
+      </div>
+      <div className={styles.buttons}>
+      <button type='button' className = {styles.month_buttons} onClick ={handleLeftClick}>left</button>
       <button type='button' className = {styles.month_buttons} onClick ={handleRightClick}>rigth</button>
+      </div>
     </div>
     );
 };
-
-export default PeriodPaginator;

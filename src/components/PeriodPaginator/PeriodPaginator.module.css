@@ -1,16 +1,18 @@
-.month {
-    font-family: sans-serif;
-    text-align: left;
+.wrapper {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    color: var(----white-color);
 }
 
-.month_buttons {
+.buttons {
+    display: flex;
+}
+
+/* .month_buttons {
     width: 50px;
     margin: 5px;
     height: 100%;
-}
+} */
 
 .month_name {
     font-family: 'Inter';
