@@ -3,7 +3,7 @@ import { format } from "date-fns";
 import PropTypes from 'prop-types';
 import styles from "./PeriodTypeSelect.module.css"
 
-export const PeriodTypeSelect = ({doActiveMonth, doActiveDate}) => {
+export const PeriodTypeSelect = ({ doActiveMonth, doActiveDate}) => {
   
     const currentDate = format(Date.now(), 'MMMM');
     const currentDay = format(Date.now(), 'ddMMMMyyyy');
@@ -27,6 +27,7 @@ export const PeriodTypeSelect = ({doActiveMonth, doActiveDate}) => {
         Day
         </NavLink>
     </div>   
+    
     )
 }
 
