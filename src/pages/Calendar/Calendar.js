@@ -7,7 +7,7 @@ import { selectTaskList } from "redux/tasks/tasks.selectors";
 import CalendarToolbar from "../../components/CalendarToolbar/CalendarToolbar";
 import styles from './Calendar.module.css';
 
-const Calendar = ({ children }) => {
+const Calendar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
