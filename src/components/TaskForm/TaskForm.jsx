@@ -1,54 +1,54 @@
 import styles  from './TaskForm.module.css';
-import {useState} from "react";
 import { ReactComponent as Close } from '../../icons/x-close.svg';
 import { ReactComponent as Pencil } from '../../icons/pencil-01.svg';
 import { ReactComponent as Plus } from '../../icons/plus.svg';
+import {create} from '../../redux/tasks/tasks.operations';
+import { useFormik } from 'formik';
+import TaskSchema from './TaskSchema';
 
+import { useDispatch} from 'react-redux';
 
-export const TaskForm =({data,onClose})=> {
-    
-    const task=null;
-    // task переделать под глобальный стейт, индикатор наличия тасок
-
-  const [title,setInTitle] = useState(''); 
-  const [start,setInStart] = useState(''); 
-  const [end,setInEnd] = useState(''); 
-  const [level,setInLevel] = useState(''); 
-
-  const dataForm={
-    title,
-    start,
-    end,
-    level
-  }
- 
-  const handleChange = event => {    
-    const {id,name, value} = event.target;
-    if(name==='title'){setInTitle(value)}
-    if(name==='start'){setInStart(value)}
-    if(name==='end'){setInEnd(value)}
-    if(name==='level'){setInLevel(id)}    
-  };    
+export const TaskForm =({data,starter,onClose})=> {
+  const task=null;
+  // task переделать под глобальный стейт, индикатор наличия тасок   
   
-  const handleSubmit = evt => {   
-    evt.preventDefault();
-    console.log(dataForm)    
+  const dispatch = useDispatch(); 
+
+  const onSubmit = async (values, actions) => {
+    dispatch(create(values));
+    actions.resetForm();
   };
+
+  const formik = useFormik({
+    initialValues: {
+      title:'',
+      start:'',
+      end:'',
+      priority:'',
+      data:data,
+      category:starter||'starter'
+    },
+    validationSchema: TaskSchema,
+    onSubmit,
+  });
   
   return (
     <div  className={styles.container}>
-      <form className={styles.form}  onSubmit={handleSubmit}>         
+      <form className={styles.form}  onSubmit={formik.handleSubmit}>         
         <div className="">
           <label className={styles.label} for='title'>
             <p>Title</p>
           </label>
-          <input
+          <input          
+            id='title'
             type='text'
-            name="title" 
-            onChange={handleChange}          
-            className={styles.input}            
+            name="title"
             placeholder="Enter text"
-            maxLength={250}      
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
+            value={formik.values.title}         
+            className={styles.input}          
+            maxLength={250}                 
           />
         </div>
         <div className={styles.flex}>
@@ -56,12 +56,14 @@ export const TaskForm =({data,onClose})=> {
           <label  className={styles.label} for='start'>
             <p>Start</p>
           </label>
-          <input 
-            onChange={handleChange}
+          <input
+            id='start'
             type='time'
             name='start'          
-            className={styles.input}            
-            placeholder="9:00"             
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
+            value={formik.values.start}                      
+            className={styles.input}                       
           />
         </div>
         <div className="">
@@ -69,30 +71,56 @@ export const TaskForm =({data,onClose})=> {
             <p>End</p>
           </label>
           <input 
-            onChange={handleChange}
+            id='end'
             type='time'
             name='end'           
-            className={styles.input}            
-            placeholder="14:00"             
+            onBlur={formik.handleBlur}
+            onChange={formik.handleChange}
+            value={formik.values.end}                       
+            className={styles.input}                       
           />
         </div>
         </div> 
         <div className={styles.flex}>           
             <label  className={styles.check}>
               <div className={styles.flex}>
-                <input className={styles.checkbox} type='radio' id='low' name='level' onChange={handleChange}/>
+                <input 
+                  id='low'
+                  type='radio'
+                  name='priority'
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  className={styles.checkbox} 
+                  value={formik.values.category}
+                />
                 <span>Low</span>
               </div>
             </label> 
             <label className={styles.check}>          
                <div className={styles.flex}>
-                <input  className={styles.checkbox} type='radio' id='medium' name='level' onChange={handleChange}/>            
+                <input  
+                  id='medium'
+                  type='radio'
+                  name='priority'
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  className={styles.checkbox} 
+                  value={formik.values.category}
+                />            
                 <span>Medium</span>
               </div>
             </label>       
             <label className={styles.check} >
               <div className={styles.flex}>
-                <input className={styles.checkbox}  type='radio' id='higt' name='level' onChange={handleChange}/>            
+                <input 
+                  id='high'
+                  type='radio'
+                  name='priority'
+                  onBlur={formik.handleBlur}
+                  onChange={formik.handleChange}
+                  className={styles.checkbox} 
+                  value={formik.values.category}
+                />            
                 <span>High</span>
               </div>
             </label>          
