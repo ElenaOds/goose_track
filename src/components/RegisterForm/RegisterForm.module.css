@@ -3,16 +3,20 @@
 }
 
 .container {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: var(--register-bgd-color);
+  padding: 0 20px;
 }
 
 .form {
-  width: 335px;
-  background-color: #fff;
+  width: 100%;
+  min-width: 320px;
+  max-width: 480px;
+  background-color: var(--white-color);
   border-radius: 8px;
   padding: 40px 24px;
 }
@@ -45,7 +49,7 @@
   font-size: 12px;
   line-height: 1.25;
 
-  color: #111111;
+  color: var(--primary-black-color);
   margin-top: 24px;
   margin-bottom: 8px;
 }
@@ -58,16 +62,19 @@
 }
 
 .input {
+  position: relative;
   width: 100%;
   display: block;
   outline: none;
   padding: 14px;
-  border: 1px solid rgba(220, 227, 229, 0.6);
+  border: 1px solid var(--normal-input-state);
   border-radius: 8px;
 }
 
-.input:focus {
-  border-color: var(--button-bgd-color);
+.input:focus,
+input:hover {
+  cursor: pointer;
+  border-color: var(--primary-black-color);
 }
 
 .submit {
@@ -87,15 +94,22 @@
   background: var(--button-bgd-color);
   box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
   border-radius: 16px;
-  color: #fff;
+  color: var(--white-color);
 
   padding: 14px;
   margin-top: 32px;
+
+  transition: linear 0.3s;
 }
 @media (min-width: 768px) {
   .submit {
     margin-top: 48px;
   }
+}
+
+.submit:hover,
+.submit:focus {
+  background-color: var(--hover-bgc-submit);
 }
 
 .submit:disabled {
@@ -108,15 +122,18 @@
 }
 
 .errorInput {
-  border-color: var(--high-priority-color);
+  border-color: var(--error-input-state);
 }
 
 .errorLabel {
-  color: var(--high-priority-color);
+  position: absolute;
+  color: var(--error-input-state);
+  font-size: 12px;
+  padding-right: 42px;
 }
 
 .success {
-  border-color: var(--button-bgd-color);
+  border-color: var(--correct-input-state);
 }
 
 .passwordContainer {
@@ -164,7 +181,7 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 1.15;
-  color: #111111;
+  color: var(--primary-black-color);
 
   transform: rotate(-27deg);
   z-index: 2;
