@@ -106,6 +106,7 @@
     flex-direction: column;
     text-align: right;
 }
+
 .datesInCalendar_date {
     margin-top: 18px;
     margin-right: 22px;
@@ -117,9 +118,11 @@
     text-transform: uppercase;
     color: var(--basic-text-color);
 }
+
 .week {
     display: flex;
 }
+
 .oneDay {
     border: 1px solid rgba(220, 227, 229, 0.8);
     width: 48px;
@@ -127,18 +130,21 @@
     text-align: right;
     background-color: var(--calendar-bdg-color);
 }
+
 @media (min-width: 600px) {
     .oneDay {
         width: 102px;
         height: 144px;
     }
 }
+
 @media (min-width: 1279px) {
     .oneDay {
         width: 156px;
         height: 125px;
     }
 }
+
 .task {
     margin-top: 22px;
     display: flex;
@@ -148,16 +154,16 @@
     margin-left: 8px;
     margin-right: 8px;
 }
+
 .task_text {
     font-family: ‘Inter’;
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
     line-height: 1.29;
-    color: var(--button-bgd-color);
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 80px;
-    }
+}
