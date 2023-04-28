@@ -1,5 +1,6 @@
 import { NavLink  } from "react-router-dom";
 import {  format } from "date-fns";
+import styles from "./PeriodTypeSelect.module.css"
 
 const PeriodTypeSelect = () => {
   
@@ -8,10 +9,14 @@ const PeriodTypeSelect = () => {
 
     return (
         <>
-        <button><NavLink to={`/calendar/month/${currentDate}`}>Month</NavLink></button>
-        <button><NavLink to={`/calendar/day/${currentDay}`}>Day</NavLink></button>
+        <div className={styles.PeriodTypeSelectMarkUp}>
+        <button className={styles.btnMonth}><NavLink to={`/calendar/month/${currentDate}`} className={styles.text}>Month</NavLink></button>
+        <button className={styles.btnDay}><NavLink  to={`/calendar/day/${currentDay}`} className={styles.text}>Day</NavLink></button>
+        </div>
+        
         </>
     )
 }
 
 export default PeriodTypeSelect;
+
