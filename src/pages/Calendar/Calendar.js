@@ -29,7 +29,7 @@ return (
     <div className={styles.container}>
        <CalendarToolbar isActivePage={isActivePage} doActiveMonth={doActiveMonth} doActiveDate={doActiveDate}/>  
        <Suspense fallback={null}>
-        <Outlet />
+        <Outlet contex={{isActivePage, doActiveMonth, doActiveDate} }/>
       </Suspense>
     </div>
   );
