@@ -1,0 +1,15 @@
+.wrapper {
+    background-color: var(--basic-bgd-color);
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 1px solid #DCE3E5CC;
+    min-width: 280px;
+    padding: 18px;
+    width: 335px;
+
+    @media screen and (min-width: 768px) {
+        width: 344px;
+
+    }
+}
