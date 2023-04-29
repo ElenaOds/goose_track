@@ -3,6 +3,7 @@ import { AuthNavigate } from 'components/AuthNavigate/AuthNavigate';
 import styles from './Login.module.css';
 
 const Login = () => {
+  
   return (
     <div className={styles.container}>
       <LoginForm />
