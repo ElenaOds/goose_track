@@ -16,7 +16,7 @@ const UserFormSchema = Yup.object().shape({
   birthday: Yup.date(),
   email: Yup.string().email('Invalid email'),
   phone: Yup.string().matches(phoneRegExp, 'Phone number is not valid'),
-  skype: Yup.string().matches(phoneRegExp, 'Skype number is not valid'),
+  skype: Yup.string(),
 });
 
 export default UserFormSchema;
