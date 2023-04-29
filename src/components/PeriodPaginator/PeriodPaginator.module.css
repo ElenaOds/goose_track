@@ -4,17 +4,39 @@
     align-items: center;
 }
 
-.buttons {
+.buttons_container {
     display: flex;
+    margin-left: 10px;
 }
 
-/* .month_buttons {
-    width: 50px;
-    margin: 5px;
-    height: 100%;
-} */
+.button {
+    padding: 10px 10px;
 
-.month_name {
+    background: var(--basic-bgd-color);
+    border: 1px solid rgba(220, 227, 229, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_left {
+    border-radius:  8px 0 0 8px ;
+;
+}
+
+.button_right {
+    border-radius: 0 8px  8px 0 ;
+}
+
+
+
+.name_container{
+    padding: 8px 12px;
+    background: var(--button-bgd-color);
+    border-radius: 8px;
+}
+
+.name {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -22,5 +44,13 @@
     line-height: 1.12;
     text-align: center;
     text-transform: uppercase;
-    color: var(--white-color);
+    color: var(--basic-bgd-color);
+}
+
+.icon {
+    stroke: var(--day-text-color)
+}
+
+.icon_active {
+    stroke: var(--basic-text-color)
 }
