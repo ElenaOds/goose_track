@@ -5,8 +5,10 @@ import styles from "./PeriodTypeSelect.module.css"
 
 export const PeriodTypeSelect = ({ doActiveMonth, doActiveDate}) => {
   
-    const currentDate = format(Date.now(), 'MMMM');
+    const currentDate = format(Date.now(), 'MMMMyyyy');
     const currentDay = format(Date.now(), 'ddMMMMyyyy');
+
+  
 
   return (   
     <div className={styles.periodTypeSelectMarkUp}>
