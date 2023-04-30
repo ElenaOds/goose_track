@@ -1,18 +1,20 @@
-import styles  from './TaskForm.module.css';
+
+import styles  from './TaskFormUpDate.module.css';
 import {useDispatch} from 'react-redux';
-import { ReactComponent as Close } from '../../icons/x-close.svg';
-import { ReactComponent as Plus } from '../../icons/plus.svg';
 import { useState } from 'react';
-import {create} from '../../redux/tasks/tasks.operations';
+import { ReactComponent as Close } from '../../icons/x-close.svg';
+import { ReactComponent as Pencil } from '../../icons/pencil-01.svg';
+import {update} from '../../redux/tasks/tasks.operations';
 
 
-export const TaskForm =({date,onClose})=> { 
+export const TaskFormUpDate =({date,id,onClose})=> {  
+  const dispatch = useDispatch();  
+ 
   const [title,setIsTitle]=useState('');
   const [start,setIsStart]=useState('');
   const [end,setIsEnd]=useState('');
-  const [priority,setIsPriority]=useState('');
-  
-  const dispatch = useDispatch(); 
+  const [priority,setIsPriority]=useState('');  
+
 
   const handleChange = event => { 
     const { name,id, value } = event.target;
@@ -25,12 +27,12 @@ export const TaskForm =({date,onClose})=> {
 
   const onSubmit = evt => {   
     evt.preventDefault();
-    dispatch(create({title,start,end,priority,date}));
+    dispatch(update(id,{title,start,end,priority,date}));
   }  
 
   return (
     <div  className={styles.container}>     
-      <form className={styles.form} onSubmit={onSubmit}>         
+     <form className={styles.form} onSubmit={onSubmit}>         
         <div className="">
           <label className={styles.label} htmlFor='title'>
             <p>Title</p>
@@ -108,16 +110,13 @@ export const TaskForm =({date,onClose})=> {
                 <span>High</span>
               </div>
             </label>          
-        </div>       
-        <div className={styles.flex}>
-            <button type="submit" className={styles.button}>
-              <div>          
-                <Plus className={styles.logo} />
-                Add             
-              </div>
-            </button> 
-            <button className={styles.btn_cansel} onClick={onClose}>Cancel</button>
-          </div>         
+        </div>     
+       <button type="submit" className={styles.button}>
+            <>          
+              <Pencil className={styles.logo} />
+              Edit              
+            </>
+        </button>              
       </form>
       <Close onClick={onClose} className={styles.btn_close}/>       
     </div>

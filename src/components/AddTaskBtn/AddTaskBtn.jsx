@@ -1,6 +1,7 @@
-import { useState } from "react";
-import { TaskModal } from "../TaskModal/TaskModal";
+import {useState} from "react";
+import {TaskModal } from "../TaskModal/TaskModal";
 import styles from './AddTaskBtn.module.css';
+import { ReactComponent as Plus } from '../../icons/plus.svg';
 
 export const AddTaskBtn = ({ inColumnHeadBar }) => {
 
