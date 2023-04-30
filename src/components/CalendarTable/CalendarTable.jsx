@@ -1,6 +1,5 @@
 import styles from './CalendarTable.module.css';
 import { v4 as uuidv4 } from 'uuid';
-import { AddTaskBtn } from 'components/AddTaskBtn/AddTaskBtn';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { get } from 'redux/tasks/tasks.operations';
@@ -80,7 +79,7 @@ export default function CalendarTable({ weeksList }) {
           );
         })}
       </div>
-      <AddTaskBtn />
+
     </div>
   );
 }

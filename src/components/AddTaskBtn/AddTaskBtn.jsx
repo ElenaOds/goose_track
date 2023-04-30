@@ -1,16 +1,16 @@
-import { useState } from "react";
-import { TaskModal } from "../TaskModal/TaskModal";
+import {useState} from "react";
+import {TaskModal } from "../TaskModal/TaskModal";
 import styles from './AddTaskBtn.module.css';
+import { ReactComponent as Plus } from '../../icons/plus.svg';
 
-export const AddTaskBtn = () => {
-  const [isOpen, setIsModalOpen] = useState(false);
+export const  AddTaskBtn =({date})=> {  
+  const [isOpen,setIsModalOpen]=useState(false);  
   return (
-    <>
-      <button className={styles.button} onClick={() => setIsModalOpen(true)}>
-        <div className={styles.plus}></div>
-        AddTaskBtn
-      </button>
-      {isOpen && (<TaskModal onClose={() => setIsModalOpen(false)} data={"Hello"} />)}
-    </>
-  );
+    <div >       
+      <button className={styles.btn} onClick={() => setIsModalOpen(true)}>
+      <Plus className={styles.logo} />
+        Add task</button> 
+      {isOpen && (<TaskModal onClose={() => setIsModalOpen(false)} date={date} />)}            
+    </div>  
+  );     
 };
