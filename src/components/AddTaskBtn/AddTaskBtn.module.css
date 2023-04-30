@@ -1,0 +1,24 @@
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 52px;
+    gap: 8px;
+    margin-top: 42px;  
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.29;
+    text-align: center;
+    color: var( --basic-text-color);
+    background-color: var(--button-task);
+    border: 1px dashed #3e85f3;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .logo {
+    stroke:var(--basic-text-color);
+    margin-right: 10px;
+}
