@@ -11,8 +11,8 @@
   font-size: 14px;
   line-height: 1.29;
   text-align: center;
-  color: #111111;
-  background-color: #e3f3ff;
+  color: var(--basic-text-color);
+  background-color: var(--add-task-button);
   border: 1px dashed #3e85f3;
   border-radius: 8px;
   cursor: pointer;
@@ -31,7 +31,7 @@
   .plus::after {
     content: "";
     position: absolute;
-    background-color: #111111;
+    background-color: var(--basic-text-color);
     width: 14px;
     height: 2px;
     border-radius: 8px;

@@ -34,6 +34,7 @@ html[data-theme='dark'] {
   --basic-text-color: #ffffff;
   --input-text-color: #ffffff;
   --label-text-color: #616161;
+  --add-task-button: #3E85F3;
 }
 
 html[data-theme='light'] {
@@ -44,6 +45,7 @@ html[data-theme='light'] {
   --basic-text-color: #13151a;
   --input-text-color: #616161;
   --label-text-color: #13151a;
+  --add-task-button: #E3F3FF;
 }
 
 body {
