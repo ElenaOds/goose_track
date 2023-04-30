@@ -1,12 +1,18 @@
 .wrapper {
   display: flex;
+  gap: 18px;
+  overflow: scroll;
+}
+
+/* .wrapper {
+  display: flex;
   flex-direction: column;
   padding: 18px 18px 10px 18px;
   min-width: 335px;
   width: 100%;
   max-height: 432px;
   list-style: none;
-  overflow-y: auto;
+  overflow-x: auto;
   border-radius: 8px;
   scroll-snap-align: start;
 }
@@ -69,5 +75,5 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 20px;
-}
+} */
 
