@@ -5,11 +5,12 @@ import DayCalendarHead from 'components/DayCalendarHead/DayCalendarHead';
 import styles from './ChosenDay.module.css';
 import { useState } from 'react';
 import TasksColumnsList from 'components/TasksColumnsList/TasksColumnsList';
-import { parse } from 'date-fns';
-import { useParams } from 'react-router-dom';
+import { format, parse } from 'date-fns';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const ChosenDay = () => {
   const { currentDay } = useParams();
+  const navigate = useNavigate();
   const formattedDate = parse(currentDay, 'dMMMMyyyy', new Date());
 
   const daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
@@ -21,6 +22,10 @@ const ChosenDay = () => {
 
   const handleDayClick = date => {
     setSelectedDay(date);
+    date = new Date(date);
+    const formattedDate = format(date, 'dMMMMyyyy');
+    const result = formattedDate.charAt(0) + formattedDate.slice(1);
+    navigate(`/calendar/day/${result}`);
   };
   console.log(selectedDay);
 
