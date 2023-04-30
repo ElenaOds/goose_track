@@ -4,14 +4,19 @@ import { ReactComponent as IconArrowRight } from '../../icons/icon-arrow-right.s
 import { ReactComponent as IconArrowLeft } from '../../icons/icon-arrow-left.svg';
 
 import styles from './PeriodPaginator.module.css';
+// import { useNavigate } from 'react-router-dom';
 
 export const PeriodPaginator = ({ isActivePage }) => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [activeBtn, setActiveBtn] = useState('');
 
+  // const navigate = useNavigate();
+
   const handleNextMonth = () => {
     setActiveBtn('next');
     setCurrentDate(addMonths(currentDate, 1));
+
+    console.log(format(currentDate, 'ddMMMMyyyy'));
   };
 
   const handlePrevMonth = () => {
