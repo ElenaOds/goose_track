@@ -1,3 +1,7 @@
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}
+
 .userNav {
     margin-top: 20px;
 
@@ -66,12 +70,13 @@
 }
 
 .icon {
-    color: var(--secondary-text-color);
+    stroke: var(--secondary-text-color);
     margin-right: 10px;
 }
 
-.activeIcon {
+.active {
     background: var(--task-button-color);
+    stroke: var(--button-bgd-color);
     margin-right: 10px;
 }
 

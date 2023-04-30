@@ -8,6 +8,7 @@ return (
     <div className={styles.wrapper}>
     <ColumnHeadBar columnTitle={columnTitle}/>
     {/* <ColumnTasksList/> */}
+
     <UpDateTaskBtn date={'2023-05-12'} id={'644d2b183459f2c60583fca2'}/>
     <AddTaskBtn date={'2023-05-12'}/>
     </div>

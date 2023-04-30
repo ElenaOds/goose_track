@@ -25,7 +25,7 @@ export const create = createAsyncThunk(
 export const get = createAsyncThunk('tasks/get', async (date, thunkAPI) => {
   try {
     const { data } = await getTasks(date);
-    toast.success('Success');
+    // toast.success('Success');
     return data;
   } catch (error) {
     toast.error('Error');
