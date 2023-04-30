@@ -67,6 +67,7 @@
 }
 
 .label {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -74,23 +75,55 @@
   max-width: 354px;
 }
 
+.errorLabel {
+  color: var(--error-input-state);
+}
+
+.errorMsg {
+  color: var(--error-msg);
+  font-size: 12px;
+}
+
+.successLabel {
+  color: var(--correct-input-state);
+}
+
 .input {
   height: 46px;
   width: 100%;
   padding: 14px;
-  border: 1px solid rgba(17, 17, 17, 0.15);
+  border: 1px solid var(--normal-input-state);
   border-radius: 8px;
 }
 
-.chevron_icom {
+.errorInput {
+  border: 1px solid var(--error-input-state);
+}
+
+.error_icon {
+  position: absolute;
+  right: 20px;
+  bottom: 34px;
+}
+.success_icon {
+  position: absolute;
+  right: 20px;
+  bottom: 12px;
+}
+
+.successInput {
+  border: 1px solid var(--correct-input-state);
+}
+
+/* .chevron_icon {
   position: absolute;
   right: 18px;
   bottom: 14px;
-}
+} */
 
 .button {
   height: 48px;
-  width: 262px;
+  width: 100%;
   border: none;
   border-radius: 16px;
   color: var(--white-color);
