@@ -25,6 +25,8 @@
   --error-msg: #db1414;
   --correct-input-state: #3cbc81;
   --hover-bgc-submit: #2b78ef;
+  --task-sorting-button: #F7F6F9;
+
 }
 
 html[data-theme='dark'] {
