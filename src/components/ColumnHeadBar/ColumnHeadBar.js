@@ -1,11 +1,11 @@
 import styles from './ColumnHeadBar.module.css';
-import { ReactComponent as AddIcon } from '../../icons/addIcon.svg';
+import { AddTaskBtn } from 'components/AddTaskBtn/AddTaskBtn';
 
 const ColumnHeadBar = ({columnTitle}) => {
 return (
     <div className={styles.wrapper}>
         <p className={styles.title}>{columnTitle}</p>
-        <AddIcon fill='white'/>
+        <AddTaskBtn inColumnHeadBar/>
     </div>
 )
 }
