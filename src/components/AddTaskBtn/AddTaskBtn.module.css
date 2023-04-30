@@ -25,6 +25,7 @@
     width: 14px;
     height: 14px;
     background-color: transparent;
+    position: relative;
   }
   
   .plus::before,
@@ -54,6 +55,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
   }
   
   .circle::before,
