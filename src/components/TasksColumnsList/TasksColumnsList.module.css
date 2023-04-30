@@ -61,7 +61,7 @@
   display: flex;
   font-display: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; 
 }
 
 .title {
