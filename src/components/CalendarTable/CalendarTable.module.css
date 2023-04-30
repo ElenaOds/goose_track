@@ -102,68 +102,69 @@
     }
 } */
 .datesInCalendar {
-    display: flex;
-    flex-direction: column;
-    text-align: right;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
 }
 
 .datesInCalendar_date {
-    margin-top: 18px;
-    margin-right: 22px;
-    font-family: ‘Inter’;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 1.12;
-    text-transform: uppercase;
-    color: var(--basic-text-color);
+  margin-top: 18px;
+  margin-right: 22px;
+  font-family: ‘Inter’;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.12;
+  text-transform: uppercase;
+  color: var(--basic-text-color);
 }
 
 .week {
-    display: flex;
+  display: flex;
 }
 
 .oneDay {
-    border: 1px solid rgba(220, 227, 229, 0.8);
-    width: 48px;
-    height: 94px;
-    text-align: right;
-    background-color: var(--calendar-bdg-color);
+  border: 1px solid rgba(220, 227, 229, 0.8);
+  width: 48px;
+  height: 94px;
+  text-align: right;
+  background-color: var(--calendar-bdg-color);
+  cursor: pointer;
 }
 
 @media (min-width: 600px) {
-    .oneDay {
-        width: 102px;
-        height: 144px;
-    }
+  .oneDay {
+    width: 102px;
+    height: 144px;
+  }
 }
 
 @media (min-width: 1279px) {
-    .oneDay {
-        width: 156px;
-        height: 125px;
-    }
+  .oneDay {
+    width: 156px;
+    height: 125px;
+  }
 }
 
 .task {
-    margin-top: 22px;
-    display: flex;
-    justify-content: center;
-    background: var(--low-priority-bgd);
-    border-radius: 8px;
-    margin-left: 8px;
-    margin-right: 8px;
+  margin-top: 22px;
+  display: flex;
+  justify-content: center;
+  background: var(--low-priority-bgd);
+  border-radius: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 .task_text {
-    font-family: ‘Inter’;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.29;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 80px;
+  font-family: ‘Inter’;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.29;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80px;
 }
