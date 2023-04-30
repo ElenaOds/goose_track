@@ -3,7 +3,7 @@ import {TaskModal } from "../TaskModal/TaskModal";
 import styles from './AddTaskBtn.module.css';
 
 
-export const AddTaskBtn = ({ inColumnHeadBar }) => {
+export const AddTaskBtn = ({ date, inColumnHeadBar }) => {
 
   const [isOpen, setIsModalOpen] = useState(false);
   return (
@@ -15,7 +15,7 @@ export const AddTaskBtn = ({ inColumnHeadBar }) => {
             Add task
           </>}
       </button>
-      {isOpen && (<TaskModal onClose={() => setIsModalOpen(false)} data={"Hello"} />)}
+      {isOpen && (<TaskModal onClose={() => setIsModalOpen(false)} date={date} />)}
     </>
   );
 };
