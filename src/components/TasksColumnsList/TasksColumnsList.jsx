@@ -14,11 +14,6 @@ const TasksColumnsList = () => {
     name: 'In progress',
     tasks: [
       {
-        taskTitle: 'Consectetur adipiscing elit',
-        taskTime: '02:45',
-        taskSort: 'low'
-      },
-      {
         taskTitle: 'Sed do eiusmod tempor',
         taskTime: '03:15',
         taskSort: 'medium'

@@ -35,6 +35,8 @@ html[data-theme='dark'] {
   --input-text-color: #ffffff;
   --label-text-color: #616161;
   --add-task-button: #3E85F3;
+  --card-bgd-color: #171820;
+
 }
 
 html[data-theme='light'] {
@@ -46,6 +48,7 @@ html[data-theme='light'] {
   --input-text-color: #616161;
   --label-text-color: #13151a;
   --add-task-button: #E3F3FF;
+  --card-bgd-color: #F7F6F9;
 }
 
 body {
