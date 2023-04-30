@@ -1,11 +1,59 @@
-.card{
+.card {
     border-radius: 8px;
     background-color: var(--card-bgd-color);
-    height: 108px;
     border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 14px 14px 18px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
 }
 
 .toolbar_container {
     display: flex;
     justify-content: space-between;
+}
+
+.userpic {
+    width: 32px;
+    height: 32px;
+    border: 1.8px solid var(--button-bgd-color);
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.task_info {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+
+}
+
+.sort {
+    width: 44px;
+    height: 20px;
+    background: var(--low-priority-color);
+    color: var(--task-sorting-button);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
 }

@@ -16,6 +16,7 @@
   border: 1px dashed #3e85f3;
   border-radius: 8px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .plus {
