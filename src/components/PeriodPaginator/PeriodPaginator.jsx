@@ -1,4 +1,4 @@
-import { addDays, addMonths, format, subDays, subMonths } from 'date-fns';
+import { format, subDays } from 'date-fns';
 import { useState } from 'react';
 import { ReactComponent as IconArrowRight } from '../../icons/icon-arrow-right.svg';
 import { ReactComponent as IconArrowLeft } from '../../icons/icon-arrow-left.svg';
@@ -6,27 +6,27 @@ import { ReactComponent as IconArrowLeft } from '../../icons/icon-arrow-left.svg
 import styles from './PeriodPaginator.module.css';
 // import { useNavigate } from 'react-router-dom';
 
-export const PeriodPaginator = ({ isActivePage }) => {
+export const PeriodPaginator = ({ isActivePage ,handleLeftClick,handleRightClick}) => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [activeBtn, setActiveBtn] = useState('');
 
   // const navigate = useNavigate();
 
-  const handleNextMonth = () => {
-    setActiveBtn('next');
-    setCurrentDate(addMonths(currentDate, 1));
+  // const handleNextMonth = () => {
+  //   setActiveBtn('next');
+  //   setCurrentDate(addMonths(currentDate, 1));
 
-    console.log(format(currentDate, 'ddMMMMyyyy'));
-  };
+  //   console.log(format(currentDate, 'ddMMMMyyyy'));
+  // };
 
-  const handlePrevMonth = () => {
-    setActiveBtn('prev');
-    setCurrentDate(subMonths(currentDate, 1));
-  };
+  // const handlePrevMonth = () => {
+  //   setActiveBtn('prev');
+  //   handleLeftClick(); //!
+  // };
 
   const handleNextDay = event => {
     setActiveBtn('next');
-    setCurrentDate(addDays(currentDate, 1));
+    // handleRightClick(); //!
   };
 
   const handlePrevDay = () => {
@@ -45,7 +45,7 @@ export const PeriodPaginator = ({ isActivePage }) => {
             <button
               className={`${styles.button} ${styles.button_left}`}
               type="button"
-              onClick={handlePrevMonth}
+              onClick={handleLeftClick}
             >
               <IconArrowLeft
                 className={
@@ -59,7 +59,7 @@ export const PeriodPaginator = ({ isActivePage }) => {
               className={`${styles.button} ${styles.button_right}`}
               type="button"
               id={'2'}
-              onClick={handleNextMonth}
+              onClick={handleRightClick}
             >
               <IconArrowRight
                 className={
