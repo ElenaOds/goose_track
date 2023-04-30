@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { selectUser } from 'redux/auth/auth.selectors';
-// import { useFormik } from 'formik';
-// import UserFormSchema from './UserFormSchema';
+import { useFormik } from 'formik';
+import UserFormSchema from './UserFormSchema';
 import DatePicker from 'react-datepicker';
+import { ReactComponent as Error } from '../../icons/error-icon.svg';
+import { ReactComponent as Success } from '../../icons/success-icon.svg';
 // import { ReactComponent as Chevron } from '../../icons/chevron-down.svg';
 // import { ReactComponent as Plus } from '../../icons/add-photo-icon.svg';
 // import "./calendar.css"
@@ -18,57 +20,65 @@ const UserForm = () => {
   const [userPhotoURL, setUserPhotoURL] = useState('');
 
   const [formData, setFormData] = useState({
-    userPhoto: '',
+    userPhoto: '' || userPhoto,
     name: '' || name,
     birthday: new Date() || birthday,
     email: '' || email,
-    phone: phone || 'Add a phone number',
-    skype: skype || 'Add a skype number',
+    phone: '' || phone,
+    skype: '' || skype,
   });
+  const formDataObj = new FormData();
 
-  const handleChange = e => {
-    setIsChanged(true);
-    const { name, value } = e.target;
+  const handleSetFormData = ({ name, value, files }) => {
     if (name === 'userPhoto') {
-      const selectedFile = e.target.files[0];
+      const selectedFile = files[0];
       setUserPhotoURL(URL.createObjectURL(selectedFile));
     }
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    const formDataObj = new FormData();
-    Object.keys(formData).forEach(key => {
-      formDataObj.append(key, formData[key]);
-    });
-    setIsChanged(false);
+  const formik = useFormik({
+    initialValues: {
+      userPhoto: '',
+      name: name || '',
+      birthday: birthday || new Date(),
+      email: email || '',
+      phone: phone || '',
+      skype: skype || '',
+    },
+    validationSchema: UserFormSchema,
+    validateOnChange: true,
+    onSubmit: values => {
+      Object.keys(values).forEach(key => {
+        formDataObj.append(key, values[key]);
+      });
+      setIsChanged(false);
+    },
+  });
+
+  const onChange = e => {
+    setIsChanged(true);
+    const { name, value } = e.target;
+    formik.setFieldValue(name, value);
+    handleSetFormData(e.target);
   };
 
-  // const formik = useFormik({
-  //   initialValues: {
-  //     userPhoto: '',
-  //     name: '',
-  //     email: '',
-  //     phone: '',
-  //     birthday: '',
-  //     skype: '',
-  //   },
-  //   validationSchema: UserFormSchema,
-  //   validateOnChange: true,
-  //   handleSubmit,
-  // });
+  const onChangeDatePicker = date => {
+    formik.setFieldValue('birthday', date);
+    setFormData({ ...formData, birthday: date });
+  };
 
   return (
-    <form className={css.form} onSubmit={handleSubmit}>
+    <form className={css.form} onSubmit={formik.handleSubmit}>
       <div className={css.relative}>
         <input
           className={css.uploader}
+          accept="image/png, image/gif, image/jpeg, image/jpg"
           type="file"
           id="userPhoto"
           name="userPhoto"
-          value={formData.userPhoto}
-          onChange={handleChange}
+          value={formik.values.userPhoto}
+          onChange={onChange}
         />
         <label className={css.uploader__label} htmlFor="userPhoto">
           {userPhoto ? (
@@ -93,71 +103,187 @@ const UserForm = () => {
 
       <div className={css.container}>
         <div className={css.column}>
-          <label className={css.label} htmlFor="name">
+          <label
+            className={`${css.label} ${
+              formik.touched.name && formik.errors.name
+                ? css.errorLabel
+                : formik.touched.name && !formik.errors.name
+                ? css.successLabel
+                : ''
+            }`}
+            htmlFor="name"
+          >
             <p>User Name</p>
             <input
-              className={css.input}
+              className={`${css.input} ${
+                formik.touched.name && formik.errors.name
+                  ? css.errorInput
+                  : formik.touched.name && !formik.errors.name
+                  ? css.successInput
+                  : ''
+              }`}
               type="text"
               id="name"
               name="name"
               placeholder="Add your name"
-              value={formData.name}
-              onChange={handleChange}
+              onChange={onChange}
+              value={formik.values.name}
             />
+            {formik.touched.name && formik.errors.name ? (
+              <>
+                <Error className={css.error_icon} />
+                <div className={css.errorMsg}>{formik.errors.name}</div>
+              </>
+            ) : formik.touched.name && !formik.errors.name ? (
+              <Success className={css.success_icon} />
+            ) : null}
           </label>
 
-          <label className={`${css.label} ${css.relative}`} htmlFor="birthday">
+          <label
+            className={`${css.label} ${
+              formik.touched.birthday && formik.errors.birthday
+                ? css.errorLabel
+                : formik.touched.birthday && !formik.errors.birthday
+                ? css.successLabel
+                : ''
+            }`}
+            htmlFor="birthday"
+          >
             <p>Birthday</p>
             <DatePicker
-              className={css.input}
-              selected={formData.birthday}
+              className={`${css.input} ${
+                formik.touched.birthday && formik.errors.birthday
+                  ? css.errorInput
+                  : formik.touched.birthday && !formik.errors.birthday
+                  ? css.successInput
+                  : ''
+              }`}
+              id="birthday"
+              name="birthday"
+              selected={formik.values.birthday}
               maxDate={new Date()}
-              onChange={handleChange}
+              onChange={onChangeDatePicker}
               calendarStartDay={1}
               dateFormat="dd/MM/yyyy"
             />
-            {/* <Chevron className={css.chevron_icom} /> */}
+            {formik.touched.birthday && formik.errors.birthday ? (
+              <>
+                <Error className={css.error_icon} />
+                <div className={css.errorMsg}>{formik.errors.birthday}</div>
+              </>
+            ) : formik.touched.birthday && !formik.errors.birthday ? (
+              <Success className={css.success_icon} />
+            ) : null}
           </label>
 
-          <label className={css.label} htmlFor="email">
+          <label
+            className={`${css.label} ${
+              formik.touched.email && formik.errors.email
+                ? css.errorLabel
+                : formik.touched.email && !formik.errors.email
+                ? css.successLabel
+                : ''
+            }`}
+            htmlFor="email"
+          >
             <p>Email</p>
             <input
-              className={css.input}
+              className={`${css.input} ${
+                formik.touched.email && formik.errors.email
+                  ? css.errorInput
+                  : formik.touched.email && !formik.errors.email
+                  ? css.successInput
+                  : ''
+              }`}
               type="email"
               id="email"
               name="email"
               placeholder="Add your email"
-              value={formData.email}
-              onChange={handleChange}
+              value={formik.values.email}
+              onChange={onChange}
             />
+            {formik.touched.email && formik.errors.email ? (
+              <>
+                <Error className={css.error_icon} />
+                <div className={css.errorMsg}>{formik.errors.email}</div>
+              </>
+            ) : formik.touched.email && !formik.errors.email ? (
+              <Success className={css.success_icon} />
+            ) : null}
           </label>
         </div>
 
         <div className={css.column}>
-          <label className={css.label} htmlFor="phone">
+          <label
+            className={`${css.label} ${
+              formik.touched.phone && formik.errors.phone
+                ? css.errorLabel
+                : formik.touched.phone && !formik.errors.phone
+                ? css.successLabel
+                : ''
+            }`}
+            htmlFor="phone"
+          >
             <p>Phone</p>
             <input
-              className={css.input}
+              className={`${css.input} ${
+                formik.touched.phone && formik.errors.phone
+                  ? css.errorInput
+                  : formik.touched.phone && !formik.errors.phone
+                  ? css.successInput
+                  : ''
+              }`}
               type="tel"
               id="phone"
               name="phone"
-              placeholder="Enter your phone number"
-              value={formData.phone}
-              onChange={handleChange}
+              placeholder="Enter your phone"
+              value={formik.values.phone}
+              onChange={onChange}
             />
+            {formik.touched.phone && formik.errors.phone ? (
+              <>
+                <Error className={css.error_icon} />
+                <div className={css.errorMsg}>{formik.errors.phone}</div>
+              </>
+            ) : formik.touched.phone && !formik.errors.phone ? (
+              <Success className={css.success_icon} />
+            ) : null}
           </label>
 
-          <label className={css.label} htmlFor="skype">
+          <label
+            className={`${css.label} ${
+              formik.touched.skype && formik.errors.skype
+                ? css.errorLabel
+                : formik.touched.skype && !formik.errors.skype
+                ? css.successLabel
+                : ''
+            }`}
+            htmlFor="skype"
+          >
             <p>Skype</p>
             <input
-              className={css.input}
+              className={`${css.input} ${
+                formik.touched.skype && formik.errors.skype
+                  ? css.errorInput
+                  : formik.touched.skype && !formik.errors.skype
+                  ? css.successInput
+                  : ''
+              }`}
               type="text"
               id="skype"
               name="skype"
-              placeholder="Add a skype number"
-              value={formData.skype}
-              onChange={handleChange}
+              placeholder="Add a skype id"
+              value={formik.values.skype}
+              onChange={onChange}
             />
+            {formik.touched.skype && formik.errors.skype ? (
+              <>
+                <Error className={css.error_icon} />
+                <div className={css.errorMsg}>{formik.errors.skype}</div>
+              </>
+            ) : formik.touched.skype && !formik.errors.skype ? (
+              <Success className={css.success_icon} />
+            ) : null}
           </label>
         </div>
       </div>

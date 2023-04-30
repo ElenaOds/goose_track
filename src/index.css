@@ -22,6 +22,7 @@
   --active-calendar-color: #cae8ff;
   --normal-input-state: rgba(17, 17, 17, 0.15);
   --error-input-state: #e74a3b;
+  --error-msg: #db1414;
   --correct-input-state: #3cbc81;
   --hover-bgc-submit: #2b78ef;
 }

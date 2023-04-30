@@ -9,6 +9,7 @@ import { selectToken } from 'redux/auth/auth.selectors';
 import { PrivateRoute } from './AuthRouts/PrivateRoute';
 import { PublicRoute } from './AuthRouts/PublicRoute';
 import { Loading } from './Loading/Loading';
+import 'react-datepicker/dist/react-datepicker.css';
 
 const Home = lazy(() => import('pages/Home/Home'));
 const Account = lazy(() => import('pages/Account/Account'));
