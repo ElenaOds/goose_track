@@ -60,6 +60,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--second-bdg-color);
   color: var(--basic-text-color);
+  box-sizing: content-box;
 }
 
 code {

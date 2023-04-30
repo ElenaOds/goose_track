@@ -1,7 +1,7 @@
 .card{
     border-radius: 8px;
     background-color: var(--card-bgd-color);
-    height: 108px;
+    height: 112px;
     border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
