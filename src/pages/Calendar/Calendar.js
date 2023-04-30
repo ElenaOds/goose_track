@@ -17,7 +17,7 @@ const Calendar = () => {
     if (location.pathname === '/calendar') {
       navigate(`/calendar/month/${formattedCurrentDate}`);
     }
-  });
+  }, [formattedCurrentDate, navigate, location.pathname]);
 
   const doActiveDate = () => {
     setActivePage(false);
