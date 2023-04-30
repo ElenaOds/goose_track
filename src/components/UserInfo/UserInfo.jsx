@@ -8,6 +8,7 @@ import { ModalUserInfo } from './ModalUserInfo/ModalUserInfo';
 export const UserInfo = () => {
   const profile = useSelector(selectUser);
 
+
   const [showModal, setShowModal] = useState(false);
 
   const toggleModal = () => {
