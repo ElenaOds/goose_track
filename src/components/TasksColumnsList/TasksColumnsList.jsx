@@ -1,5 +1,7 @@
 import styles from './TasksColumnsList.module.css';
 import { ReactComponent as AddIcon } from '../../icons/addIcon.svg';
+import {AddTaskBtn} from 'components/AddTaskBtn/AddTaskBtn';
+import {UpDateTaskBtn} from '../upDateTaskBtn/upDateTaskBtn';
 
 const TasksColumnsList = () => {
   return (
@@ -9,28 +11,25 @@ const TasksColumnsList = () => {
           <div className={styles.container}>
             <p className={styles.title}>To do</p>
             <AddIcon />
-          </div>
-          <button className={styles.btn} type="button">
-            Add task
-          </button>
+          </div>         
+          <UpDateTaskBtn date={'2023-05-12'} id={'644d2b183459f2c60583fca2'}/>         
+          <AddTaskBtn  date={'2023-05-12'}/>   
         </li>
         <li className={styles.item}>
           <div className={styles.container}>
             <p className={styles.title}>In progress</p>
-            <AddIcon />
+            <AddIcon/>
           </div>
-          <button className={styles.btn} type="button">
-            Add task
-          </button>
+          <UpDateTaskBtn date={'2023-05-12'} id={'644d2b183459f2c60583fca2'}/>
+          <AddTaskBtn  date={'2023-05-12'}/>   
         </li>
         <li className={styles.item}>
           <div className={styles.container}>
             <p className={styles.title}>Done</p>
-            <AddIcon />
+            <AddIcon/>
           </div>
-          <button className={styles.btn} type="button">
-            Add task
-          </button>
+          <UpDateTaskBtn date={'2023-05-12'} id={'644d2b183459f2c60583fca2'}/>
+          <AddTaskBtn  date={'2023-05-12'}/>          
         </li>
       </ul>
     </>
