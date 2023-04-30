@@ -15,6 +15,7 @@ export const AddTaskBtn = ({ date, inColumnHeadBar }) => {
             Add task
           </>}
       </button>
+
       {isOpen && (<TaskModal onClose={() => setIsModalOpen(false)} date={date} />)}
     </>
   );

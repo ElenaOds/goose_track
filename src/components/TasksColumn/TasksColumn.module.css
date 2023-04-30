@@ -4,12 +4,19 @@
     flex-direction: column;
     border-radius: 8px;
     border: 1px solid #DCE3E5CC;
-    min-width: 280px;
     padding: 18px;
-    width: 335px;
-
-    @media screen and (min-width: 768px) {
-        width: 344px;
-
-    }
+    overflow: auto;
+    min-width: calc(100% - 40px);
 }
+
+  @media (min-width: 768px) {
+    .wrapper {
+        min-width: calc(50% - 46px);
+    }
+  }
+  
+  @media (min-width: 1440px) {
+    .wrapper {
+        min-width: calc(33.33% - 56px);
+    }
+  }
