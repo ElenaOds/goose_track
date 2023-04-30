@@ -6,12 +6,11 @@ import { ReactComponent as Burger } from '../../icons/menu.svg';
 import { ReactComponent as LogoHeader} from '../../icons/logoheader.svg';
 import PropTypes from 'prop-types';
 
-export const Header = ({isActivPage,toggleSidebar}) => {
+export const Header = ({isActivPage,toggleSidebar}) => {  
   const task=null;
   
   return (
-     <div className={styles.container}>
-      
+     <div className={styles.container}>      
       <div className={styles.header}> 
        <div className={styles.burger}>
             <button className={styles.button} type="button" onClick={toggleSidebar}>
@@ -32,10 +31,8 @@ export const Header = ({isActivPage,toggleSidebar}) => {
           </div>          
         </div>
           :<p className={styles.title}>Calendar</p>) 
-        : (<p className={styles.title} >User Profile</p>)}
-                   
+        : (<p className={styles.title} >User Profile</p>)}                   
       <div className={styles.flex}>
-
         <ThemeToggler />
         <UserInfo />
       </div> 

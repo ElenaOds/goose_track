@@ -1,6 +1,7 @@
 // import TaskToolbar from "components/TaskToolbar/TaskToolbar";
 
 import styles from './TaskColumnCard.module.css';
+import { UpDateTaskBtn } from 'components/upDateTaskBtn/upDateTaskBtn';
 
 const TaskColumnCard = (task) => {
     console.log(task, 'task');
@@ -8,7 +9,16 @@ const TaskColumnCard = (task) => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.card}>
-                <p className={styles.title}>Testsfjhgljskdhglsdjsfvlsdnflkvjnsldfknvlkdfjsnvlkjdfsnlvkjnsdffhglsjkdhfg</p>
+
+              /* <div className={styles.userpic}>P</div>
+                { <img className={styles.userpic} alt='userpic' src=''/> }
+                <p className={styles.title}>Test</p>
+                <div className={styles.toolbar_container} >
+                    <p className={styles.date}>12:44</p>
+                    <div className={styles.sort}>Low</div>
+                    <UpDateTaskBtn  id={'644d2aa23459f2c60583fc95'}/> */
+                    
+               <p className={styles.title}>Testsfjhgljskdhglsdjsfvlsdnflkvjnsldfknvlkdfjsnvlkjdfsnlvkjnsdffhglsjkdhfg</p>
                 <div className={styles.meta} >
                     <div className={styles.task_info}>
                         <div className={styles.userpic}>P</div>
@@ -17,6 +27,7 @@ const TaskColumnCard = (task) => {
                     </div>
                     {/* <TaskToolbar/> */}
                     <div>Toolbar</div>
+
                 </div>
             </div>
         </div>

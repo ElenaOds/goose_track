@@ -8,7 +8,7 @@ return (
     <div className={styles.wrapper}>
     <ColumnHeadBar columnTitle={columnTitle}/>
     {tasks && <ColumnsTasksList tasks={tasks}/>}
-    <AddTaskBtn/>
+    <AddTaskBtn date={'2023-05-30'}/>
     </div>
 )
 }
