@@ -1,0 +1,11 @@
+.card{
+    border-radius: 8px;
+    background-color: var(--card-bgd-color);
+    height: 108px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.toolbar_container {
+    display: flex;
+    justify-content: space-between;
+}

@@ -35,7 +35,9 @@ html[data-theme='dark'] {
   --basic-text-color: #ffffff;
   --input-text-color: #ffffff;
   --label-text-color: #616161;
-  --button-task:#3e85f3;
+  --add-task-button: #3E85F3;
+  --card-bgd-color: #171820;
+
 }
 
 html[data-theme='light'] {
@@ -46,7 +48,8 @@ html[data-theme='light'] {
   --basic-text-color: #13151a;
   --input-text-color: #616161;
   --label-text-color: #13151a;
-  --button-task:#e3f3ff;
+  --add-task-button: #E3F3FF;
+  --card-bgd-color: #F7F6F9;
 }
 
 body {
