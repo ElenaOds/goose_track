@@ -31,8 +31,7 @@
     margin-right: 18px;         
 }
 .checkbox{
-    margin-right: 6px;
-     
+    margin-right: 6px;     
 }
 
 
@@ -44,9 +43,10 @@
 }
 
 
-.button {    
+.button { 
+    display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;    
     margin-top: 30px;
     padding: 16px;
     width: 100%;
@@ -99,4 +99,5 @@
 
 .logo {
     margin-right: 10px;
+    stroke: white;
 }
