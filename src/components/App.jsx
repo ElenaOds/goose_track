@@ -42,7 +42,7 @@ const App = () => {
             <Route path="" element={<MainLayout />}>
               <Route path="/account" element={<Account />} />
               <Route path="/calendar" element={<Calendar />}>
-                <Route path="month/:currentDate" element={<ChosenMonth />} />
+                <Route path="month/:currentDate" element={<ChosenMonth  />} />
                 <Route path="day/:currentDay" element={<ChosenDay />} />
               </Route>
             </Route>
