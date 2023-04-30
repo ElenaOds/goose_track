@@ -31,9 +31,9 @@ export const TaskForm =({date,onClose})=> {
   return (
     <div  className={styles.container}>     
       <form className={styles.form} onSubmit={onSubmit}>         
-        <div className="">
+        <div className=''>
           <label className={styles.label} htmlFor='title'>
-            <p>Title</p>
+            <p>Title</p>            
           </label>
           <input          
             id='title'
@@ -79,7 +79,7 @@ export const TaskForm =({date,onClose})=> {
                   type='radio'
                   name='priority'
                   onChange={handleChange}                  
-                  className={styles.checkbox}               
+                  className={styles.checkbox1}                           
                 />
                 <span>Low</span>
               </div>
@@ -91,7 +91,7 @@ export const TaskForm =({date,onClose})=> {
                   type='radio'
                   name='priority'
                   onChange={handleChange}                  
-                  className={styles.checkbox}                 
+                  className={styles.checkbox2}                 
                 />            
                 <span>Medium</span>
               </div>
@@ -103,7 +103,7 @@ export const TaskForm =({date,onClose})=> {
                   type='radio'
                   name='priority'
                   onChange={handleChange}                  
-                  className={styles.checkbox}                 
+                  className={styles.checkbox3}                 
                 />            
                 <span>High</span>
               </div>
