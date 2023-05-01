@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import styles from './ModalUserInfo.module.css';
 import { NavLink } from 'react-router-dom/dist';
-import LogoutBtn from 'components/LogoutBtn/LogoutBtn';
 import { ReactComponent as IconUser } from '../../../icons/icon-user.svg';
+import { ReactComponent as IconLogout } from '../../../icons/icon-logout.svg';
 
 export const ModalUserInfo = ({ toggleModal, profile }) => {
   useEffect(() => {
@@ -26,7 +26,7 @@ export const ModalUserInfo = ({ toggleModal, profile }) => {
     }
   };
 
-  const name = profile;
+  const name = profile.split(' ')[0];
   const firstLetter = name[0].toLocaleUpperCase();
 
   return (
@@ -42,9 +42,10 @@ export const ModalUserInfo = ({ toggleModal, profile }) => {
             My Account
           </NavLink>
         </div>
-        <div className={styles.btContainer}>
-          <LogoutBtn />
-        </div>
+        <button className={styles.lgButton} type="button">
+          Log out
+          <IconLogout className={styles.lgButton_icon} />
+        </button>
       </div>
     </div>
   );

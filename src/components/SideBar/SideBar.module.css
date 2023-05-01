@@ -70,9 +70,14 @@
   }
 }
 
+.close {
+  stroke: var(--basic-text-color);
+}
+
 @media screen and (min-width: 1280px) {
   .close {
     display: none;
+    stroke: var(--basic-text-color);
   }
 }
 

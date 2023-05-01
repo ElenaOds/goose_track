@@ -1,7 +1,6 @@
 .wrapper {
-    overflow: scroll;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-
+  /* overflow: scroll; */
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
