@@ -26,7 +26,7 @@ export const Modal =({onClose,children})=> {
       <div className={styles.Backdrop}/>     
       <div className={styles.Overlay} onClick={handleClose}>
         <div className={styles.Modal}>                  
-          <p>{children}</p>
+          <div>{children}</div>
         </div>
       </div>      
     </>                      

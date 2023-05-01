@@ -9,11 +9,10 @@ import { selectTaskList } from 'redux/tasks/tasks.selectors';
 export const TaskFormUpDate =({id,onClose})=> {
   const dispatch = useDispatch(); 
   const TaskList = useSelector(selectTaskList); 
-  console.log(TaskList)
   const TaskNew={} 
  
-  for (let i=0; i<TaskList.length;i+=1){
-    if(TaskList[i].id===id){
+  for (let i=0; i<TaskList.length;i+=1){   
+    if(TaskList[i]._id===id){
       TaskNew.title=TaskList[i].title
       TaskNew.start=TaskList[i].start
       TaskNew.end=TaskList[i].end
@@ -35,16 +34,16 @@ export const TaskFormUpDate =({id,onClose})=> {
 
   const onSubmit = evt => {   
     evt.preventDefault();
-     const task={                     
+     const task={
+      id,                     
       task:{
         title:title,
         start:start,
         end:end,
         priority:priority
       }      
-    }  
-    console.log(task) 
-    dispatch(update(id,task));
+    }    
+    dispatch(update(task));
   }  
 
   return (
@@ -64,7 +63,7 @@ export const TaskFormUpDate =({id,onClose})=> {
             maxLength={250} 
             value={title}                
           />
-        </div>
+        </div>        
         <div className={styles.flex}>
           <div className={styles.start}>
           <label  className={styles.label} htmlFor='start'>
@@ -103,7 +102,7 @@ export const TaskFormUpDate =({id,onClose})=> {
                   onChange={handleChange}                  
                   className={styles.checkbox1}               
                 />
-                <span>Low</span>
+                <div>Low</div>
               </div>
             </label> 
             <label htmlFor='medium' className={styles.check}>          
@@ -115,7 +114,7 @@ export const TaskFormUpDate =({id,onClose})=> {
                   onChange={handleChange}                  
                   className={styles.checkbox2}                 
                 />            
-                <span>Medium</span>
+                <div>Medium</div>
               </div>
             </label>       
             <label htmlFor='high' className={styles.check} >
@@ -127,7 +126,7 @@ export const TaskFormUpDate =({id,onClose})=> {
                   onChange={handleChange}                  
                   className={styles.checkbox3}                 
                 />            
-                <span>High</span>
+                <div>High</div>
               </div>
             </label>          
         </div>     
