@@ -1,7 +1,7 @@
 // import TaskToolbar from "components/TaskToolbar/TaskToolbar";
 
 import styles from './TaskColumnCard.module.css';
-// import { UpDateTaskBtn } from 'components/upDateTaskBtn/upDateTaskBtn';
+import { UpDateTaskBtn } from 'components/upDateTaskBtn/upDateTaskBtn';
 
 const TaskColumnCard = (task) => {
     console.log(task, 'task');
@@ -26,7 +26,9 @@ const TaskColumnCard = (task) => {
                         <div className={styles.sort}>Low</div>
                     </div>
                     {/* <TaskToolbar/> */}
-                    <div>Toolbar</div>
+                    <div className={styles.toolbar}>
+                    <UpDateTaskBtn  id={'644d2aa23459f2c60583fc95'}/>
+                    </div>
 
                 </div>
             </div>
