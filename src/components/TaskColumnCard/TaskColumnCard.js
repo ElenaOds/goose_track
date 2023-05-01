@@ -28,7 +28,9 @@ const TaskColumnCard = task => {
             <div className={styles.sort}>Low</div>
           </div>
           <TaskToolbar />
+          <UpDateTaskBtn  id={'644d2aa23459f2c60583fc95'}/>
         </div>
+        
       </div>
     </div>
   );
