@@ -7,19 +7,18 @@ import { ReactComponent as LogoHeader} from '../../icons/logoheader.svg';
 import PropTypes from 'prop-types';
 import { selectTaskList } from 'redux/tasks/tasks.selectors';
 
-export const Header = ({isActivPage,toggleSidebar}) => { 
-  // ToDo переделать на получение даты в компонент
-  const date='2024-05-12T00:00:00.000Z';  
-
+export const Header = ({isActivPage,toggleSidebar}) => {   
+  const  date = new Date();
+  const  output = date.getFullYear()+'-'+ String(date.getMonth() + 1).padStart(2, '0') + '-'+ String(date.getDate()).padStart(2, '0')+'T00:00:00.000Z'
   const TaskListAll = useSelector(selectTaskList); 
   const TaskListDay=[];
- 
+
   for (let i=0; i<TaskListAll.length;i+=1){   
-    if(TaskListAll[i].date===date){
+    if(TaskListAll[i].date===output){
       TaskListDay.push(TaskListAll[i])
     }
   } 
-
+console.log( TaskListDay)
   return (
      <div className={styles.container}>      
       <div className={styles.header}> 
