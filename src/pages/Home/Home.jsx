@@ -45,7 +45,7 @@ const Home = () => {
             </div>
             <figure>
               <img
-                src="../../images/feature-calendar-mobile.jpg"
+                src="../../images/feature-calendar-mobile.jpeg"
                 alt="Calendar page of this app"
               />
             </figure>
@@ -91,52 +91,52 @@ const Home = () => {
           </li>
         </ul>
       </section>
-      <section >
+      <section>
         <h2 className={style.review_head}>REVIEWS</h2>
         <div className={style.review}>
           <div className={style.review_list}>
-          <div className={style.review_item}>
-            <img
-              className={style.review_img}
-              src="../../images/olena.jpg"
-              alt="foto reviewer"
-            />
-            <div>
-              <h4>Olena Doe</h4>
-              <img src="../../images/star.jpg" alt="star" />
-              <p className={style.review_text}>
-                GooseTrack is impressive, the calendar view and filter options
-                make it easy to stay organized and focused. Highly recommended.
-              </p>
+            <div className={style.review_item}>
+              <img
+                className={style.review_img}
+                src="../../images/olena.jpg"
+                alt="foto reviewer"
+              />
+              <div>
+                <h4>Olena Doe</h4>
+                <img src="../../images/star.jpg" alt="star" />
+                <p className={style.review_text}>
+                  GooseTrack is impressive, the calendar view and filter options
+                  make it easy to stay organized and focused. Highly
+                  recommended.
+                </p>
+              </div>
             </div>
+            <svg className={style.review_vector} aria-hidden="true">
+              <use href="../../images/vector.svg"></use>
+            </svg>
           </div>
-          <svg className={style.review_vector} aria-hidden="true">
-            <use href="../../images/vector.svg"></use>
-          </svg>
-        </div>
-        <div className={style.review_list}>
-          <div className={style.review_item_mobile}>
-            <img
-              className={style.review_img}
-              src="../../images/alexandr.jpg"
-              alt="foto reviewer"
-            />
-            <div>
-              <h4>Alexander Hubbard</h4>
-              <img src="../../images/star.jpg" alt="star" />
-              <p className={style.review_text}>
-                GooseTrack is incredibly helpful, the sidebar with account
-                management, calendar, and filter options make navigation
-                seamless. Great for staying organized.
-              </p>
+          <div className={style.review_list}>
+            <div className={style.review_item_mobile}>
+              <img
+                className={style.review_img}
+                src="../../images/alexandr.jpg"
+                alt="foto reviewer"
+              />
+              <div>
+                <h4>Alexander Hubbard</h4>
+                <img src="../../images/star.jpg" alt="star" />
+                <p className={style.review_text}>
+                  GooseTrack is incredibly helpful, the sidebar with account
+                  management, calendar, and filter options make navigation
+                  seamless. Great for staying organized.
+                </p>
+              </div>
             </div>
+            <svg className={style.review_vector} aria-hidden="true">
+              <use href="../../images/vector.svg"></use>
+            </svg>
           </div>
-          <svg className={style.review_vector} aria-hidden="true">
-            <use href="../../images/vector.svg"></use>
-          </svg>
         </div>
-        </div>
-        
       </section>
     </container>
   );

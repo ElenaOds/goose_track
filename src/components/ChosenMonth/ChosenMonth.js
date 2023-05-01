@@ -11,7 +11,6 @@ const ChosenMonth = () => {
   const [state] = useOutletContext();
 
   const [weeksList, setWeeksList] = useState([]);
-
   // const [month, setMonth] = useState(0); //! take out
   // const [currentDate, setCurrentDate] = useState(new Date());
 
