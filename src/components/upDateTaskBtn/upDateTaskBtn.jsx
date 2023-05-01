@@ -3,7 +3,7 @@ import { TaskModalUpDate } from '../TaskModalUpDate/TaskModalUpDate';
 import { ReactComponent as Pencil } from '../../icons/pencil-01.svg';
 import { useState } from 'react';
 
-export const UpDateTaskBtn = ({ id }) => {
+export const UpDateTaskBtn = ({ id, task }) => {
   const [isOpenModal, setIsTaskModalUpDate] = useState(false);
 
   return (
@@ -15,7 +15,11 @@ export const UpDateTaskBtn = ({ id }) => {
       />
       {/* </button> */}
       {isOpenModal && (
-        <TaskModalUpDate onClose={() => setIsTaskModalUpDate(false)} id={id} />
+        <TaskModalUpDate
+          onClose={() => setIsTaskModalUpDate(false)}
+          id={id}
+          task={task}
+        />
       )}
     </>
   );
