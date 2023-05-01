@@ -1,18 +1,22 @@
 import styles from './upDateTaskBtn.module.css';
-import {TaskModalUpDate} from "../TaskModalUpDate/TaskModalUpDate";
+import { TaskModalUpDate } from '../TaskModalUpDate/TaskModalUpDate';
 import { ReactComponent as Pencil } from '../../icons/pencil-01.svg';
-import { useState } from "react";
+import { useState } from 'react';
 
-export const  UpDateTaskBtn =({id})=> { 
-
-  const [isOpenModal,setIsTaskModalUpDate]= useState(false);
+export const UpDateTaskBtn = ({ id }) => {
+  const [isOpenModal, setIsTaskModalUpDate] = useState(false);
 
   return (
-    <div >       
-        <button className={styles.btn} onClick={() => setIsTaskModalUpDate(true)}>
-          <Pencil className={styles.logo} />           
-        </button> 
-      {isOpenModal && (<TaskModalUpDate onClose={() => setIsTaskModalUpDate(false)}  id={id}/>)}            
-    </div>  
-  );     
+    <>
+      {/* <button className={styles.btn} > */}
+      <Pencil
+        className={styles.logo}
+        onClick={() => setIsTaskModalUpDate(true)}
+      />
+      {/* </button> */}
+      {isOpenModal && (
+        <TaskModalUpDate onClose={() => setIsTaskModalUpDate(false)} id={id} />
+      )}
+    </>
+  );
 };
