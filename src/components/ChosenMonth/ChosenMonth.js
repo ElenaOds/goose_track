@@ -9,7 +9,7 @@ import { useOutletContext } from 'react-router-dom';
 
 const ChosenMonth = () => {
 
-  const [state, setState] = useOutletContext(); 
+  const [state] = useOutletContext(); 
   
 
    const [weeksList, setWeeksList] = useState([]);
