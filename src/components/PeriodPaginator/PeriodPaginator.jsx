@@ -1,37 +1,26 @@
-import { format, subDays } from 'date-fns';
+import { format, subDays,addDays } from 'date-fns';
 import { useState } from 'react';
 import { ReactComponent as IconArrowRight } from '../../icons/icon-arrow-right.svg';
 import { ReactComponent as IconArrowLeft } from '../../icons/icon-arrow-left.svg';
 
 import styles from './PeriodPaginator.module.css';
-// import { useNavigate } from 'react-router-dom';
 
-export const PeriodPaginator = ({ isActivePage ,handleLeftClick,handleRightClick}) => {
-  const [currentDate, setCurrentDate] = useState(new Date());
+export const PeriodPaginator = ({ isActivePage ,handleLeftClick,handleRightClick,currentDate, setState}) => {
   const [activeBtn, setActiveBtn] = useState('');
 
-  // const navigate = useNavigate();
 
-  // const handleNextMonth = () => {
-  //   setActiveBtn('next');
-  //   setCurrentDate(addMonths(currentDate, 1));
-
-  //   console.log(format(currentDate, 'ddMMMMyyyy'));
-  // };
-
-  // const handlePrevMonth = () => {
-  //   setActiveBtn('prev');
-  //   handleLeftClick(); //!
-  // };
 
   const handleNextDay = event => {
     setActiveBtn('next');
-    // handleRightClick(); //!
+    setState(prevState => ({...prevState, currentDate: addDays(currentDate, 1)}));
+
+    console.log('click');
   };
 
   const handlePrevDay = () => {
     setActiveBtn('prev');
-    setCurrentDate(subDays(currentDate, 1));
+    setState(prevState => ({...prevState, currentDate: subDays(currentDate, 1)}));
+    // setCurrentDate(subDays(currentDate, 1));
   };
 
   return (
