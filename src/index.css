@@ -42,6 +42,8 @@ html[data-theme='dark'] {
   --card-bgd-color: #171820;
   --user-nav-btn-text: #ffffff;
   --user-nav-btn-bg: #3e85f3;
+  --user-name-color: #ffffff;
+  --user-form-lable-color: rgba(250, 250, 250, 0.3);
 }
 
 html[data-theme='light'] {
@@ -58,6 +60,8 @@ html[data-theme='light'] {
   --card-bgd-color: #f7f6f9;
   --user-nav-btn-text: #3e85f3;
   --user-nav-btn-bg: #e3f3ff;
+  --user-name-color: #343434;
+  --user-form-lable-color: #616161;
 }
 
 body {
