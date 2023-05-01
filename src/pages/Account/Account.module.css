@@ -1,20 +1,19 @@
 .container {
   height: 100%;
   padding: 0 30px 50px 30px;
-  background-color:var(--mobile-bdg-color); 
+  background-color: var(--mobile-bdg-color);
 }
 
 @media screen and (min-width: 768px) {
   .container {
-    padding-left: 32px;
-    padding-right: 32px;
-    background-color:var(--mobile-bdg-color);
+    padding: 0 32px;
+    background-color: var(--mobile-bdg-color);
   }
 }
 
 @media screen and (min-width: 1280px) {
   .container {
-    margin-left: 289px; 
-    background-color: var(--second-bdg-color);   
+    margin-left: 289px;
+    background-color: var(--second-bdg-color);
   }
 }
