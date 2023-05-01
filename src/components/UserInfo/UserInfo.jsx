@@ -2,12 +2,12 @@ import { useSelector } from 'react-redux';
 import styles from './UserInfo.module.css';
 import { useState } from 'react';
 import { ModalUserInfo } from './ModalUserInfo/ModalUserInfo';
-import {selectUser} from 'redux/user/user.selectors';
+import {selectUser} from 'redux/auth/auth.selectors';
 
 export const UserInfo = () => { 
   const [showModal, setShowModal] = useState(false);
   const profile = useSelector(selectUser);  
-  const name = profile.user.name;
+  const name = profile.name;
   const firstLetter = name[0].toLocaleUpperCase();
   // ToDo
   // const url= profile.user.url;
