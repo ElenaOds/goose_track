@@ -17,23 +17,14 @@
   border-radius: 8px;
   top: 15px;
   right: 15px;
-  
-  padding: 14px 53px 18px 18px;
-
 }
 
 .inner {
   display: flex;
   flex-direction: row;
-  /* padding: 14px 53px 18px 18px; */
+  padding: 14px 0px 18px 18px;
   align-items: center;
   margin-bottom: 18px;
-}
-
-@media screen and (min-width: 768px) {
-  .inner {
-    padding: 14px 26px 18px 18px;
-  }
 }
 
 .avatar {
