@@ -28,7 +28,7 @@
 @media screen and (min-width: 1280px) {
   .list {
     padding: 10px 46px 10px 46px;
-    gap: 128px;
+    gap: 100px;
     margin-top: 32px;
     margin-bottom: 16px;
   }
