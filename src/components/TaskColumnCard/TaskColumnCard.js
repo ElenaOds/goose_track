@@ -3,7 +3,7 @@ import { TaskToolbar } from 'components/TaskToolbar/TaskToolbar';
 
 import styles from './TaskColumnCard.module.css';
 
-const TaskColumnCard = ({ title, _id, priority, firstLetter, task }) => { 
+const TaskColumnCard = ({ title, id, priority, firstLetter, task }) => { 
 
 console.log(priority);
   return (
