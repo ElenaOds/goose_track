@@ -1,17 +1,29 @@
-import { format } from 'date-fns';
+import { addMonths, format } from 'date-fns';
 import { useEffect, useState, Suspense } from 'react';
 import { useNavigate, Outlet, useLocation } from 'react-router-dom';
 import CalendarToolbar from '../../components/CalendarToolbar/CalendarToolbar';
 import styles from './Calendar.module.css';
 
 const Calendar = () => {
-  const [isActivePage, setActivePage] = useState(false);
+  const [state, setState] = useState({
+    isActivePage: false,
+    currentDate: new Date(),
+    month: 0
+  });
+ 
+
+  const handleLeftClick = () => {
+    setState(prevState => ({...prevState, currentDate: addMonths(prevState.currentDate, -1), month: prevState.month - 1}));
+    
+  }
+  const handleRightClick = () => {
+    setState(prevState => ({...prevState, currentDate: addMonths(prevState.currentDate, 1), month: prevState.month + 1}));
+  }
 
   const navigate = useNavigate();
   const location = useLocation();
 
-  const currentDate = Date.now();
-  const formattedCurrentDate = format(currentDate, 'MMMMu');
+  const formattedCurrentDate = format(state.currentDate, 'MMMMu');
 
   useEffect(() => {
     if (location.pathname === '/calendar') {
@@ -20,21 +32,23 @@ const Calendar = () => {
   }, [formattedCurrentDate, navigate, location.pathname]);
 
   const doActiveDate = () => {
-    setActivePage(false);
+    setState(prevState => ({...prevState, isActivePage: false}));
   };
   const doActiveMonth = () => {
-    setActivePage(true);
+    setState(prevState => ({...prevState, isActivePage: true}));
   };
 
   return (
     <div className={styles.container}>
       <CalendarToolbar
-        isActivePage={isActivePage}
+        handleLeftClick={handleLeftClick}
+        handleRightClick={handleRightClick}
+        isActivePage={state.isActivePage}
         doActiveMonth={doActiveMonth}
         doActiveDate={doActiveDate}
       />
       <Suspense fallback={null}>
-        <Outlet contex={{ isActivePage, doActiveMonth, doActiveDate }} />
+        <Outlet context={[state]} />
       </Suspense>
     </div>
   );

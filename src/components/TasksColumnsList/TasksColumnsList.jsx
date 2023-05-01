@@ -17,7 +17,22 @@ const TasksColumnsList = () => {
         taskTitle: 'Sed do eiusmod tempor',
         taskTime: '03:15',
         taskSort: 'medium'
-      }
+      },
+      {
+        taskTitle: 'Sed do eiusmod tempor',
+        taskTime: '03:15',
+        taskSort: 'medium'
+      },
+      {
+        taskTitle: 'Sed do eiusmod tempor',
+        taskTime: '03:15',
+        taskSort: 'medium'
+      },
+      {
+        taskTitle: 'Sed do eiusmod tempor',
+        taskTime: '03:15',
+        taskSort: 'medium'
+      },
     ]
   },
   {

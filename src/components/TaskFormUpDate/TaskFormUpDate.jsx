@@ -1,24 +1,32 @@
-
 import styles  from './TaskFormUpDate.module.css';
-import {useDispatch} from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { ReactComponent as Close } from '../../icons/x-close.svg';
 import { ReactComponent as Pencil } from '../../icons/pencil-01.svg';
 import {update} from '../../redux/tasks/tasks.operations';
+import { selectTaskList } from 'redux/tasks/tasks.selectors';
 
-
-export const TaskFormUpDate =({date,id,onClose})=> {  
-  const dispatch = useDispatch();  
+export const TaskFormUpDate =({id,onClose})=> {
+  const dispatch = useDispatch(); 
+  const TaskList = useSelector(selectTaskList); 
+  console.log(TaskList)
+  const TaskNew={} 
  
-  const [title,setIsTitle]=useState('');
-  const [start,setIsStart]=useState('');
-  const [end,setIsEnd]=useState('');
-  const [priority,setIsPriority]=useState('');  
-
+  for (let i=0; i<TaskList.length;i+=1){
+    if(TaskList[i].id===id){
+      TaskNew.title=TaskList[i].title
+      TaskNew.start=TaskList[i].start
+      TaskNew.end=TaskList[i].end
+      TaskNew.priority=TaskList[i].priority
+    }
+  } 
+  const [title,setIsTitle]=useState(TaskNew.title);
+  const [start,setIsStart]=useState(TaskNew.start);
+  const [end,setIsEnd]=useState(TaskNew.end);
+  const [priority,setIsPriority]=useState(TaskNew.priority);
 
   const handleChange = event => { 
     const { name,id, value } = event.target;
-
     if(name==='title'){setIsTitle(value)};
     if(name==='start'){setIsStart(value)};
     if(name==='end'){setIsEnd(value)};
@@ -27,7 +35,16 @@ export const TaskFormUpDate =({date,id,onClose})=> {
 
   const onSubmit = evt => {   
     evt.preventDefault();
-    dispatch(update(id,{title,start,end,priority,date}));
+     const task={                     
+      task:{
+        title:title,
+        start:start,
+        end:end,
+        priority:priority
+      }      
+    }  
+    console.log(task) 
+    dispatch(update(id,task));
   }  
 
   return (
@@ -44,7 +61,8 @@ export const TaskFormUpDate =({date,id,onClose})=> {
             placeholder="Enter text"
             onChange={handleChange}                  
             className={styles.input}          
-            maxLength={250}                 
+            maxLength={250} 
+            value={title}                
           />
         </div>
         <div className={styles.flex}>
@@ -57,7 +75,8 @@ export const TaskFormUpDate =({date,id,onClose})=> {
             type='time'
             name='start' 
             onChange={handleChange}                             
-            className={styles.input}                       
+            className={styles.input} 
+            value={start}                        
           />
         </div>
         <div className="">
@@ -69,7 +88,8 @@ export const TaskFormUpDate =({date,id,onClose})=> {
             type='time'
             name='end' 
             onChange={handleChange}                                
-            className={styles.input}                       
+            className={styles.input} 
+            value={end}                      
           />
         </div>
         </div> 
@@ -81,7 +101,7 @@ export const TaskFormUpDate =({date,id,onClose})=> {
                   type='radio'
                   name='priority'
                   onChange={handleChange}                  
-                  className={styles.checkbox}               
+                  className={styles.checkbox1}               
                 />
                 <span>Low</span>
               </div>
@@ -93,7 +113,7 @@ export const TaskFormUpDate =({date,id,onClose})=> {
                   type='radio'
                   name='priority'
                   onChange={handleChange}                  
-                  className={styles.checkbox}                 
+                  className={styles.checkbox2}                 
                 />            
                 <span>Medium</span>
               </div>
@@ -105,7 +125,7 @@ export const TaskFormUpDate =({date,id,onClose})=> {
                   type='radio'
                   name='priority'
                   onChange={handleChange}                  
-                  className={styles.checkbox}                 
+                  className={styles.checkbox3}                 
                 />            
                 <span>High</span>
               </div>

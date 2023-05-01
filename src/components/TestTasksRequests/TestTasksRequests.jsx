@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { create, deleteItem, get, update } from 'redux/tasks/tasks.operations';
 import { selectTaskList } from 'redux/tasks/tasks.selectors';
+import { getUser, updateUser } from 'redux/user/user.operations';
 
 export const TestTaskRequests = () => {
   const dispatch = useDispatch();
@@ -62,6 +63,22 @@ export const TestTaskRequests = () => {
     dispatch(deleteItem(id));
   };
 
+  const handleGetUser = () => {
+    console.log('handleGetUser');
+
+    dispatch(getUser());
+  };
+
+  const handleUpdateUser = () => {
+    console.log('handleUpdateUser');
+
+    const updatedUser = {
+      name: 'Updated Name',
+      birthday: '15-04-1999',
+    };
+
+    dispatch(updateUser(updatedUser));
+  };
   return (
     <>
       <h4>TEST REQUESTS FOR TASKS</h4>
@@ -77,6 +94,12 @@ export const TestTaskRequests = () => {
       </button>
       <button type="button" onClick={handleDelete}>
         Delete task
+      </button>
+      <button type="button" onClick={handleGetUser}>
+        Get User Info
+      </button>
+      <button type="button" onClick={handleUpdateUser}>
+        Update User Info
       </button>
     </>
   );

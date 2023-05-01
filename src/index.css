@@ -25,11 +25,14 @@
   --error-msg: #db1414;
   --correct-input-state: #3cbc81;
   --hover-bgc-submit: #2b78ef;
+  --task-sorting-button: #F7F6F9;
+
 }
 
 html[data-theme='dark'] {
   --basic-bgd-color: #13151a;
   --second-bdg-color: #13151a;
+  --mobile-bdg-color:#13151a;
   --calendar-bdg-color: #21222c;
   --input-bdg-color: #13151a;
   --basic-text-color: #ffffff;
@@ -43,6 +46,7 @@ html[data-theme='dark'] {
 html[data-theme='light'] {
   --basic-bgd-color: #ffffff;
   --second-bdg-color: #eaeaea;
+  --mobile-bdg-color:#F7F6F9;
   --calendar-bdg-color: #ffffff;
   --input-bdg-color: #f7f7f7;
   --basic-text-color: #13151a;
@@ -60,6 +64,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--second-bdg-color);
   color: var(--basic-text-color);
+  box-sizing: content-box;
 }
 
 code {

@@ -1,16 +1,15 @@
 .btn {
   cursor: pointer;
-  /* margin: 15px;   */
   border: none;
   background-color: rgba(0, 0, 0, 0);
 }
 
-.logo {
+.icon {
   height: 18px;
   stroke: var(--basic-text-color);
   transition: linear 0.3s;
 }
-.logo:hover {
+.icon:hover {
   cursor: pointer;
   stroke: var(--button-bgd-color);
 }

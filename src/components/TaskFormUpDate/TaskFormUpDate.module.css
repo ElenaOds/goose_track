@@ -4,21 +4,25 @@
     background-color: var(--basic-bgd-color);
     font-size:14px;
     font-weight: 600;
-    line-height: 18px;
+    line-height: 18px;  
+}
+.div{
+    width: 100%;
 }
 .flex{
     display: flex;
     margin-top: 18px;
 }
 .start{
-    margin-right: 14px;
+    margin-right: 40px;
 }
 .label{
+    width: 100%;
     color: var(--label-text-color);
     text-align: left;
 }
 .input{
-    width: 100%;
+    width: 95%;
     padding: 14px;
     padding-left: 18px;
     margin-top: 8px;
@@ -39,7 +43,8 @@
     position: absolute;
     top:-22px;
     right:-5px;
-    stroke:var(--basic-text-color)
+    stroke:var(--basic-text-color);
+    cursor: pointer;
 }
 
 
@@ -68,30 +73,46 @@
     cursor: pointer;
 }
 
-/* .btn_cansel{
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    margin-left: 14px;
-    padding: 16px;
-    width: 100%;
-    cursor: pointer;
+input[type='radio'] {
+    position: relative;    
+    appearance: none;
+    margin-right: 10px;
+    margin-left: 5px;  
+}
 
-    border: 2px solid var(--button-bgd-color);
-    background: white;
-    box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
-    border-radius: 8px;
+input[type='radio']::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);        
+  }
 
-    Font-family: 'Inter';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 24px;
-    letter-spacing: -0.02em;
-    color:black;
-
-    cursor: pointer;
-} */
+  input.checkbox1[type='radio']::before {
+    background-color:   #72C2F8;
+  }
+  input.checkbox2[type='radio']::before {
+    background-color:   #F3B249;
+  }
+  input.checkbox3[type='radio']::before {
+    background-color:   #EA3D65;
+  }
+  
+  input[type='radio']:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: dodgerblue;
+    transform: translate(-50%, -50%);
+    visibility: visible;
+  }
 
 .button:disabled {
     opacity: 0.35;
