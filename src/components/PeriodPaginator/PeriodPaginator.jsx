@@ -2,25 +2,27 @@ import { format, subDays,addDays } from 'date-fns';
 import { useState } from 'react';
 import { ReactComponent as IconArrowRight } from '../../icons/icon-arrow-right.svg';
 import { ReactComponent as IconArrowLeft } from '../../icons/icon-arrow-left.svg';
-
 import styles from './PeriodPaginator.module.css';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export const PeriodPaginator = ({ isActivePage ,handleLeftClick,handleRightClick,currentDate, setState}) => {
   const [activeBtn, setActiveBtn] = useState('');
 
-
-
+  const navigate = useNavigate()
+  const params = useParams()
+  
   const handleNextDay = event => {
     setActiveBtn('next');
     setState(prevState => ({...prevState, currentDate: addDays(currentDate, 1)}));
-
-    console.log('click');
+    navigate(`/calendar/day/${format(currentDate, 'ddMMMyyyy')}`)
+    
   };
 
   const handlePrevDay = () => {
     setActiveBtn('prev');
     setState(prevState => ({...prevState, currentDate: subDays(currentDate, 1)}));
-    // setCurrentDate(subDays(currentDate, 1));
+    navigate(`/calendar/day/${format(currentDate, 'ddMMMyyyy')}`)
+
   };
 
   return (
@@ -28,7 +30,7 @@ export const PeriodPaginator = ({ isActivePage ,handleLeftClick,handleRightClick
       {isActivePage ? (
         <>
           <div className={styles.name_container}>
-            <h1 className={styles.name}>{format(currentDate, 'MMMM Y')}</h1>
+            <h1 className={styles.name}>{format(new Date(params.currentDate), 'd MMM yyyy')}</h1>
           </div>
           <div className={styles.buttons_container}>
             <button
@@ -63,7 +65,7 @@ export const PeriodPaginator = ({ isActivePage ,handleLeftClick,handleRightClick
       ) : (
         <>
           <div className={styles.name_container}>
-            <h1 className={styles.name}>{format(currentDate, 'd MMMM Y')}</h1>
+            <h1 className={styles.name}>{format(new Date(currentDate), 'd MMM yyyy')}</h1>
           </div>
           <div className={styles.buttons_container}>
             <button
