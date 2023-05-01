@@ -3,7 +3,7 @@
   flex-direction: row;
   overflow: auto;
   gap: 16px;
-  max-height: 54vh;
+  max-height: 58vh;
 
   @media (min-width: 1280px) {
 

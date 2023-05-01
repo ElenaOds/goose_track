@@ -12,27 +12,6 @@
 }
 
   .circle {
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    border: 2px solid var(--basic-text-color);
-    background-color: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    stroke: var(--basic-text-color);
   }
   
-  .circle::before,
-  .circle::after {
-    content: '';
-    width: 10px;
-    height: 2px;
-    border-radius: 8px;
-    background-color: var(--basic-text-color);
-    position: absolute;
-  }
-  
-  .circle::before {
-    transform: rotate(90deg);
-  }
