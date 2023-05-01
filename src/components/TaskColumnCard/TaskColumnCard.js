@@ -25,7 +25,7 @@ const TaskColumnCard = task => {
             {/* <img className={styles.userpic} alt='userpic' src=''/> */}
             <div className={styles.sort}>Low</div>
           </div>
-          <TaskToolbar />
+          <TaskToolbar id={'644d2aa23459f2c60583fc95'}/>
         </div>
       </div>
     </div>
