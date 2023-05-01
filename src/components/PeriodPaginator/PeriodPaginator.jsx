@@ -30,7 +30,7 @@ export const PeriodPaginator = ({ isActivePage ,handleLeftClick,handleRightClick
       {isActivePage ? (
         <>
           <div className={styles.name_container}>
-            <h1 className={styles.name}>{format(new Date(params.currentDate), 'd MMM yyyy')}</h1>
+            <h1 className={styles.name}>{format(new Date(params.currentDate), ' MMM yyyy')}</h1>
           </div>
           <div className={styles.buttons_container}>
             <button
