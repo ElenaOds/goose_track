@@ -36,7 +36,6 @@ const ChosenMonth = () => {
   // }
   return (
     <div className={styles.container}>
-      <p>Chosen month</p>
       <MonthCalendarHead />
       <CalendarTable weeksList={weeksList} />
     </div>
