@@ -46,6 +46,8 @@ const Calendar = () => {
         isActivePage={state.isActivePage}
         doActiveMonth={doActiveMonth}
         doActiveDate={doActiveDate}
+        currentDate = {state.currentDate}
+        setState = {setState}
       />
       <Suspense fallback={null}>
         <Outlet context={[state]} />
