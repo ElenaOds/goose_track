@@ -1,61 +1,23 @@
 import TasksColumn from "components/TasksColumn/TasksColumn";
 import styles from './TasksColumnsList.module.css';
+import { useSelector } from "react-redux";
+import { selectTaskList } from "redux/tasks/tasks.selectors";
+
+
 
 
 
 const TasksColumnsList = () => {
-  const tasks = [{
-    name: 'To do', 
-    tasks: [
-      {
-    taskTitle: 'Lorem ipsum', taskTime: '00:00', taskSort: 'medium' }, { taskTitle: 'Dolor sit amet', taskTime: '01:30', taskSort: 'high' }]
-  },
-  {
-    name: 'In progress',
-    tasks: [
-      {
-        taskTitle: 'Sed do eiusmod tempor',
-        taskTime: '03:15',
-        taskSort: 'medium'
-      },
-      {
-        taskTitle: 'Sed do eiusmod tempor',
-        taskTime: '03:15',
-        taskSort: 'medium'
-      },
-      {
-        taskTitle: 'Sed do eiusmod tempor',
-        taskTime: '03:15',
-        taskSort: 'medium'
-      },
-      {
-        taskTitle: 'Sed do eiusmod tempor',
-        taskTime: '03:15',
-        taskSort: 'medium'
-      },
-    ]
-  },
-  {
-    name: 'Done',
-    tasks: [
-      {
-        taskTitle: 'Ut enim ad minim veniam',
-        taskTime: '04:00',
-        taskSort: 'high'
-      },
-      {
-        taskTitle: 'Quis nostrud exercitation',
-        taskTime: '05:30',
-        taskSort: 'low'
-      }
-    ]
-  }
-  ];
-  const columns = tasks.map(task => (
+
+  const user_tasks = useSelector(selectTaskList);
+
+  const columnTitles = ['To do', 'In progress', 'Done'];
+
+  const columns = columnTitles.map(title => (
     <TasksColumn 
-      key={task.name} 
-      columnTitle={task.name} 
-      tasks={task.tasks} 
+      key={title} 
+      columnTitle={title} 
+      tasks={user_tasks.filter(task => task.column === title)} 
     />
   ));
 

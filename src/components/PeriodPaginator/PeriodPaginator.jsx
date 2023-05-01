@@ -41,7 +41,7 @@ export const PeriodPaginator = ({
         <>
           <div className={styles.name_container}>
             <h1 className={styles.name}>
-              {format(new Date(params.currentDate), 'd MMM yyyy')}
+              {format(new Date(params.currentDate), ' MMM yyyy')}
             </h1>
           </div>
           <div className={styles.buttons_container}>

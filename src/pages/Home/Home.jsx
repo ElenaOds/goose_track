@@ -5,7 +5,7 @@ import style from './Home.module.css';
 const Home = () => {
   const location = useLocation();
   return (
-    <container className={style.container}>
+    <div className={style.container}>
       <section className={style.hero}>
         <GooseLogo className={style.logo} />
         <h1 className={style.heading}>
@@ -138,7 +138,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-    </container>
+    </div>
   );
 };
 
