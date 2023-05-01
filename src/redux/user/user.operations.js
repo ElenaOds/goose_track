@@ -14,7 +14,7 @@ export const getUser = createAsyncThunk('user/get', async thunkAPI => {
 });
 
 export const updateUser = createAsyncThunk(
-  'tasks/update',
+  'user/update',
   async (updatedUser, thunkAPI) => {
     try {
       const { data } = await updateUserInfo(updatedUser);

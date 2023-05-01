@@ -1,4 +1,4 @@
-.form {
+ .form {
   position: relative;
   display: flex;
   align-items: center;
@@ -126,12 +126,12 @@
   border: 1px solid var(--correct-input-state);
 }
 
-/* .chevron_icon {
+.chevron_icon {
   position: absolute;
   right: 18px;
   bottom: 14px;
-} */
-
+} 
+ 
 .button {
   height: 48px;
   width: 100%;
@@ -209,4 +209,4 @@
   .column {
     gap: 50px 0;
   }
-}
+}  

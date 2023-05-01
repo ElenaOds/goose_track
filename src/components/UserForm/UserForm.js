@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectUser } from 'redux/user/user.selectors';
-import { updateUser } from 'redux/user/user.operations';
+import { selectUser } from '../../redux/user/user.selectors';
+import { updateUser } from '../../redux/user/user.operations';
 import { useFormik } from 'formik';
 import UserFormSchema from './UserFormSchema';
 import DatePicker from 'react-datepicker';
@@ -14,7 +14,6 @@ import css from './UserForm.module.css';
 
 const UserForm = () => {
   const dispatch = useDispatch();
-
   const {
     user: { userPhoto, name, birthday, email, phone, skype },
   } = useSelector(selectUser);
@@ -45,11 +44,11 @@ const UserForm = () => {
   const formik = useFormik({
     initialValues: {
       userPhoto: '',
-      name: formData.name,
-      birthday: formattedDate || new Date(),
+      name: formData.name ?? '',
+      birthday: birthday ?? '',
       email: formData.email,
-      phone: formData.phone,
-      skype: formData.skype,
+      phone: formData.phone ?? '',
+      skype: formData.skype ?? '',
     },
     validationSchema: UserFormSchema,
     validateOnChange: true,
@@ -77,6 +76,7 @@ const UserForm = () => {
   };
 
   return (
+  
     <form className={css.form} onSubmit={formik.handleSubmit}>
       <div className={css.userPhoto_container}>
         <input
@@ -169,7 +169,7 @@ const UserForm = () => {
               }`}
               id="birthday"
               name="birthday"
-              selected={formik.values.birthday}
+              selected={formik.values.birthday.toDate}
               maxDate={new Date()}
               onChange={onChangeDatePicker}
               calendarStartDay={1}
