@@ -3,7 +3,6 @@ import { TaskToolbar } from 'components/TaskToolbar/TaskToolbar';
 import styles from './TaskColumnCard.module.css';
 
 const TaskColumnCard = task => {
-  console.log(task, 'task');
 
   return (
     <div className={styles.wrapper}>

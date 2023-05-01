@@ -1,9 +1,14 @@
 import TasksColumn from "components/TasksColumn/TasksColumn";
 import styles from './TasksColumnsList.module.css';
+import { useSelector } from "react-redux";
+import {selectUser} from 'redux/user/user.selectors';
+
 
 
 
 const TasksColumnsList = () => {
+  const profile = useSelector(selectUser);  
+  console.log(profile,"profile");
   const tasks = [{
     name: 'To do', 
     tasks: [
