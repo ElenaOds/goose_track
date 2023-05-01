@@ -63,9 +63,9 @@ a, a:visited, a:hover, a:active {
     padding: 12px;
     gap: 8px;
 
-    color: var(--button-bgd-color)!important;
+    color: var(--user-nav-btn-text)!important;
 
-    background: var(--task-button-color);
+    background: var(--user-nav-btn-bg);
     border-radius: 8px;
 }
 
@@ -75,8 +75,8 @@ a, a:visited, a:hover, a:active {
 }
 
 .active {
-    background: var(--task-button-color);
-    stroke: var(--button-bgd-color);
+    
+    stroke: var(--user-nav-btn-text);
     margin-right: 10px;
 }
 
