@@ -40,6 +40,8 @@ html[data-theme='dark'] {
   --label-text-color: #616161;
   --add-task-button: #3E85F3;
   --card-bgd-color: #171820;
+  --user-nav-btn-text: #ffffff;
+  --user-nav-btn-bg: #3E85F3;
 
 }
 
@@ -54,6 +56,8 @@ html[data-theme='light'] {
   --label-text-color: #13151a;
   --add-task-button: #E3F3FF;
   --card-bgd-color: #F7F6F9;
+  --user-nav-btn-text: #3E85F3;
+  --user-nav-btn-bg: #E3F3FF;
 }
 
 body {
