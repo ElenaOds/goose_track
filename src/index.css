@@ -20,44 +20,44 @@
   --low-priority-bgd: #ceeefd;
   --task-button-color: #e3f3ff;
   --active-calendar-color: #cae8ff;
-  --normal-input-state: rgba(17, 17, 17, 0.15);
   --error-input-state: #e74a3b;
   --error-msg: #db1414;
   --correct-input-state: #3cbc81;
   --hover-bgc-submit: #2b78ef;
-  --task-sorting-button: #F7F6F9;
-
+  --task-sorting-button: #f7f6f9;
+  --datepicker-line: rgba(255, 255, 255, 0.2);
 }
 
 html[data-theme='dark'] {
   --basic-bgd-color: #13151a;
   --second-bdg-color: #13151a;
-  --mobile-bdg-color:#13151a;
+  --mobile-bdg-color: #13151a;
   --calendar-bdg-color: #21222c;
+  --normal-input-state: rgba(255, 255, 255, 0.15);
   --input-bdg-color: #13151a;
   --basic-text-color: #ffffff;
   --input-text-color: #ffffff;
   --label-text-color: #616161;
-  --add-task-button: #3E85F3;
+  --add-task-button: #3e85f3;
   --card-bgd-color: #171820;
   --user-nav-btn-text: #ffffff;
-  --user-nav-btn-bg: #3E85F3;
-
+  --user-nav-btn-bg: #3e85f3;
 }
 
 html[data-theme='light'] {
   --basic-bgd-color: #ffffff;
   --second-bdg-color: #eaeaea;
-  --mobile-bdg-color:#F7F6F9;
+  --mobile-bdg-color: #f7f6f9;
   --calendar-bdg-color: #ffffff;
+  --normal-input-state: rgba(17, 17, 17, 0.15);
   --input-bdg-color: #f7f7f7;
   --basic-text-color: #13151a;
   --input-text-color: #616161;
   --label-text-color: #13151a;
-  --add-task-button: #E3F3FF;
-  --card-bgd-color: #F7F6F9;
-  --user-nav-btn-text: #3E85F3;
-  --user-nav-btn-bg: #E3F3FF;
+  --add-task-button: #e3f3ff;
+  --card-bgd-color: #f7f6f9;
+  --user-nav-btn-text: #3e85f3;
+  --user-nav-btn-bg: #e3f3ff;
 }
 
 body {
