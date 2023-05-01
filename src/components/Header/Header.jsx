@@ -2,13 +2,24 @@ import { ThemeToggler } from '../ThemeToggler/ThemeToggler';
 import { UserInfo } from '../UserInfo/UserInfo';
 import styles from './Header.module.css';
 import { ReactComponent as Burger } from '../../icons/menu.svg';
-
+import { useSelector} from 'react-redux';
 import { ReactComponent as LogoHeader} from '../../icons/logoheader.svg';
 import PropTypes from 'prop-types';
+import { selectTaskList } from 'redux/tasks/tasks.selectors';
 
-export const Header = ({isActivPage,toggleSidebar}) => {  
-  const task=null;
-  
+export const Header = ({isActivPage,toggleSidebar}) => { 
+  // ToDo переделать на получение даты в компонент
+  const date='2024-05-12T00:00:00.000Z';  
+
+  const TaskListAll = useSelector(selectTaskList); 
+  const TaskListDay=[];
+ 
+  for (let i=0; i<TaskListAll.length;i+=1){   
+    if(TaskListAll[i].date===date){
+      TaskListDay.push(TaskListAll[i])
+    }
+  } 
+
   return (
      <div className={styles.container}>      
       <div className={styles.header}> 
@@ -18,7 +29,7 @@ export const Header = ({isActivPage,toggleSidebar}) => {
           </button>   
         </div>        
       {isActivPage === false 
-      ?( task===null
+      ?( TaskListDay.length===0
         ?<div>
           <div className={styles.warning}>
             <LogoHeader className={styles.logo_header} /> 
