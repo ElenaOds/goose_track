@@ -1,9 +1,6 @@
-// import { format } from 'date-fns';
-// import { useEffect, useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
 import DayCalendarHead from 'components/DayCalendarHead/DayCalendarHead';
 import styles from './ChosenDay.module.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import TasksColumnsList from 'components/TasksColumnsList/TasksColumnsList';
 import { format, parse } from 'date-fns';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -13,7 +10,22 @@ const ChosenDay = () => {
   const navigate = useNavigate();
   const formattedDate = parse(currentDay, 'dMMMMyyyy', new Date());
 
-  const daysOfWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  const getDaysOfWeek = () => {
+    if (screenWidth >= 768) {
+      return ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    } else {
+      return ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+    }
+  };
+
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const selectDay = formattedDate;
 
   const currentDayOfWeek = selectDay.getDay();
@@ -38,7 +50,9 @@ const ChosenDay = () => {
 
     days.push(
       <div className={styles.day} key={i} onClick={() => handleDayClick(date)}>
-        <span className={styles.dayOfWeek}>{daysOfWeek[date.getDay()]}</span>
+        <span className={styles.dayOfWeek}>
+          {getDaysOfWeek()[date.getDay()]}
+        </span>
         <span className={`${isDaySelected ? styles.selectedDay : ''} `}>
           {date.getDate()}
         </span>
