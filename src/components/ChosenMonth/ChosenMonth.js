@@ -8,9 +8,10 @@ import { useEffect, useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 
 const ChosenMonth = () => {
-  const [state, setState] = useOutletContext();
+  const [state] = useOutletContext();
 
   const [weeksList, setWeeksList] = useState([]);
+
   // const [month, setMonth] = useState(0); //! take out
   // const [currentDate, setCurrentDate] = useState(new Date());
 
