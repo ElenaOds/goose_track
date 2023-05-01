@@ -1,10 +1,11 @@
 import styles from './Account.module.css';
-import UserForm from '../../components/UserForm/UserForm';
+// import UserForm from '../../components/UserForm/UserForm';
 
 const Account = () => {
   return (
     <div className={styles.container}>
-      <UserForm />
+      <p>User form</p>
+      {/* <UserForm /> */}
     </div>
   );
 };
