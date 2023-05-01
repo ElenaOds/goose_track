@@ -48,7 +48,7 @@ const Calendar = () => {
         doActiveDate={doActiveDate}
       />
       <Suspense fallback={null}>
-        <Outlet context={[state, setState]} />
+        <Outlet context={[state]} />
       </Suspense>
     </div>
   );
