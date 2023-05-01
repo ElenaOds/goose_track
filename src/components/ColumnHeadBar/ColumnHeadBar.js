@@ -1,4 +1,6 @@
 import styles from './ColumnHeadBar.module.css';
+import { ReactComponent as PlusCircle } from '../../icons/plus-circle.svg';
+
 
 
 const ColumnHeadBar = ({columnTitle}) => {
@@ -7,7 +9,7 @@ const ColumnHeadBar = ({columnTitle}) => {
 return (
     <div className={styles.wrapper}>
         <p className={styles.title}>{columnTitle}</p>
-        <div className={styles.circle}></div>
+        <PlusCircle className={styles.circle}/>
     </div>
 )
 }

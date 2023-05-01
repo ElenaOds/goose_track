@@ -10,7 +10,8 @@ const ColumnsTasksList = ({ tasks }) => {
   const imya = profile.name;
   const firstLetter = imya[0].toLocaleUpperCase();
   return (
-    <div className={styles.wrapper}>
+    <>
+    {tasks.length !==0 && <div className={styles.wrapper}>
       {tasks.map((task) => {
 
         const { title, _id, priority } = task;
@@ -19,7 +20,8 @@ const ColumnsTasksList = ({ tasks }) => {
         )
       }
       )}
-    </div>
+    </div>}
+    </>
   );
 };
 
