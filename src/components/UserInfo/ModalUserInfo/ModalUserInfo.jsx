@@ -3,6 +3,7 @@ import styles from './ModalUserInfo.module.css';
 import { NavLink } from 'react-router-dom/dist';
 import { ReactComponent as IconUser } from '../../../icons/icon-user.svg';
 import { ReactComponent as IconLogout } from '../../../icons/icon-logout.svg';
+// import LogoutBtn from '../../LogoutBtn/LogoutBtn';
 
 export const ModalUserInfo = ({ toggleModal, profile }) => {
   useEffect(() => {
@@ -46,6 +47,8 @@ export const ModalUserInfo = ({ toggleModal, profile }) => {
           Log out
           <IconLogout className={styles.lgButton_icon} />
         </button>
+        {/* <LogoutBtn className={styles.lgButton} /> */}
+        
       </div>
     </div>
   );
