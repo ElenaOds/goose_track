@@ -42,6 +42,7 @@ html[data-theme='dark'] {
   --card-bgd-color: #171820;
   --user-nav-btn-text: #ffffff;
   --user-nav-btn-bg: #3E85F3;
+
 }
 
 html[data-theme='light'] {

@@ -28,6 +28,12 @@ a, a:visited, a:hover, a:active {
     color: var(--secondary-text-color);
 }
 
+@media screen and (min-width: 768px) {
+    .heading {
+        font-size: 14px;
+    }
+}
+
 
 
 .navLink {
@@ -45,6 +51,8 @@ a, a:visited, a:hover, a:active {
 
     padding: 12px;
     gap: 8px;
+
+    color: var(--input-text-color)!important;
 }
 
 .activeLink {
@@ -69,8 +77,18 @@ a, a:visited, a:hover, a:active {
     border-radius: 8px;
 }
 
+@media screen and (min-width: 768px) {
+    .navLink {
+        font-size: 16px;
+    }
+
+    .activeLink {
+        font-size: 16px;
+    }
+}
+
 .icon {
-    stroke: var(--secondary-text-color);
+    stroke: var(--input-text-color);
     margin-right: 10px;
 }
 
