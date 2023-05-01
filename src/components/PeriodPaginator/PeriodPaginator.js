@@ -22,9 +22,11 @@ const PeriodPaginator = () => {
     
     return (
     <div className={styles.month}>
+      <div className={styles.month_markUp}>
       <h1 className={styles.month_name}>{format(currentDate, 'LLLL yyyy')}</h1>
-      <button type='button' className = {styles.month_buttons} onClick ={handleLeftClick} >left</button>
-      <button type='button' className = {styles.month_buttons} onClick ={handleRightClick}>rigth</button>
+      </div>
+      <button type='button' className = {styles.month_buttons} onClick ={handleLeftClick}>Left</button>
+      <button type='button' className = {styles.month_buttons} onClick ={handleRightClick}>Rigth</button>
     </div>
     );
 };

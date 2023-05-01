@@ -1,0 +1,6 @@
+
+/* позиціювання  компонетів  */
+.MarkUp{
+display: flex;
+justify-content: space-between;
+}

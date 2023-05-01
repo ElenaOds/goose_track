@@ -12,8 +12,8 @@ max-height: 35px;
 content: '';
 height: 100%;
 position: absolute;
-
-right: 8.20%;
+left: 50%;
+transform: translateX(-50%); 
 width: 1px;
 background-color: rgba(62, 133, 243, 0.2)
 }
@@ -26,7 +26,7 @@ background-color: rgba(62, 133, 243, 0.2)
     padding: 8px 16px ;
     width: 82px;
     height: 34px;
-    background: #CAE8FF;
+    background:var(--task-button-color);
     border: none;
     border-radius: 8px 0px 0px 8px;
     text-decoration: none;
@@ -36,18 +36,18 @@ background-color: rgba(62, 133, 243, 0.2)
 .btnMonth a{
     text-decoration: none;
 }
-.btnMonth:hover, .btnMonth:active{
-background-color: rgba(62, 133, 243, 0.35);
-}
+.btnMonth:hover,
+.btnMonth:focus,
 .btnMonth:active{
-    background-color: rgba(62, 133, 243, 0.35);
+background-color:var(--active-calendar-color);
 }
+
 
 .btnDay{
     padding: 8px 26px;
     width: 82px;
     height: 34px;
-    background: #CAE8FF;
+    background:var(--task-button-color) ;
     border: none;
     border-radius: 0px 8px 8px 0px;
 }
@@ -55,23 +55,20 @@ background-color: rgba(62, 133, 243, 0.35);
     text-decoration: none;
 }
 
-.btnDay:hover, .btnDay:active{
-    background-color: rgba(62, 133, 243, 0.35);
-}
+.btnDay:hover, 
+.btnDay:focus,
 .btnDay:active{
-    background-color: rgba(62, 133, 243, 0.35);
+    background-color: var(--active-calendar-color);
 }
+
 .text{
     width: 50px;
     height: 18px;
-    
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 18px;
-    
     text-align: center;
-    
-    color: #3E85F3;
+    color:var(--button-bgd-color);
 }
