@@ -8,8 +8,10 @@ ul {
 
 .container {
   display: block; 
+  justify-content: center;
+  align-items: center;
   width: 100%; 
-  margin: auto;
+  margin: auto; 
 }
 
 .hero { 
@@ -177,6 +179,17 @@ h3 {
 }
 
 /* =================== */
+.feedback{
+  display: flex;
+  flex-direction: column;  
+  justify-content: center;
+  align-items: center;
+}
+
+.review{
+  width: 380px;   
+}
+
 .review_head {
   font-family: 'Inter';
   font-size: 28px;
@@ -193,7 +206,7 @@ h3 {
 .review_item {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: flex-start; 
   gap: 18px;
   border: 1px solid #1111111a;
   padding: 32px;
@@ -232,9 +245,9 @@ h4 {
 }
 
 .arrow{
-  margin-top: 50px;
-  margin-bottom: 50px;
-  margin-left: 270px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 140px;
   width: 147px;
   height:61px;
   background-image: url('../../images/arrows.jpg')
@@ -315,6 +328,9 @@ h3{
   
   background-image: url('../../images/feature-all-in-one-tablet.jpeg');
 }
+.review{
+  width: 780px;   
+}
 
 .review_head {  
   font-size: 40px;   
@@ -326,7 +342,7 @@ h3{
   display: none;    
 }
 .arrow{
-  margin-left: 500px;
+  margin-left: 320px;
 }
 } 
 
@@ -396,12 +412,13 @@ h3{
     margin-top: 40px;
     margin-left: 240px; 
     background-image: url('../../images/feature-all-in-one-dt-x2.jpeg');
-  } 
-  
+  }   
+    
   .review {
     display: flex;
     justify-content: center;
     text-align: center;
+     width: 1280px;   
    
   }
   .review_head {  
