@@ -22,11 +22,10 @@ const UserForm = () => {
 
   const [isChanged, setIsChanged] = useState(false);
   // const [userPhoto, setUserPhoto] = useState('');
-
   const [formData, setFormData] = useState({
     userPhoto: '' || userPhoto,
     name: '' || name,
-    birthday: new Date() || new Date(birthday),
+    birthday: birthday ? new Date(birthday) : new Date(),
     email: '' || email,
     phone: '' || phone,
     skype: '' || skype,
