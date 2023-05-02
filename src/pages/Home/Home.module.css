@@ -154,7 +154,9 @@ h3 {
   text-align: left;
   margin-top: 14px;
 }
+
 .foto_calendar{
+  order: 1;
   width: 335px;
   height: 457px;
   margin-top: 40px;
@@ -163,6 +165,7 @@ h3 {
 }
 
 .foto_sidebar{ 
+  order: 1;
   width: 335px;
   height: 457px;
   margin-top: 40px;
@@ -171,6 +174,7 @@ h3 {
 }
 
 .foto_all{
+  order: 1;
   width: 335px;
   height: 457px;
   margin-top: 40px;
@@ -390,7 +394,11 @@ h3{
   .feature_item{
     display: flex;
   }
-  .foto_calendar{
+  .reverse_position{
+    order: 2;
+  }
+
+  .foto_calendar{   
     width: 604px;
     height: 700px; 
     margin-top: 0; 
@@ -398,7 +406,8 @@ h3{
     background-image: url('../../images/feature-calendar-dt-x2.jpeg');
   }
   
-  .foto_sidebar{    
+  .foto_sidebar{ 
+    order: 1;   
     float: left;     
     width: 604px;
     height: 700px;
@@ -406,7 +415,7 @@ h3{
     margin-right: 240px;   
     background-image: url('../../images/feature-sidebar-dt-x2.jpeg');
   }
-  .foto_all{
+  .foto_all{    
     width: 604px;
     height: 700px;
     margin-top: 40px;

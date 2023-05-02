@@ -36,7 +36,7 @@ const Home = () => {
       <section className={style.features}>
         <ul className={style.feature_list}>
           <li className={style.feature_item}>
-            <div>             
+            <div >             
               <p className={style.feature_number}>1.</p>
               <h2 className={style.feature_name}>Calendar</h2>
               <h3>View</h3>
@@ -49,9 +49,8 @@ const Home = () => {
             </div>           
             <div className={style.foto_calendar}></div>          
           </li>
-          <li className={style.feature_item}>  
-             <div className={style.foto_sidebar}></div>          
-            <div className={style.test}>
+          <li className={style.feature_item}>                        
+            <div className={style.reverse_position}>
               <p className={style.feature_number}>2.</p>
               <h3>SIDEBAR</h3>
               <p className={style.feature_text}>
@@ -60,11 +59,12 @@ const Home = () => {
                 manage your profile information and preferences, while the
                 calendar provides a quick and convenient way to view your
                 upcoming events and tasks.
-              </p>
-            </div>                     
+              </p>              
+            </div>
+            <div className={style.foto_sidebar}></div>                     
           </li>
           <li className={style.feature_item}>
-            <div className={style.test}>
+            <div >
               <p className={style.feature_number}>3.</p>
               <h2 className={style.feature_name}>ALL IN</h2>
               <h3>ONE</h3>
