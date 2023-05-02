@@ -26,7 +26,7 @@ const UserForm = () => {
   const [formData, setFormData] = useState({
     userPhoto: '' || userPhoto,
     name: '' || name,
-    birthday: new Date() || formattedDate,
+    birthday: formattedDate || new Date(),
     email: '' || email,
     phone: '' || phone,
     skype: '' || skype,
@@ -45,7 +45,7 @@ const UserForm = () => {
     initialValues: {
       userPhoto: '',
       name: formData.name ?? '',
-      birthday: birthday ?? '',
+      birthday: formData.birthday ?? '',
       email: formData.email,
       phone: formData.phone ?? '',
       skype: formData.skype ?? '',
@@ -76,7 +76,6 @@ const UserForm = () => {
   };
 
   return (
-  
     <form className={css.form} onSubmit={formik.handleSubmit}>
       <div className={css.userPhoto_container}>
         <input
@@ -169,7 +168,7 @@ const UserForm = () => {
               }`}
               id="birthday"
               name="birthday"
-              selected={formik.values.birthday.toDate}
+              selected={formik.values.birthday}
               maxDate={new Date()}
               onChange={onChangeDatePicker}
               calendarStartDay={1}
