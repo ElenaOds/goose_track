@@ -3,36 +3,32 @@ import { useState } from 'react';
 import { ReactComponent as IconArrowRight } from '../../icons/icon-arrow-right.svg';
 import { ReactComponent as IconArrowLeft } from '../../icons/icon-arrow-left.svg';
 import styles from './PeriodPaginator.module.css';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useDate } from 'hooks/useDate';
 
 export const PeriodPaginator = ({
   isActivePage,
   handleLeftClick,
   handleRightClick,
-  currentDate,
-  setState,
 }) => {
   const [activeBtn, setActiveBtn] = useState('');
 
   const navigate = useNavigate();
-  const params = useParams();
+
+  const urlDate = useDate();
 
   const handleNextDay = event => {
     setActiveBtn('next');
-    setState(prevState => ({
-      ...prevState,
-      currentDate: addDays(currentDate, 1),
-    }));
-    navigate(`/calendar/day/${format(currentDate, 'ddMMMyyyy')}`);
+
+    const date = addDays(urlDate, 1);
+    navigate(`/calendar/day/${format(date, 'ddMMMyyyy')}`);
   };
 
   const handlePrevDay = () => {
     setActiveBtn('prev');
-    setState(prevState => ({
-      ...prevState,
-      currentDate: subDays(currentDate, 1),
-    }));
-    navigate(`/calendar/day/${format(currentDate, 'ddMMMyyyy')}`);
+
+    const date = subDays(urlDate, 1);
+    navigate(`/calendar/day/${format(date, 'ddMMMyyyy')}`);
   };
 
   return (
@@ -40,9 +36,7 @@ export const PeriodPaginator = ({
       {isActivePage ? (
         <>
           <div className={styles.name_container}>
-            <h1 className={styles.name}>
-              {format(new Date(params.currentDate), ' MMM yyyy')}
-            </h1>
+            <h1 className={styles.name}>{format(urlDate, ' MMM yyyy')}</h1>
           </div>
           <div className={styles.buttons_container}>
             <button
@@ -77,9 +71,7 @@ export const PeriodPaginator = ({
       ) : (
         <>
           <div className={styles.name_container}>
-            <h1 className={styles.name}>
-              {format(new Date(currentDate), 'd MMM yyyy')}
-            </h1>
+            <h1 className={styles.name}>{format(urlDate, 'd MMM yyyy')}</h1>
           </div>
           <div className={styles.buttons_container}>
             <button
