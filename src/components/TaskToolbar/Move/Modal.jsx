@@ -1,3 +1,4 @@
+import { useDate } from 'hooks/useDate';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { get, update } from 'redux/tasks/tasks.operations';
@@ -6,10 +7,15 @@ import styles from './Modal.module.css';
 const { format, addMonths } = require('date-fns');
 
 export const Modal = ({ onClose, id, task }) => {
+  const urlDate = useDate();
+
+  const from = format(urlDate, 'yyyy-MM-dd');
+  const to = format(addMonths(urlDate, 1), 'yyyy-MM-dd');
+
   const dispatch = useDispatch();
-  const currentDate = Date.now();
-  const from = format(currentDate, 'yyyy-MM-dd');
-  const to = format(addMonths(currentDate, 1), 'yyyy-MM-dd');
+  // const currentDate = Date.now();
+  // const from = format(currentDate, 'yyyy-MM-dd');
+  // const to = format(addMonths(currentDate, 1), 'yyyy-MM-dd');
   const data = {
     from,
     to,
