@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { get, update } from 'redux/tasks/tasks.operations';
 import { ReactComponent as Icon } from '../../../icons/move.svg';
 import styles from './Modal.module.css';
-const { getDate, format, addMonths } = require('date-fns');
+const { format, addMonths } = require('date-fns');
 
 export const Modal = ({ onClose, id, task }) => {
   const dispatch = useDispatch();
