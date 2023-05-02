@@ -18,7 +18,7 @@ export const Header = ({isActivPage,toggleSidebar}) => {
       TaskListDay.push(TaskListAll[i])
     }
   } 
-// console.log( TaskListDay)
+
   return (
      <div className={styles.container}>      
       <div className={styles.header}> 

@@ -4,28 +4,51 @@ import { ReactComponent as Close } from '../../icons/x-close.svg';
 import { ReactComponent as Plus } from '../../icons/plus.svg';
 import { useState } from 'react';
 import {create} from '../../redux/tasks/tasks.operations';
-
+import {get} from '../../redux/tasks/tasks.operations';
+// import { selectTaskList } from 'redux/tasks/tasks.selectors';
+// import { useSelector} from 'react-redux';
+const { format, addMonths } = require('date-fns');
 
 export const TaskForm =({date,onClose})=> { 
   const [title,setIsTitle]=useState('');
   const [start,setIsStart]=useState('');
   const [end,setIsEnd]=useState('');
-  const [priority,setIsPriority]=useState('');
-  
+  const [priority,setIsPriority]=useState('');  
   const dispatch = useDispatch(); 
+
+  // console.log(date)
+  // const dates=new Date(date);
+  // const  output = dates.getFullYear()+'-'+ String(dates.getMonth() + 1).padStart(2, '0') + '-'+ String(dates.getDate()).padStart(2, '0')
+  // console.log(output)
+
+  const currentDate = Date.now();
+  const from = format(currentDate, 'yyyy-MM-dd');
+  const to = format(addMonths(currentDate, 1), 'yyyy-MM-dd');
+
+  // const TaskListAll = useSelector(selectTaskList); 
+  // console.log(TaskListAll)
 
   const handleChange = event => { 
     const { name,id, value } = event.target;
-
+  
     if(name==='title'){setIsTitle(value)};
     if(name==='start'){setIsStart(value)};
     if(name==='end'){setIsEnd(value)};
     if(name==='priority'){setIsPriority(id)};  
   };
 
-  const onSubmit = evt => {   
-    evt.preventDefault();
+  const onSubmit = async(evt)=> {     
+    evt.preventDefault();   
+    const data = {
+      from,
+      to,
+    };  
     dispatch(create({title,start,end,priority,date}));
+    dispatch(get(data)); 
+    setIsTitle('');
+    setIsStart('');
+    setIsEnd('');
+    setIsPriority('');  
   }  
 
   return (
@@ -42,7 +65,8 @@ export const TaskForm =({date,onClose})=> {
             placeholder="Enter text"
             onChange={handleChange}                  
             className={styles.input}          
-            maxLength={250}                 
+            maxLength={250}
+            value={title}                
           />
         </div>
         <div className={styles.flex}>
@@ -55,7 +79,8 @@ export const TaskForm =({date,onClose})=> {
             type='time'
             name='start' 
             onChange={handleChange}                             
-            className={styles.input}                       
+            className={styles.input} 
+            value={start}                         
           />
         </div>
         <div className="">
@@ -67,7 +92,8 @@ export const TaskForm =({date,onClose})=> {
             type='time'
             name='end' 
             onChange={handleChange}                                
-            className={styles.input}                       
+            className={styles.input} 
+            value={end}                         
           />
         </div>
         </div> 
