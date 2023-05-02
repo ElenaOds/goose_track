@@ -15,13 +15,14 @@ import css from './UserForm.module.css';
 const UserForm = () => {
   const dispatch = useDispatch();
   const {
-    user: {  userPhoto, name, birthday, email, phone, skype }
+    user: {  name, birthday, email, phone, skype }
   } = useSelector(selectUser);
 
   const formattedDate = new Date(birthday);
 
   const [isChanged, setIsChanged] = useState(false);
-  // const [userPhoto, setUserPhoto] = useState('');
+  const [userPhoto, setUserPhoto] = useState('');
+
 
   
 
@@ -59,38 +60,47 @@ const UserForm = () => {
         formDataObj.append(key, formData[key]);
       });
       dispatch(updateUser(formDataObj));
+      console.log(formDataObj);
 
       setIsChanged(true);
     },
   });
 
   const onChange = e => {
-    setIsChanged(true);
     const { name, value } = e.target;
     formik.setFieldValue(name, value);
     setFormData({ ...formData, [name]: value });
+
+    setIsChanged(true);
   };
 
   const onChangePhotoHandler = e => {
-    setIsChanged(true);
-    const { file } = e.target;
-    formik.setFieldValue('userPhoto', file);
-    setFormData({ ...formData, userPhoto: file });
+    // const file = e.target.files[0];
+    // formik.setFieldValue('userPhoto', file);
+    // setUserPhoto(URL.createObjectURL(file));
 
     // setIsChanged(true);
-    // const { files } = e.target;
-    // let images = [];
-    // const selected = [...[...files]];
+    // const {file} = e.target;
+    // formik.setFieldValue('userPhoto', file);
+  
+    // setFormData(URL.createObjectURL(file));
 
-    // selected.forEach(i => images.push(URL.createObjectURL(i)));
+    setIsChanged(true);
+    const { files } = e.target;
+    let images = [];
+    const selected = [...[...files]];
 
-    // setuserPhoto(images);
+    selected.forEach(i => images.push(URL.createObjectURL(i)));
+
+    setUserPhoto(images);
+    console.log(images);
     };
 
   const onChangeDatePicker = date => {
-    setIsChanged(true);
     formik.setFieldValue('birthday', date);
     setFormData({ ...formData, birthday: date });
+
+    setIsChanged(true);
   };
 
   return (
@@ -190,7 +200,9 @@ const UserForm = () => {
               maxDate={new Date()}
               onChange={onChangeDatePicker}
               calendarStartDay={1}
-              dateFormat="dd/MM/yyyy"
+              dateFormat="dd/mm/yyyy"
+
+            
             />
             {formik.touched.birthday && formik.errors.birthday ? (
               <>
