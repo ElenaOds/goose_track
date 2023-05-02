@@ -15,15 +15,14 @@ import css from './UserForm.module.css';
 const UserForm = () => {
   const dispatch = useDispatch();
   const {
-    user: { userPhoto, name, birthday, email, phone, skype },
+    user: { userPhoto, name, birthday, email, phone, skype }
   } = useSelector(selectUser);
 
 
   const formattedDate = birthday ? new Date(birthday) : new Date();
 
   const [isChanged, setIsChanged] = useState(false);
-  // const [userPhoto, setUserPhoto] = useState('');
-  
+
   const [formData, setFormData] = useState({
     userPhoto: '' || userPhoto,
     name: '' || name,
@@ -34,13 +33,6 @@ const UserForm = () => {
   });
   const formDataObj = new FormData();
 
-  // const handleSetFormData = ({ name, value, files }) => {
-  // if (name === 'userPhoto') {
-  //   const selectedFile = files[0];
-  //   setUserPhotoURL(URL.createObjectURL(selectedFile));
-  // }
-  //   setFormData({ ...formData, files });
-  // };
 
   const formik = useFormik({
     initialValues: {
@@ -72,18 +64,9 @@ const UserForm = () => {
 
   const onChangePhotoHandler = e => {
     setIsChanged(true);
-    const { file } = e.target;
-    formik.setFieldValue('userPhoto', file);
-    setFormData({ ...formData, userPhoto: file });
-
-    // setIsChanged(true);
-    // const { files } = e.target;
-    // let images = [];
-    // const selected = [...[...files]];
-
-    // selected.forEach(i => images.push(URL.createObjectURL(i)));
-
-    // setuserPhoto(images);
+    const fileUploaded = e.target.files[0];
+    formik.setFieldValue('userPhoto', fileUploaded);
+    setFormData({ ...formData, userPhoto: fileUploaded });
   };
 
   const onChangeDatePicker = date => {
@@ -93,31 +76,24 @@ const UserForm = () => {
   };
 
   return (
-    <form className={css.form} onSubmit={formik.handleSubmit}>
-      <div className={css.userPhoto_container}>
-        <input
-          className={css.uploader}
-          accept="image/png, image/gif, image/jpeg, image/jpg"
-          type="file"
-          id="userPhoto"
-          name="userPhoto"
-          value={formik.values.userPhoto}
-          onChange={onChangePhotoHandler}
-        />
-        <div className={css.plus_container}>
-          <label className={css.uploader__label} htmlFor="userPhoto">
-            {userPhoto ? (
-              <img
-                className={css.userPhoto}
-                src={userPhoto}
-                alt="user avatar"
-              />
-            ) : (
-              <h3 className={css.userletter}>{name[0]}</h3>
-            )}
-          </label>
-          <Plus className={css.plus_icon} />
-        </div>
+    <form encType="multipart/form-data"
+    className={css.form} onSubmit={formik.handleSubmit}>
+      <div className={css.plus_container}>
+      <label className={css.uploader__label}>
+      {userPhoto ? (
+          <img className={css.userPhoto} src={userPhoto} alt="Userphoto" />
+        ) : (
+          <h3 className={css.userletter}>{name[0]}</h3>
+        )}
+      <input className={css.uploader}
+        type="file"
+        accept="image/png, image/gif, image/jpeg, image/jpg"
+        id="userPhoto"
+        name="userPhoto"
+        onChange={onChangePhotoHandler}
+      />
+      </label>
+      <Plus className={css.plus_icon} />
       </div>
       <label className={`${css.label} ${css.user_label}`} htmlFor="user">
         <h4 id="user" name="user">
