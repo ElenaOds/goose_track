@@ -111,10 +111,10 @@ export const TaskForm =({date,onClose})=> {
         </div>       
         <div className={styles.flex}>
             <button type="submit" className={styles.button}>
-              <div>          
+              <>          
                 <Plus className={styles.logo} />
                 Add             
-              </div>
+              </>
             </button> 
             <button className={styles.btn_cansel} onClick={onClose}>Cancel</button>
           </div>         
