@@ -4,7 +4,10 @@ import { useState } from 'react';
 import { ReactComponent as Close } from '../../icons/x-close.svg';
 import { ReactComponent as Pencil } from '../../icons/pencil-01.svg';
 import {update} from '../../redux/tasks/tasks.operations';
+import {get} from '../../redux/tasks/tasks.operations';
 import { selectTaskList } from 'redux/tasks/tasks.selectors';
+const { format, addMonths } = require('date-fns');
+
 
 export const TaskFormUpDate =({id,onClose})=> {
   const dispatch = useDispatch(); 
@@ -32,7 +35,11 @@ export const TaskFormUpDate =({id,onClose})=> {
     if(name==='priority'){setIsPriority(id)};  
   };
 
-  const onSubmit = evt => {   
+  const currentDate = Date.now();
+  const from = format(currentDate, 'yyyy-MM-dd');
+  const to = format(addMonths(currentDate, 1), 'yyyy-MM-dd');
+
+  const onSubmit = async(evt) => {   
     evt.preventDefault();
      const task={
       id,                     
@@ -44,6 +51,15 @@ export const TaskFormUpDate =({id,onClose})=> {
       }      
     }    
     dispatch(update(task));
+    const data = {
+      from,
+      to,
+    }; 
+    dispatch(get(data)); 
+    setIsTitle('');
+    setIsStart('');
+    setIsEnd('');
+    setIsPriority(''); 
   }  
 
   return (
