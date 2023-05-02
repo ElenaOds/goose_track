@@ -70,7 +70,7 @@ body {
     'Libre Bodoni', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--second-bdg-color);
+  background-color: var(--basic-bgd-color);
   color: var(--basic-text-color);
   box-sizing: content-box;
 }

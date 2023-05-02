@@ -3,6 +3,7 @@
     padding-right: 20px;
     padding-bottom: 55px;    
     background-color:var(--mobile-bdg-color); 
+    height: 100vh;
   }
 
   @media screen and (min-width: 768px) {
