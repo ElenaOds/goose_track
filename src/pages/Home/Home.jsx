@@ -36,8 +36,7 @@ const Home = () => {
       <section className={style.features}>
         <ul className={style.feature_list}>
           <li className={style.feature_item}>
-            <div className={style.test}>
-             
+            <div>             
               <p className={style.feature_number}>1.</p>
               <h2 className={style.feature_name}>Calendar</h2>
               <h3>View</h3>
@@ -50,7 +49,6 @@ const Home = () => {
             </div>           
             <div className={style.foto_calendar}></div>          
           </li>
-
           <li className={style.feature_item}>  
              <div className={style.foto_sidebar}></div>          
             <div className={style.test}>
@@ -81,11 +79,10 @@ const Home = () => {
           </li>
         </ul>
       </section>
-      <section>
+      <section className={style.feedback}>
         <h2 className={style.review_head}>REVIEWS</h2>
         <div className={style.review}>
           <div className={style.review_list}>
-
           <div className={style.review_item}> 
              <div className={style.review_img_olena}></div >      
             <div>
@@ -109,13 +106,8 @@ const Home = () => {
                 management, calendar, and filter options make navigation
                 seamless. Great for staying organized.
               </p>
-
-            </div>
-            <svg className={style.review_vector} aria-hidden="true">
-              <use href="../../images/vector.svg"></use>
-            </svg>
+            </div>            
           </div>
-
           <div className={style.arrow}></div>
         </div>        
         </div>        
