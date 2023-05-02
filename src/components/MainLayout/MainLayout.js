@@ -4,8 +4,8 @@ import { Header } from 'components/Header/Header';
 import SideBar from 'components/SideBar/SideBar';
 import styles from './MainLayout.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectUser } from 'redux/auth/auth.selectors';
-import { getUser } from 'redux/user/user.operations';
+import { selectUser } from '../../redux/auth/auth.selectors';
+import { getUser } from '../../redux/user/user.operations';
 
 const MainLayout = () => {
   const [isActivPage, setActivPage] = useState(false);
