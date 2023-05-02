@@ -1,44 +1,19 @@
-const { useLocation } = require('react-router-dom');
+const { useParams } = require('react-router-dom');
 
 export const useDate = () => {
-  const location = useLocation();
-  const getMonthNumber = monthName => {
-    const months = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
-      'September',
-      'October',
-      'November',
-      'December',
-    ];
+  const params = useParams();
+  const date = new Date(params.currentDate);
 
-    for (let i = 0; i <= 12; i++) {
-      if (monthName === months[i]) {
-        let number = i + 1;
-        return `0${number}`;
-      }
+  if (Object.prototype.toString.call(date) === '[object Date]') {
+    // it is a date
+
+    if (isNaN(date)) {
+      // d.getTime() or d.valueOf() will also work
+      // date object is not valid
+      return new Date();
+    } else {
+      // date object is valid
+      return date;
     }
-  };
-
-  const urlDate =
-    location.pathname.split('/')[location.pathname.split('/').length - 1];
-
-  const day = urlDate.slice(0, 2);
-  const month = urlDate.slice(2, urlDate.length - 4);
-  const monthNumber = getMonthNumber(month);
-  const year = urlDate.slice(urlDate.length - 4, urlDate.length);
-
-  const date = `${year}-${monthNumber}-${day}`;
-
-  //   const dateDate = Date(date);
-
-  const parsedDate = Date.parse(date);
-
-  return parsedDate;
+  }
 };

@@ -6,9 +6,9 @@ import { format, parse } from 'date-fns';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const ChosenDay = () => {
-  const { currentDay } = useParams();
+  const { currentDate } = useParams();
   const navigate = useNavigate();
-  const formattedDate = parse(currentDay, 'ddMMMMyyyy', new Date());
+  const formattedDate = parse(currentDate, 'ddMMMMyyyy', new Date());
 
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 

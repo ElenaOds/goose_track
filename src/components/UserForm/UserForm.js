@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectUser } from '../../redux/user/user.selectors';
 import { updateUser } from '../../redux/user/user.operations';
@@ -15,20 +15,19 @@ import css from './UserForm.module.css';
 const UserForm = () => {
   const dispatch = useDispatch();
   const {
-    user: {  userPhoto, name, birthday, email, phone, skype }
+    user: { userPhoto, name, birthday, email, phone, skype },
   } = useSelector(selectUser);
 
-  const formattedDate = new Date(birthday);
+
+  const formattedDate = birthday ? new Date(birthday) : new Date();
 
   const [isChanged, setIsChanged] = useState(false);
   // const [userPhoto, setUserPhoto] = useState('');
-
   
-
   const [formData, setFormData] = useState({
     userPhoto: '' || userPhoto,
     name: '' || name,
-    birthday: formattedDate || new Date(),
+    birthday: '' || formattedDate,
     email: '' || email,
     phone: '' || phone,
     skype: '' || skype,
@@ -36,10 +35,10 @@ const UserForm = () => {
   const formDataObj = new FormData();
 
   // const handleSetFormData = ({ name, value, files }) => {
-    // if (name === 'userPhoto') {
-    //   const selectedFile = files[0];
-    //   setUserPhotoURL(URL.createObjectURL(selectedFile));
-    // }
+  // if (name === 'userPhoto') {
+  //   const selectedFile = files[0];
+  //   setUserPhotoURL(URL.createObjectURL(selectedFile));
+  // }
   //   setFormData({ ...formData, files });
   // };
 
@@ -85,7 +84,7 @@ const UserForm = () => {
     // selected.forEach(i => images.push(URL.createObjectURL(i)));
 
     // setuserPhoto(images);
-    };
+  };
 
   const onChangeDatePicker = date => {
     setIsChanged(true);

@@ -1,11 +1,19 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { update } from 'redux/tasks/tasks.operations';
+import { get, update } from 'redux/tasks/tasks.operations';
 import { ReactComponent as Icon } from '../../../icons/move.svg';
 import styles from './Modal.module.css';
+const { format, addMonths } = require('date-fns');
 
 export const Modal = ({ onClose, id, task }) => {
   const dispatch = useDispatch();
+  const currentDate = Date.now();
+  const from = format(currentDate, 'yyyy-MM-dd');
+  const to = format(addMonths(currentDate, 1), 'yyyy-MM-dd');
+  const data = {
+    from,
+    to,
+  };
 
   const columns = ['To do', 'In progress', 'Done'];
   const otherColumns = columns.filter(column => column !== task.column);
@@ -50,6 +58,7 @@ export const Modal = ({ onClose, id, task }) => {
               onClick={() => {
                 onClose();
                 dispatch(update(updateData));
+                dispatch(get(data));
               }}
             >
               {column}

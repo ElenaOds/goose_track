@@ -1,38 +1,39 @@
-import { NavLink } from "react-router-dom";
-import { format } from "date-fns";
+import { NavLink } from 'react-router-dom';
+import { format } from 'date-fns';
 import PropTypes from 'prop-types';
-import styles from "./PeriodTypeSelect.module.css"
+import styles from './PeriodTypeSelect.module.css';
+import { useDate } from 'hooks/useDate';
 
-export const PeriodTypeSelect = ({ doActiveMonth, doActiveDate}) => {
+export const PeriodTypeSelect = ({ doActiveMonth, doActiveDate }) => {
+  const urlDate = useDate();
 
-    const currentDate = format(new Date(), 'ddMMMMyyyy');
-    const currentDay = format(new Date(), 'ddMMMMyyyy');
+  const currentDate = format(urlDate, 'ddMMMMyyyy');
+  const currentDay = format(urlDate, 'ddMMMMyyyy');
 
-  return (   
+  return (
     <div className={styles.periodTypeSelectMarkUp}>
-      <NavLink 
+      <NavLink
         onClick={doActiveMonth}
-        to={`/calendar/month/${currentDate}`} 
+        to={`/calendar/month/${currentDate}`}
         className={({ isActive }) =>
-            isActive ? styles.activeLink_month : styles.navLink_month}
-            >
+          isActive ? styles.activeLink_month : styles.navLink_month
+        }
+      >
         Month
       </NavLink>
-      <NavLink 
-      onClick={doActiveDate}
-      to={`/calendar/day/${currentDay}`} 
-      className={({ isActive }) =>
-            isActive ? styles.activeLink_day : styles.navLink_day}
-            >
+      <NavLink
+        onClick={doActiveDate}
+        to={`/calendar/day/${currentDay}`}
+        className={({ isActive }) =>
+          isActive ? styles.activeLink_day : styles.navLink_day
+        }
+      >
         Day
-        </NavLink>
-    </div>   
-    
-    )
-}
+      </NavLink>
+    </div>
+  );
+};
 
 PeriodTypeSelect.propTypes = {
   changePage: PropTypes.array,
 };
-
-
