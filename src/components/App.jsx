@@ -10,6 +10,7 @@ import { PrivateRoute } from './AuthRouts/PrivateRoute';
 import { PublicRoute } from './AuthRouts/PublicRoute';
 import { Loading } from './Loading/Loading';
 import 'react-datepicker/dist/react-datepicker.css';
+import {PageNotFound} from '../components/PageNotFound/PageNotFound';
 
 const Home = lazy(() => import('pages/Home/Home'));
 const Account = lazy(() => import('pages/Account/Account'));
@@ -36,6 +37,7 @@ const App = () => {
             <Route path="" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path='*' element={<PageNotFound />} />
           </Route>
 
           <Route path="" element={<PrivateRoute />}>
@@ -44,6 +46,7 @@ const App = () => {
               <Route path="/calendar" element={<Calendar />}>
                 <Route path="month/:currentDate" element={<ChosenMonth  />} />
                 <Route path="day/:currentDay" element={<ChosenDay />} />
+                <Route path='*' element={<PageNotFound />} />
               </Route>
             </Route>
           </Route>

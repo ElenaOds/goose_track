@@ -1,11 +1,14 @@
 import { useLocation, Link } from 'react-router-dom';
 import { ReactComponent as GooseLogo } from '../../icons/goosesidebar.svg';
+import { ReactComponent as LogIn } from '../../icons/log-in-01.svg';
 import style from './Home.module.css';
 
 const Home = () => {
   const location = useLocation();
   return (
-    <div className={style.container}>
+    
+    <container className={style.container}>
+
       <section className={style.hero}>
         <GooseLogo className={style.logo} />
         <h1 className={style.heading}>
@@ -16,14 +19,15 @@ const Home = () => {
           <button
             className={`${style.btn} ${style.btn_register}`}
             type="button"
-          >
-            <Link to="register" state={location.state}>
+          >          
+            <Link className={style.link} to="register" state={location.state}>
               Sign up
-            </Link>
+            </Link>             
           </button>
           <button className={`${style.btn} ${style.btn_login}`} type="button">
-            <Link to="login" state={location.state}>
+            <Link className={style.link} to="login" state={location.state}>
               Log in
+              <LogIn/>
             </Link>
           </button>
         </div>
@@ -32,8 +36,7 @@ const Home = () => {
       <section className={style.features}>
         <ul className={style.feature_list}>
           <li className={style.feature_item}>
-            <div>
-              {' '}
+            <div >             
               <p className={style.feature_number}>1.</p>
               <h2 className={style.feature_name}>Calendar</h2>
               <h3>View</h3>
@@ -42,23 +45,12 @@ const Home = () => {
                 your schedule, displaying all your tasks, events, and
                 appointments in a visually appealing and intuitive layout.
               </p>
-            </div>
-            <figure>
-              <img
-                src="../../images/feature-calendar-mobile.jpeg"
-                alt="Calendar page of this app"
-              />
-            </figure>
-          </li>
 
-          <li className={style.feature_item}>
-            <figure>
-              <img
-                src="../../images/feature-sidebar-mobile.jpg"
-                alt="side bar of this app"
-              />
-            </figure>
-            <div>
+            </div>           
+            <div className={style.foto_calendar}></div>          
+          </li>
+          <li className={style.feature_item}>                        
+            <div className={style.reverse_position}>
               <p className={style.feature_number}>2.</p>
               <h3>SIDEBAR</h3>
               <p className={style.feature_text}>
@@ -67,11 +59,12 @@ const Home = () => {
                 manage your profile information and preferences, while the
                 calendar provides a quick and convenient way to view your
                 upcoming events and tasks.
-              </p>
+              </p>              
             </div>
+            <div className={style.foto_sidebar}></div>                     
           </li>
           <li className={style.feature_item}>
-            <div>
+            <div >
               <p className={style.feature_number}>3.</p>
               <h2 className={style.feature_name}>ALL IN</h2>
               <h3>ONE</h3>
@@ -82,63 +75,45 @@ const Home = () => {
                 GooseTrack.
               </p>
             </div>
-            <figure>
-              <img
-                src="../../images/feature-all-in-one-mobile.jpg"
-                alt="task page of this app"
-              />
-            </figure>
+            <div className={style.foto_all}></div>
           </li>
         </ul>
       </section>
-      <section>
+      <section className={style.feedback}>
         <h2 className={style.review_head}>REVIEWS</h2>
         <div className={style.review}>
           <div className={style.review_list}>
-            <div className={style.review_item}>
-              <img
-                className={style.review_img}
-                src="../../images/olena.jpg"
-                alt="foto reviewer"
-              />
-              <div>
-                <h4>Olena Doe</h4>
-                <img src="../../images/star.jpg" alt="star" />
-                <p className={style.review_text}>
-                  GooseTrack is impressive, the calendar view and filter options
-                  make it easy to stay organized and focused. Highly
-                  recommended.
-                </p>
-              </div>
+          <div className={style.review_item}> 
+             <div className={style.review_img_olena}></div >      
+            <div>
+              <h4>Olena Doe</h4>  
+              <div className={style.stars}></div>           
+              <p className={style.review_text}>
+                GooseTrack is impressive, the calendar view and filter options
+                make it easy to stay organized and focused. Highly recommended.
+              </p>
             </div>
-            <svg className={style.review_vector} aria-hidden="true">
-              <use href="../../images/vector.svg"></use>
-            </svg>
-          </div>
-          <div className={style.review_list}>
-            <div className={style.review_item_mobile}>
-              <img
-                className={style.review_img}
-                src="../../images/alexandr.jpg"
-                alt="foto reviewer"
-              />
-              <div>
-                <h4>Alexander Hubbard</h4>
-                <img src="../../images/star.jpg" alt="star" />
-                <p className={style.review_text}>
-                  GooseTrack is incredibly helpful, the sidebar with account
-                  management, calendar, and filter options make navigation
-                  seamless. Great for staying organized.
-                </p>
-              </div>
-            </div>
-            <svg className={style.review_vector} aria-hidden="true">
-              <use href="../../images/vector.svg"></use>
-            </svg>
-          </div>
+          </div>          
         </div>
+        <div className={style.review_list}>
+          <div className={style.review_item_mobile}>
+          <div className={style.review_img_alex}></div>            
+            <div>
+              <h4>Alexander Hubbard</h4>
+              <div className={style.stars}></div>
+              <p className={style.review_text}>
+                GooseTrack is incredibly helpful, the sidebar with account
+                management, calendar, and filter options make navigation
+                seamless. Great for staying organized.
+              </p>
+            </div>            
+          </div>
+          <div className={style.arrow}></div>
+        </div>        
+        </div>        
       </section>
-    </div>
+    </container>
+
   );
 };
 
