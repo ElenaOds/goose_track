@@ -32,9 +32,9 @@ export default function CalendarTable({ weeksList }) {
     console.log('result', result);
     navigate(`/calendar/day/${result}`);
   };
+ 
 
   return (
-   
       <div className={styles.container}>
         {weeksList.map(week => {
           return (

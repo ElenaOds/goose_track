@@ -4,7 +4,7 @@ const phonePattern =
 /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{0,4}[-.\s]?\d{0,9}$/;
 
 const UserFormSchema = Yup.object().shape({
-  userPhoto: Yup.string(),
+  userPhoto: Yup.mixed(),
   name: Yup.string()
     .min(3, 'Too short')
     .max(30, 'Too long')
