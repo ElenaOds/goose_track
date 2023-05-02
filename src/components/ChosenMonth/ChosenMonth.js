@@ -9,10 +9,8 @@ import { useOutletContext } from 'react-router-dom';
 
 const ChosenMonth = () => {
   const [state] = useOutletContext();
-
   const [weeksList, setWeeksList] = useState([]);
-  // const [month, setMonth] = useState(0); //! take out
-  // const [currentDate, setCurrentDate] = useState(new Date());
+  
 
   useEffect(() => {
     const days = state.month === 0 ? daysList : nextMonth(state.month);
@@ -22,21 +20,12 @@ const ChosenMonth = () => {
     setWeeksList(weeksList);
   }, [state.month]);
 
-  // const handleLeftClick = () => {
-  //   setCurrentDate((prevMonth) => addMonths(prevMonth, -1));
-  //   setMonth(month - 1)
-
-  // }
-  // const handleRightClick = () => {
-  //   setCurrentDate((prevMonth) => addMonths(prevMonth, +1));
-
-  //   setMonth(month + 1)
-
-  // }
+  
   return (
     <div className={styles.container}>
       <MonthCalendarHead />
       <CalendarTable weeksList={weeksList} />
+     
     </div>
   );
 };

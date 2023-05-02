@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectUser } from '../../redux/user/user.selectors';
 import { updateUser } from '../../redux/user/user.operations';
@@ -15,13 +15,25 @@ import css from './UserForm.module.css';
 const UserForm = () => {
   const dispatch = useDispatch();
   const {
-    user: { userPhoto, name, birthday, email, phone, skype },
+    user: { name, birthday, email, phone, skype }
   } = useSelector(selectUser);
 
+const filePicker = useRef(null);
   const formattedDate = new Date(birthday);
 
   const [isChanged, setIsChanged] = useState(false);
-  const [userPhotoURL, setUserPhotoURL] = useState('');
+  const [userPhoto, setuserPhoto] = useState([]);
+
+  const photoHandler = (e) => {
+    setIsChanged(true);
+    const { files } = e.target;
+    let images = [];
+    const selected = [...[...files]];
+
+    selected.forEach(i => images.push(URL.createObjectURL(i)));
+
+    setuserPhoto(images);
+  }
 
   const [formData, setFormData] = useState({
     userPhoto: '' || userPhoto,
@@ -34,11 +46,11 @@ const UserForm = () => {
   const formDataObj = new FormData();
 
   const handleSetFormData = ({ name, value, files }) => {
-    if (name === 'userPhoto') {
-      const selectedFile = files[0];
-      setUserPhotoURL(URL.createObjectURL(selectedFile));
-    }
-    setFormData({ ...formData, [name]: value });
+    // if (name === 'userPhoto') {
+    //   const selectedFile = files[0];
+    //   setUserPhotoURL(URL.createObjectURL(selectedFile));
+    // }
+    setFormData({ ...formData, files });
   };
 
   const formik = useFormik({
@@ -82,17 +94,18 @@ const UserForm = () => {
           className={css.uploader}
           accept="image/png, image/gif, image/jpeg, image/jpg"
           type="file"
+          ref={filePicker}
           id="userPhoto"
           name="userPhoto"
           value={formik.values.userPhoto}
-          onChange={onChange}
+          onChange={photoHandler}
         />
         <div className={css.plus_container}>
           <label className={css.uploader__label} htmlFor="userPhoto">
             {userPhoto ? (
               <img
                 className={css.userPhoto}
-                src={userPhotoURL || userPhoto}
+                src={userPhoto}
                 alt="user avatar"
               />
             ) : (
