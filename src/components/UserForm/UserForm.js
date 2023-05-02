@@ -18,14 +18,16 @@ const UserForm = () => {
     user: { userPhoto, name, birthday, email, phone, skype },
   } = useSelector(selectUser);
 
-  // const formattedDate = new Date(birthday);
+
+  const formattedDate = birthday ? new Date(birthday) : new Date();
 
   const [isChanged, setIsChanged] = useState(false);
   // const [userPhoto, setUserPhoto] = useState('');
+  
   const [formData, setFormData] = useState({
     userPhoto: '' || userPhoto,
     name: '' || name,
-    birthday: birthday ? new Date(birthday) : new Date(),
+    birthday: '' || formattedDate,
     email: '' || email,
     phone: '' || phone,
     skype: '' || skype,
