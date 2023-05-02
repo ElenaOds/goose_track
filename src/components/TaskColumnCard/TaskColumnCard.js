@@ -1,31 +1,25 @@
 import { TaskToolbar } from 'components/TaskToolbar/TaskToolbar';
 
+
 import styles from './TaskColumnCard.module.css';
 
-const TaskColumnCard = task => {
-  console.log(task, 'task');
+const TaskColumnCard = ({ title, id, priority, firstLetter, task }) => { 
 
+console.log(priority);
   return (
     <div className={styles.wrapper}>
       <div className={styles.card}>
-        {/* <div className={styles.userpic}>P</div> */}
-        {/* { <img className={styles.userpic} alt='userpic' src=''/> } */}
-        {/* <p className={styles.title}>Test</p>
-                <div className={styles.toolbar_container} >
-                    <p className={styles.date}>12:44</p>
-                    <div className={styles.sort}>Low</div>
-                    <UpDateTaskBtn  id={'644d2aa23459f2c60583fc95'}/>  </div> */}
-
         <p className={styles.title}>
-          Testsfjhgljskdhglsdjsfvlsdnflkvjnsldfknvlkdfjsnvlkjdfsnlvkjnsdffhglsjkdhfg
+        {title}
         </p>
         <div className={styles.meta}>
-          <div className={styles.task_info}>
-            <div className={styles.userpic}>P</div>
-            {/* <img className={styles.userpic} alt='userpic' src=''/> */}
-            <div className={styles.sort}>Low</div>
+          <div className={`${styles.task_info} ${priority === 'high' ? styles.highPriority : priority === 'medium' ? styles.mediumPriority : styles.lowPriority}`}>
+            <div className={styles.userpic}>
+            {firstLetter}
+            </div>
+            <div className={`${styles.priority_main} ${styles.priority}`}>{priority}</div>
           </div>
-          <TaskToolbar id={'644d2aa23459f2c60583fc95'}/>
+          <TaskToolbar id={id} task={task} />
         </div>
       </div>
     </div>

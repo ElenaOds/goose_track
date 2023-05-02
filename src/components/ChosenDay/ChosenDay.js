@@ -8,7 +8,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 const ChosenDay = () => {
   const { currentDay } = useParams();
   const navigate = useNavigate();
-  const formattedDate = parse(currentDay, 'dMMMMyyyy', new Date());
+  const formattedDate = parse(currentDay, 'ddMMMMyyyy', new Date());
 
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
@@ -29,24 +29,30 @@ const ChosenDay = () => {
   const selectDay = formattedDate;
 
   const currentDayOfWeek = selectDay.getDay();
-  const [selectedDay, setSelectedDay] = useState(selectDay);
+  const [selectedDay, setSelectedDay] = useState(new Date(formattedDate));
   const days = [];
 
   const handleDayClick = date => {
     setSelectedDay(date);
     date = new Date(date);
-    const formattedDate = format(date, 'dMMMMyyyy');
+    const formattedDate = format(date, 'ddMMMMyyyy');
     const result = formattedDate.charAt(0) + formattedDate.slice(1);
     navigate(`/calendar/day/${result}`);
   };
-  console.log(selectedDay);
 
   for (let i = 0; i < 7; i++) {
     const date = new Date(selectDay);
-    date.setDate(selectDay.getDate() + i - currentDayOfWeek);
+    date.setDate(
+      selectDay.getDate() +
+        i -
+        currentDayOfWeek +
+        (currentDayOfWeek === 0 ? -6 : 1)
+    );
 
     const isDaySelected =
-      selectedDay && selectedDay.getDate() === date.getDate();
+      selectedDay &&
+      selectedDay.getDate() &&
+      selectDay.getDate() === date.getDate();
 
     days.push(
       <div className={styles.day} key={i} onClick={() => handleDayClick(date)}>

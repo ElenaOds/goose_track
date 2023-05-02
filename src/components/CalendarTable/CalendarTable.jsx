@@ -25,7 +25,7 @@ export default function CalendarTable({ weeksList }) {
 
   const select = useSelector(selectTaskList);
 
-  const handeClick = date => {
+  const handleClick = date => {
     date = new Date(date);
     const formattedDate = format(date, 'dMMMMyyyy');
     const result = formattedDate.charAt(0) + formattedDate.slice(1);
@@ -34,8 +34,8 @@ export default function CalendarTable({ weeksList }) {
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.datesInCalendar}>
+   
+      <div className={styles.container}>
         {weeksList.map(week => {
           return (
             <div key={week} className={styles.week}>
@@ -58,7 +58,7 @@ export default function CalendarTable({ weeksList }) {
                   <div
                     className={styles.oneDay}
                     key={uuidv4()}
-                    onClick={() => handeClick(day)}
+                    onClick={() => handleClick(day)}
                   >
                     {day ? (
                       <div>
@@ -80,6 +80,6 @@ export default function CalendarTable({ weeksList }) {
         })}
       </div>
 
-    </div>
+   
   );
 }

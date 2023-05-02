@@ -4,7 +4,7 @@ import UserForm from '../../components/UserForm/UserForm';
 const Account = () => {
   return (
     <div className={styles.container}>
-      <UserForm />
+       <UserForm /> 
     </div>
   );
 };

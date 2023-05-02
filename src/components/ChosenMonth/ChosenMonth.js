@@ -11,7 +11,6 @@ const ChosenMonth = () => {
   const [state] = useOutletContext();
 
   const [weeksList, setWeeksList] = useState([]);
-
   // const [month, setMonth] = useState(0); //! take out
   // const [currentDate, setCurrentDate] = useState(new Date());
 
@@ -36,7 +35,6 @@ const ChosenMonth = () => {
   // }
   return (
     <div className={styles.container}>
-      <p>Chosen month</p>
       <MonthCalendarHead />
       <CalendarTable weeksList={weeksList} />
     </div>

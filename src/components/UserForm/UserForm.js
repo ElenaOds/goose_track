@@ -1,20 +1,24 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { selectUser } from 'redux/auth/auth.selectors';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectUser } from '../../redux/user/user.selectors';
+import { updateUser } from '../../redux/user/user.operations';
 import { useFormik } from 'formik';
 import UserFormSchema from './UserFormSchema';
 import DatePicker from 'react-datepicker';
 import { ReactComponent as Error } from '../../icons/error-icon.svg';
 import { ReactComponent as Success } from '../../icons/success-icon.svg';
 // import { ReactComponent as Chevron } from '../../icons/chevron-down.svg';
-// import { ReactComponent as Plus } from '../../icons/add-photo-icon.svg';
-// import "./calendar.css"
+import { ReactComponent as Plus } from '../../icons/add-photo-icon.svg';
+import './calendar.css';
 import css from './UserForm.module.css';
 
 const UserForm = () => {
-  // const dispatch = useDispatch();
-  const { userPhoto, name, birthday, email, phone, skype } =
-    useSelector(selectUser);
+  const dispatch = useDispatch();
+  const {
+    user: { userPhoto, name, birthday, email, phone, skype },
+  } = useSelector(selectUser);
+
+  const formattedDate = new Date(birthday);
 
   const [isChanged, setIsChanged] = useState(false);
   const [userPhotoURL, setUserPhotoURL] = useState('');
@@ -22,7 +26,7 @@ const UserForm = () => {
   const [formData, setFormData] = useState({
     userPhoto: '' || userPhoto,
     name: '' || name,
-    birthday: new Date() || birthday,
+    birthday: new Date() || formattedDate,
     email: '' || email,
     phone: '' || phone,
     skype: '' || skype,
@@ -40,18 +44,20 @@ const UserForm = () => {
   const formik = useFormik({
     initialValues: {
       userPhoto: '',
-      name: name || '',
-      birthday: birthday || new Date(),
-      email: email || '',
-      phone: phone || '',
-      skype: skype || '',
+      name: formData.name ?? '',
+      birthday: birthday ?? '',
+      email: formData.email,
+      phone: formData.phone ?? '',
+      skype: formData.skype ?? '',
     },
     validationSchema: UserFormSchema,
     validateOnChange: true,
-    onSubmit: values => {
-      Object.keys(values).forEach(key => {
-        formDataObj.append(key, values[key]);
+    onSubmit: () => {
+      Object.keys(formData).forEach(key => {
+        formDataObj.append(key, formData[key]);
       });
+      dispatch(updateUser(formDataObj));
+
       setIsChanged(false);
     },
   });
@@ -64,13 +70,15 @@ const UserForm = () => {
   };
 
   const onChangeDatePicker = date => {
+    setIsChanged(true);
     formik.setFieldValue('birthday', date);
     setFormData({ ...formData, birthday: date });
   };
 
   return (
+  
     <form className={css.form} onSubmit={formik.handleSubmit}>
-      <div className={css.relative}>
+      <div className={css.userPhoto_container}>
         <input
           className={css.uploader}
           accept="image/png, image/gif, image/jpeg, image/jpg"
@@ -80,20 +88,21 @@ const UserForm = () => {
           value={formik.values.userPhoto}
           onChange={onChange}
         />
-        <label className={css.uploader__label} htmlFor="userPhoto">
-          {userPhoto ? (
-            <img
-              className={css.userPhoto}
-              src={userPhotoURL || userPhoto}
-              alt="user avatar"
-            />
-          ) : (
-            <h3 className={css.userletter}>{name[0]}</h3>
-          )}
-        </label>
-        {/* <Plus className={css.plus_icon} /> */}
+        <div className={css.plus_container}>
+          <label className={css.uploader__label} htmlFor="userPhoto">
+            {userPhoto ? (
+              <img
+                className={css.userPhoto}
+                src={userPhotoURL || userPhoto}
+                alt="user avatar"
+              />
+            ) : (
+              <h3 className={css.userletter}>{name[0]}</h3>
+            )}
+          </label>
+          <Plus className={css.plus_icon} />
+        </div>
       </div>
-
       <label className={`${css.label} ${css.user_label}`} htmlFor="user">
         <h4 id="user" name="user">
           {formData.name.length > 0 ? formData.name : name}
@@ -160,7 +169,7 @@ const UserForm = () => {
               }`}
               id="birthday"
               name="birthday"
-              selected={formik.values.birthday}
+              selected={formik.values.birthday.toDate}
               maxDate={new Date()}
               onChange={onChangeDatePicker}
               calendarStartDay={1}

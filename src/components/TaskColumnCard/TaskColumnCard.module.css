@@ -46,14 +46,20 @@
 
 }
 
-.sort {
-    width: 44px;
-    height: 20px;
-    background: var(--low-priority-color);
-    color: var(--task-sorting-button);
+.priority_main {
+    color: var(--task-priority-marker);
     border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 12px;
+    padding: 4px 12px;
 }
+
+.lowPriority .priority{
+    background: var(--low-priority-color);
+}
+.mediumPriority .priority{
+    background: var(--medium-priority-color);
+}
+.highPriority .priority {
+    background: var(--high-priority-color);
+}
+

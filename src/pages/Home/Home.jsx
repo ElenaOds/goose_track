@@ -8,6 +8,7 @@ const Home = () => {
   return (
     
     <container className={style.container}>
+
       <section className={style.hero}>
         <GooseLogo className={style.logo} />
         <h1 className={style.heading}>
@@ -45,6 +46,7 @@ const Home = () => {
                 your schedule, displaying all your tasks, events, and
                 appointments in a visually appealing and intuitive layout.
               </p>
+
             </div>           
             <div className={style.foto_calendar}></div>          
           </li>
@@ -79,10 +81,11 @@ const Home = () => {
           </li>
         </ul>
       </section>
-      <section >
+      <section>
         <h2 className={style.review_head}>REVIEWS</h2>
         <div className={style.review}>
           <div className={style.review_list}>
+
           <div className={style.review_item}> 
              <div className={style.review_img_olena}></div >      
             <div>
@@ -106,14 +109,19 @@ const Home = () => {
                 management, calendar, and filter options make navigation
                 seamless. Great for staying organized.
               </p>
+
             </div>
+            <svg className={style.review_vector} aria-hidden="true">
+              <use href="../../images/vector.svg"></use>
+            </svg>
           </div>
+
           <div className={style.arrow}></div>
         </div>        
         </div>        
       </section>
     </container>
-   
+
   );
 };
 
