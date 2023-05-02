@@ -5,7 +5,7 @@ import styles from './TaskColumnCard.module.css';
 
 const TaskColumnCard = ({ title, id, priority, firstLetter, task }) => { 
 
-console.log(priority);
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.card}>
