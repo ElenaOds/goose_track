@@ -2,13 +2,22 @@ import DayCalendarHead from 'components/DayCalendarHead/DayCalendarHead';
 import styles from './ChosenDay.module.css';
 import { useEffect, useState } from 'react';
 import TasksColumnsList from 'components/TasksColumnsList/TasksColumnsList';
-import { format, parse } from 'date-fns';
-import { useNavigate, useParams } from 'react-router-dom';
+import { format } from 'date-fns';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { get } from 'redux/tasks/tasks.operations';
+import { useDate } from 'hooks/useDate';
 
 const ChosenDay = () => {
-  const { currentDate } = useParams();
+  // const { currentDate } = useParams();
+  const formattedDate = useDate();
+  const currentDate = format(useDate(), 'ddMMMyyyy');
   const navigate = useNavigate();
-  const formattedDate = parse(currentDate, 'ddMMMMyyyy', new Date());
+  const dispatch = useDispatch();
+  // const formattedDate = (currentDate, 'ddMMMMyyyy', new Date());
+
+  console.log(formattedDate);
+  console.log(currentDate);
 
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
@@ -20,11 +29,21 @@ const ChosenDay = () => {
     }
   };
 
+  const from = format(formattedDate, 'yyyy-MM-dd');
+  const to = format(formattedDate, 'yyyy-MM-dd');
+
   useEffect(() => {
+    const data = {
+      from,
+      to,
+    };
+
+    dispatch(get(data));
+
     const handleResize = () => setScreenWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [dispatch, from, to]);
 
   const selectDay = formattedDate;
 
