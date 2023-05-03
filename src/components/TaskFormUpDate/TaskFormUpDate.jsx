@@ -13,7 +13,16 @@ export const TaskFormUpDate =({id,onClose})=> {
   const dispatch = useDispatch(); 
   const TaskList = useSelector(selectTaskList); 
   const TaskNew={} 
- 
+
+  useEffect(() => {    
+    const isActivRadioButton= document.getElementsByName('priority'); 
+    for (let i=0; i<isActivRadioButton.length;i+=1){   
+      if(isActivRadioButton[i].id===TaskNew.priority){
+        isActivRadioButton[i].setAttribute("checked", 'on')
+      }    
+    } 
+  });  
+
   for (let i=0; i<TaskList.length;i+=1){   
     if(TaskList[i]._id===id){
       TaskNew.title=TaskList[i].title
@@ -43,27 +52,23 @@ export const TaskFormUpDate =({id,onClose})=> {
     to,
   }; 
 
-  const onSubmit = async(evt) => {   
-    evt.preventDefault();
-     const task={
-      id,                     
-      task:{
-        title:title,
-        start:start,
-        end:end,
-        priority:priority
-      }      
-    }    
-    dispatch(update(task));
-    const data = {
-      from,
-      to,
-    }; 
-    dispatch(get(data)); 
-    setIsTitle('');
-    setIsStart('');
-    setIsEnd('');
-    setIsPriority(''); 
+  const task={
+    id,                     
+    task:{
+      title:title,
+      start:start,
+      end:end,
+      priority:priority
+    }      
+  }  
+
+  const onSubmit = (evt) => {   
+    // evt.preventDefault();
+    // console.log(data)
+    // console.log(task)   
+    dispatch(update(task));    
+    dispatch(get(data))
+    // console.log(TaskList)   
   }  
 
   return (
