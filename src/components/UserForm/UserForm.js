@@ -15,13 +15,13 @@ import css from './UserForm.module.css';
 const UserForm = () => {
   const dispatch = useDispatch();
   const {
-    user: { userPhoto, name, birthday, email, phone, skype }
+    user: { userPhoto, name, birthday, email, phone, skype },
   } = useSelector(selectUser);
-
 
   const formattedDate = birthday ? new Date(birthday) : new Date();
 
   const [isChanged, setIsChanged] = useState(false);
+  const [uploadedFileURL, setUploadedFileURL] = useState('');
 
   const [formData, setFormData] = useState({
     userPhoto: '' || userPhoto,
@@ -32,7 +32,6 @@ const UserForm = () => {
     skype: '' || skype,
   });
   const formDataObj = new FormData();
-
 
   const formik = useFormik({
     initialValues: {
@@ -51,7 +50,7 @@ const UserForm = () => {
       });
       dispatch(updateUser(formDataObj));
 
-      setIsChanged(true);
+      setIsChanged(false);
     },
   });
 
@@ -65,6 +64,7 @@ const UserForm = () => {
   const onChangePhotoHandler = e => {
     setIsChanged(true);
     const fileUploaded = e.target.files[0];
+    setUploadedFileURL(URL.createObjectURL(fileUploaded));
     formik.setFieldValue('userPhoto', fileUploaded);
     setFormData({ ...formData, userPhoto: fileUploaded });
   };
@@ -76,24 +76,34 @@ const UserForm = () => {
   };
 
   return (
-    <form encType="multipart/form-data"
-    className={css.form} onSubmit={formik.handleSubmit}>
+    <form
+      encType="multipart/form-data"
+      className={css.form}
+      onSubmit={formik.handleSubmit}
+    >
       <div className={css.plus_container}>
-      <label className={css.uploader__label}>
-      {userPhoto ? (
-          <img className={css.userPhoto} src={userPhoto} alt="Userphoto" />
-        ) : (
-          <h3 className={css.userletter}>{name[0]}</h3>
-        )}
-      <input className={css.uploader}
-        type="file"
-        accept="image/png, image/gif, image/jpeg, image/jpg"
-        id="userPhoto"
-        name="userPhoto"
-        onChange={onChangePhotoHandler}
-      />
-      </label>
-      <Plus className={css.plus_icon} />
+        <label htmlFor='userPhoto'>
+          <label className={css.uploader__label}>
+            {userPhoto || uploadedFileURL ? (
+              <img
+                className={css.userPhoto}
+                src={uploadedFileURL ? uploadedFileURL : userPhoto}
+                alt="Userphoto"
+              />
+            ) : (
+              <h3 className={css.userletter}>{name[0]}</h3>
+            )}
+            <input
+              className={css.uploader}
+              type="file"
+              accept="image/png, image/gif, image/jpeg, image/jpg"
+              id="userPhoto"
+              name="userPhoto"
+              onChange={onChangePhotoHandler}
+            />
+          </label>
+          <Plus className={css.plus_icon} />
+        </label>
       </div>
       <label className={`${css.label} ${css.user_label}`} htmlFor="user">
         <h4 id="user" name="user">
