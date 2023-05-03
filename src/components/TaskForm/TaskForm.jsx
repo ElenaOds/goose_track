@@ -24,7 +24,7 @@ export const TaskForm =({date,onClose,column})=> {
   }; 
 
   const handleChange = event => { 
-    const { name,id, value } = event.target;
+    const { name, id, value } = event.target;
   
     if(name==='title'){setIsTitle(value)};
     if(name==='start'){setIsStart(value)};

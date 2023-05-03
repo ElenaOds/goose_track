@@ -4,17 +4,18 @@ import PropTypes from 'prop-types';
 import styles from './PeriodTypeSelect.module.css';
 import { useDate } from 'hooks/useDate';
 
-export const PeriodTypeSelect = ({ doActiveMonth, doActiveDate }) => {
+export const PeriodTypeSelect = ({  doActiveMonth, doActiveDate }) => {
   const urlDate = useDate();
 
   const currentDate = format(urlDate, 'ddMMMMyyyy');
   const currentDay = format(urlDate, 'ddMMMMyyyy');
-
+  
   return (
     <div className={styles.periodTypeSelectMarkUp}>
       <NavLink
+      
         onClick={doActiveMonth}
-        to={`/calendar/month/${currentDate}`}
+        to={`/calendar/month/${currentDate}`} 
         className={({ isActive }) =>
           isActive ? styles.activeLink_month : styles.navLink_month
         }
