@@ -1,11 +1,11 @@
 {
   "files": {
     "main.css": "/goose_track/static/css/main.bd360250.css",
-    "main.js": "/goose_track/static/js/main.590d28f2.js",
+    "main.js": "/goose_track/static/js/main.2cd3a004.js",
     "static/css/936.2dcc0e33.chunk.css": "/goose_track/static/css/936.2dcc0e33.chunk.css",
     "static/js/936.2836a2bf.chunk.js": "/goose_track/static/js/936.2836a2bf.chunk.js",
-    "static/css/8.e54521d8.chunk.css": "/goose_track/static/css/8.e54521d8.chunk.css",
-    "static/js/8.bc1c80d0.chunk.js": "/goose_track/static/js/8.bc1c80d0.chunk.js",
+    "static/css/8.abeebe5e.chunk.css": "/goose_track/static/css/8.abeebe5e.chunk.css",
+    "static/js/8.a22cd89b.chunk.js": "/goose_track/static/js/8.a22cd89b.chunk.js",
     "static/css/199.bbb5916f.chunk.css": "/goose_track/static/css/199.bbb5916f.chunk.css",
     "static/js/199.dc8c714f.chunk.js": "/goose_track/static/js/199.dc8c714f.chunk.js",
     "static/css/773.bb5f110e.chunk.css": "/goose_track/static/css/773.bb5f110e.chunk.css",
@@ -56,11 +56,11 @@
     "static/media/icon-arrow-right.svg": "/goose_track/static/media/icon-arrow-right.233a7e6d57bab1a1f79b37a572c08ff9.svg",
     "static/media/plus.svg": "/goose_track/static/media/plus.d557e5f870a00548676deca894446b65.svg",
     "main.bd360250.css.map": "/goose_track/static/css/main.bd360250.css.map",
-    "main.590d28f2.js.map": "/goose_track/static/js/main.590d28f2.js.map",
+    "main.2cd3a004.js.map": "/goose_track/static/js/main.2cd3a004.js.map",
     "936.2dcc0e33.chunk.css.map": "/goose_track/static/css/936.2dcc0e33.chunk.css.map",
     "936.2836a2bf.chunk.js.map": "/goose_track/static/js/936.2836a2bf.chunk.js.map",
-    "8.e54521d8.chunk.css.map": "/goose_track/static/css/8.e54521d8.chunk.css.map",
-    "8.bc1c80d0.chunk.js.map": "/goose_track/static/js/8.bc1c80d0.chunk.js.map",
+    "8.abeebe5e.chunk.css.map": "/goose_track/static/css/8.abeebe5e.chunk.css.map",
+    "8.a22cd89b.chunk.js.map": "/goose_track/static/js/8.a22cd89b.chunk.js.map",
     "199.bbb5916f.chunk.css.map": "/goose_track/static/css/199.bbb5916f.chunk.css.map",
     "199.dc8c714f.chunk.js.map": "/goose_track/static/js/199.dc8c714f.chunk.js.map",
     "773.bb5f110e.chunk.css.map": "/goose_track/static/css/773.bb5f110e.chunk.css.map",
@@ -75,6 +75,6 @@
   },
   "entrypoints": [
     "static/css/main.bd360250.css",
-    "static/js/main.590d28f2.js"
+    "static/js/main.2cd3a004.js"
   ]
 }
