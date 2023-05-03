@@ -10,10 +10,9 @@ export const UserInfo = () => {
   const profile = useSelector(selectUser);
   const name = profile.name;
   const firstLetter = name[0].toLocaleUpperCase();
-  // ToDo
-  // const url= profile.user.url;
-  const url = null;
 
+  const url= profile.userPhoto;
+  
   const toggleModal = () => {
     setShowModal(!showModal);
   };
