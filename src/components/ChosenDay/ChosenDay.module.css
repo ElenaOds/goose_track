@@ -14,7 +14,7 @@
 }
 
 .selectedDay {
-  background: #3e85f3;
+  background: var(--button-bgd-color) ;
   border-radius: 8px;
   padding: 4px 8px;
   font-family: 'Inter';

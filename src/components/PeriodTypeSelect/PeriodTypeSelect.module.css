@@ -1,6 +1,5 @@
 .periodTypeSelectMarkUp{
 display: flex;
-display: flex;
 flex-direction: row;
 justify-content: flex-start;
 margin-bottom: 24px;
@@ -26,6 +25,9 @@ margin-bottom: 24px;
 
     padding: 8px 25px;
     border-radius: 0px 8px 8px 0px;
+}
+.navLink_day:hover{
+    color: var(--button-bgd-color);
 }
 
 @media screen and (min-width: 768px) {
@@ -54,6 +56,7 @@ margin-bottom: 24px;
     .activeLink_day {
         font-size: 16px;
         line-height: 18px;
+        color: var(--button-bgd-color);
     }
   }
 
@@ -72,11 +75,15 @@ margin-bottom: 24px;
     border-right: 1px solid rgba(62, 133, 243, 0.2);
     border-radius: 8px 0px 0px 8px;
 }
+.navLink_month:hover{
+    color: var(--button-bgd-color);
+}
 
 @media screen and (min-width: 768px) {
     .navLink_month {
         font-size: 16px;
         line-height: 18px;
+        color: var(--button-bgd-color);
     }
   }
 

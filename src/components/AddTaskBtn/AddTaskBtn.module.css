@@ -12,7 +12,7 @@
   text-align: center;
   color: var(--basic-text-color);
   background-color: var(--add-task-button);
-  border: 1px dashed #3e85f3;
+  border: 1px dashed var(--button-bgd-color) ;
   border-radius: 8px;
   cursor: pointer;
   flex-shrink: 0;
