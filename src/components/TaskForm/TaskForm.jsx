@@ -8,7 +8,7 @@ import {get} from '../../redux/tasks/tasks.operations';
 import { useDate } from 'hooks/useDate';
 const { format, addMonths } = require('date-fns');
 
-export const TaskForm =({date,onClose})=> { 
+export const TaskForm =({date,onClose,column})=> { 
   const [title,setIsTitle]=useState('');
   const [start,setIsStart]=useState('');
   const [end,setIsEnd]=useState('');
@@ -32,8 +32,9 @@ export const TaskForm =({date,onClose})=> {
     if(name==='priority'){setIsPriority(id)};  
   };
 
-  const onSubmit = ()=> {     
-    dispatch(create({title,start,end,priority,date}));
+  const onSubmit = (evt)=> { 
+    // evt.preventDefault()
+    dispatch(create({title,start,end,priority,date,column}));
     dispatch(get(data));    
   }  
 
