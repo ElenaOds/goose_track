@@ -17,7 +17,7 @@ const ColumnsTasksList = ({ tasks }) => {
         const { title, _id, priority } = task;
        return (
           <TaskColumnCard key={_id} title={title} priority={priority} firstLetter={firstLetter} id={_id}
-            task={task}/>
+          task={task}/>
         )
       }
       )}
