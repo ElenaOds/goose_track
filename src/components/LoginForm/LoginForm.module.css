@@ -163,7 +163,7 @@ input:hover {
   display: none;
 }
 
-@media (min-width: 1279px) {
+@media (min-width: 1280px) {
   .imgContainer_login {
     display: block;
     width: 352px;
