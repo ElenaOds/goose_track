@@ -42,13 +42,16 @@
   font-size: 12px;
   line-height: 1.17;
   color: var(--date-text-color);
+  
 }
 
 @media (min-width: 768px) {
   .datesInCalendar_date {
     font-size: 16px;
     line-height: 1.12;
+    
   }
+  
 }  
 
 .task {
@@ -72,4 +75,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 80px;
+}
+
+.ActiveDay{
+  position: relative;
 }
