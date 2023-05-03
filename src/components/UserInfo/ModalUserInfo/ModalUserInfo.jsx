@@ -3,11 +3,16 @@ import styles from './ModalUserInfo.module.css';
 import { NavLink } from 'react-router-dom/dist';
 import { ReactComponent as IconUser } from '../../../icons/icon-user.svg';
 import { ReactComponent as IconLogout } from '../../../icons/icon-logout.svg';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { logout } from 'redux/auth/auth.operations';
+import { selectUser } from 'redux/user/user.selectors';
 
 export const ModalUserInfo = ({ toggleModal, profile }) => {
   const dispatch = useDispatch();
+
+  const {
+    user: { userPhoto },
+  } = useSelector(selectUser);
 
   const handleLogout = () => {
     dispatch(logout());
@@ -41,7 +46,18 @@ export const ModalUserInfo = ({ toggleModal, profile }) => {
     <div className={styles.overlay} onClick={closeOnClick}>
       <div className={styles.container}>
         <div className={styles.inner}>
-          <div className={styles.avatar}>{firstLetter}</div>
+          {userPhoto
+            ?
+            <img
+            className={styles.avatar}
+              src={userPhoto}
+              alt="Userphoto"
+            />
+            :
+            <div className={styles.avatar}>
+              {firstLetter}
+            </div>
+          }
           <p className={styles.text}>{name}</p>
         </div>
         <div className={styles.stylelink}>

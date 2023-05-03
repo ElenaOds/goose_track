@@ -33,13 +33,13 @@
   border-radius: 50px;
   border: 1.8px solid var(--button-bgd-color);
   text-align: center;
-  padding: 5px;
   font-size: 20px;
   font-weight: 700;
   margin-right: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
+  object-fit: cover;
 }
 
 @media screen and (min-width: 768px) {
