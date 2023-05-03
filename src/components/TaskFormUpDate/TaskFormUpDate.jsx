@@ -6,22 +6,14 @@ import { ReactComponent as Pencil } from '../../icons/pencil-01.svg';
 import {update} from '../../redux/tasks/tasks.operations';
 import {get} from '../../redux/tasks/tasks.operations';
 import { selectTaskList } from 'redux/tasks/tasks.selectors';
+import { useDate } from 'hooks/useDate';
 const { format, addMonths } = require('date-fns');
 
 export const TaskFormUpDate =({id,onClose})=> {
   const dispatch = useDispatch(); 
   const TaskList = useSelector(selectTaskList); 
   const TaskNew={} 
-
-  useEffect(() => {    
-    const isActivRadioButton= document.getElementsByName('priority'); 
-    for (let i=0; i<isActivRadioButton.length;i+=1){   
-      if(isActivRadioButton[i].id===TaskNew.priority) {
-        isActivRadioButton[i].setAttribute("checked", 'on')
-      }    
-    } 
-  });  
-
+ 
   for (let i=0; i<TaskList.length;i+=1){   
     if(TaskList[i]._id===id){
       TaskNew.title=TaskList[i].title
@@ -43,9 +35,13 @@ export const TaskFormUpDate =({id,onClose})=> {
     if(name==='priority'){setIsPriority(id)};  
   };
 
-  const currentDate = Date.now();
-  const from = format(currentDate, 'yyyy-MM-dd');
-  const to = format(addMonths(currentDate, 1), 'yyyy-MM-dd');
+  const urlDate = useDate();
+  const from = format(urlDate, 'yyyy-MM-dd');
+  const to = format(addMonths(urlDate, 1), 'yyyy-MM-dd');
+  const data = {
+    from,
+    to,
+  }; 
 
   const onSubmit = async(evt) => {   
     evt.preventDefault();
@@ -67,6 +63,7 @@ export const TaskFormUpDate =({id,onClose})=> {
     setIsTitle('');
     setIsStart('');
     setIsEnd('');
+    setIsPriority(''); 
   }  
 
   return (

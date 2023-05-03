@@ -20,7 +20,7 @@ const Calendar = () => {
       currentDate: addMonths(prevState.currentDate, -1),
       month: prevState.month - 1,
     }));
-    navigate(`/calendar/month/${format(state.currentDate, 'ddMMMyyyy')}`);
+    navigate(`/calendar/month/${format(state.currentDate, 'MMMyyyy')}`);
   };
   const handleRightClick = () => {
     setState(prevState => ({
@@ -28,7 +28,7 @@ const Calendar = () => {
       currentDate: addMonths(prevState.currentDate, +1),
       month: prevState.month + 1,
     }));
-    navigate(`/calendar/month/${format(state.currentDate, 'ddMMMyyyy')}`);
+    navigate(`/calendar/month/${format(state.currentDate, 'MMMyyyy')}`);
   };
 
   const location = useLocation();

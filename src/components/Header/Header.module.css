@@ -24,11 +24,11 @@
     padding-left: 32px;
     padding-right: 32px; 
     margin-left: 289px;  
-    background-color: var(--second-bdg-color);
+    /* background-color: var(--second-bdg-color); */
   }  
-  .header{
+  /* .header{
     background-color: var(--second-bdg-color);
-  }
+  } */
 }
 
 
@@ -69,8 +69,10 @@
 
 .title {
   display: none;
-  
+  width: 368px;
+  height: 60px;
 }
+
 .burger{
   display: flex;
 }

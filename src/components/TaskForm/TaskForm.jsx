@@ -5,8 +5,7 @@ import { ReactComponent as Plus } from '../../icons/plus.svg';
 import { useState } from 'react';
 import {create} from '../../redux/tasks/tasks.operations';
 import {get} from '../../redux/tasks/tasks.operations';
-// import { selectTaskList } from 'redux/tasks/tasks.selectors';
-// import { useSelector} from 'react-redux';
+import { useDate } from 'hooks/useDate';
 const { format, addMonths } = require('date-fns');
 
 export const TaskForm =({date,onClose})=> { 
@@ -16,17 +15,13 @@ export const TaskForm =({date,onClose})=> {
   const [priority,setIsPriority]=useState('');  
   const dispatch = useDispatch(); 
 
-  // console.log(date)
-  // const dates=new Date(date);
-  // const  output = dates.getFullYear()+'-'+ String(dates.getMonth() + 1).padStart(2, '0') + '-'+ String(dates.getDate()).padStart(2, '0')
-  // console.log(output)
-
-  const currentDate = Date.now();
-  const from = format(currentDate, 'yyyy-MM-dd');
-  const to = format(addMonths(currentDate, 1), 'yyyy-MM-dd');
-
-  // const TaskListAll = useSelector(selectTaskList); 
-  // console.log(TaskListAll)
+  const urlDate = useDate();
+  const from = format(urlDate, 'yyyy-MM-dd');
+  const to = format(addMonths(urlDate, 1), 'yyyy-MM-dd');
+  const data = {
+    from,
+    to,
+  }; 
 
   const handleChange = event => { 
     const { name, id, value } = event.target;
@@ -37,18 +32,9 @@ export const TaskForm =({date,onClose})=> {
     if(name==='priority'){setIsPriority(id)};  
   };
 
-  const onSubmit = async(evt)=> {     
-    evt.preventDefault();   
-    const data = {
-      from,
-      to,
-    };  
+  const onSubmit = ()=> {     
     dispatch(create({title,start,end,priority,date}));
-    dispatch(get(data)); 
-    setIsTitle('');
-    setIsStart('');
-    setIsEnd('');
-    setIsPriority('');  
+    dispatch(get(data));    
   }  
 
   return (
