@@ -25,7 +25,7 @@ const Calendar = () => {
   const handleRightClick = () => {
     setState(prevState => ({
       ...prevState,
-      currentDate: addMonths(prevState.currentDate, +1),
+      currentDate: addMonths(prevState.currentDate, 1),
       month: prevState.month + 1,
     }));
     navigate(`/calendar/month/${format(state.currentDate, 'MMMyyyy')}`);
@@ -33,7 +33,7 @@ const Calendar = () => {
 
   const location = useLocation();
 
-  const formattedCurrentDate = format(state.currentDate, 'MMMyyyy');
+  const formattedCurrentDate = format(state.currentDate, 'MMMMu');
 
   useEffect(() => {
     if (location.pathname === '/calendar') {
