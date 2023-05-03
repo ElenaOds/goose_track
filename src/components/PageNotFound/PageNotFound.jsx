@@ -8,7 +8,7 @@ export const PageNotFound = () => {
 return (
         <div>
             <div className={styles.PageNotFound_MarkUp}>
-            <h1 className={styles.PageNotFound_Header}>Нажаль такой сторінки не існує </h1>
+            <h1 className={styles.PageNotFound_Header}>Requested page does not exists </h1>
             <Link to='' className={styles.PageNotFound_Link}><button className={styles.PageNotFound_textEffect}>Повернутись на головну</button></Link>
             </div>
         </div>
