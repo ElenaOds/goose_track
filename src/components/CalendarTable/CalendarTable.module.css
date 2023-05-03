@@ -1,82 +1,15 @@
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
 
-.container {
-  display: flex;
-  flex-direction: column;
+.cell {
+  border: 1px solid black;
+  padding: 5px 5px 20px 20px;
+  height: 50px;
+
+}
+
+.day_number {
   text-align: right;
-  border: 1px solid rgba(220, 227, 229, 0.5);
-  border-radius: 8px;
-}
-
-
-.week {
-  display: flex;
-}
-
-.oneDay {
-  width: calc(100%  / 7); 
-  border: 1px solid rgba(220, 227, 229, 0.8);
-  height: 94px;
-  text-align: right;
-  background-color: var(--calendar-bdg-color);
-  cursor: pointer; 
-} 
-
- @media (min-width: 768px) {
-  .oneDay {
-    height: 100px;
-  }
-}  
-
-@media (min-width: 1280px) {
-  .oneDay {
-    max-height: 125px;
-  }
-}  
-
-.datesInCalendar_date {
-  margin-top: 12px;
-  margin-right: 10px;
-  font-family: ‘Inter’;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 1.17;
-  color: var(--date-text-color);
-  
-}
-
-@media (min-width: 768px) {
-  .datesInCalendar_date {
-    font-size: 16px;
-    line-height: 1.12;
-    
-  }
-  
-}  
-
-.task {
-  margin-top: 22px;
-  display: flex;
-  justify-content: center;
-  background: var(--low-priority-bgd);
-  border-radius: 8px;
-  margin-left: 8px;
-  margin-right: 8px;
-}
-
-.task_text {
-  font-family: ‘Inter’;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.29;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 80px;
-}
-
-.ActiveDay{
-  position: relative;
 }

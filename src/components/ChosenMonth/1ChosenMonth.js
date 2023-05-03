@@ -1,6 +1,6 @@
 import MonthCalendarHead from '../MonthCalendarHead/MonthCalendarHead';
 import styles from './ChosenMonth.module.css';
-import CalendarTable from '../CalendarTable/CalendarTable';
+import CalendarTable from '../CalendarTable/1CalendarTable';
 import { createCalendarDays } from '../CalendarTable/createCalendarDays';
 import { daysList, nextMonth } from '../CalendarTable/getDays';
 import { splitIntoWeeks } from '../CalendarTable/splitWeeks';
