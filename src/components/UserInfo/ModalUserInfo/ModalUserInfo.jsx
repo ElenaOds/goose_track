@@ -9,6 +9,8 @@ import { logout } from 'redux/auth/auth.operations';
 export const ModalUserInfo = ({ toggleModal, profile }) => {
   const dispatch = useDispatch();
 
+  const url = profile.userPhoto;
+
   const handleLogout = () => {
     dispatch(logout());
   };
@@ -34,14 +36,18 @@ export const ModalUserInfo = ({ toggleModal, profile }) => {
     }
   };
 
-  const name = profile.split(' ')[0];
+  const name = profile.name.split(' ')[0];
   const firstLetter = name[0].toLocaleUpperCase();
 
   return (
     <div className={styles.overlay} onClick={closeOnClick}>
       <div className={styles.container}>
         <div className={styles.inner}>
-          <div className={styles.avatar}>{firstLetter}</div>
+          {url !== null ? (
+            <img src={url} alt="" className={styles.avatar} />
+          ) : (
+            <div className={styles.avatar}>{firstLetter}</div>
+          )}
           <p className={styles.text}>{name}</p>
         </div>
         <div className={styles.stylelink}>
