@@ -21,7 +21,7 @@ const TasksColumn = ({ columnTitle, tasks }) => {
         <div className={styles.wrapper}>
             <ColumnHeadBar columnTitle={columnTitle} />
             {tasks && <ColumnsTasksList tasks={tasks} />}
-            <AddTaskBtn date={formattedDate} />
+            <AddTaskBtn date={formattedDate} column={columnTitle}/>
         </div>
     )
 }

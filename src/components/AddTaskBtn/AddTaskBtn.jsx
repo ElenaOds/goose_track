@@ -5,7 +5,7 @@ import { ReactComponent as Plus } from '../../icons/plus.svg';
 
 
 
-export const AddTaskBtn = ({ date }) => {
+export const AddTaskBtn = ({ date,column }) => {
 
   const [isOpen, setIsModalOpen] = useState(false);
   return (
@@ -14,7 +14,7 @@ export const AddTaskBtn = ({ date }) => {
       <Plus className={styles.plus_icon}/>
             Add task
       </button>
-      {isOpen && (<TaskModal onClose={() => setIsModalOpen(false)} date={date} />)}
+      {isOpen && (<TaskModal onClose={() => setIsModalOpen(false)} date={date} column={column}/>)}
     </>
   );
 };
