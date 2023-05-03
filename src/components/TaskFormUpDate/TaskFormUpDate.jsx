@@ -6,6 +6,7 @@ import { ReactComponent as Pencil } from '../../icons/pencil-01.svg';
 import {update} from '../../redux/tasks/tasks.operations';
 import {get} from '../../redux/tasks/tasks.operations';
 import { selectTaskList } from 'redux/tasks/tasks.selectors';
+import { useDate } from 'hooks/useDate';
 const { format, addMonths } = require('date-fns');
 
 export const TaskFormUpDate =({id,onClose})=> {
@@ -43,30 +44,31 @@ export const TaskFormUpDate =({id,onClose})=> {
     if(name==='priority'){setIsPriority(id)};  
   };
 
-  const currentDate = Date.now();
-  const from = format(currentDate, 'yyyy-MM-dd');
-  const to = format(addMonths(currentDate, 1), 'yyyy-MM-dd');
+  const urlDate = useDate();
+  const from = format(urlDate, 'yyyy-MM-dd');
+  const to = format(addMonths(urlDate, 1), 'yyyy-MM-dd');
+  const data = {
+    from,
+    to,
+  }; 
 
-  const onSubmit = async(evt) => {   
-    evt.preventDefault();
-     const task={
-      id,                     
-      task:{
-        title:title,
-        start:start,
-        end:end,
-        priority:priority
-      }      
-    }    
-    dispatch(update(task));
-    const data = {
-      from,
-      to,
-    }; 
-    dispatch(get(data)); 
-    setIsTitle('');
-    setIsStart('');
-    setIsEnd('');
+  const task={
+    id,                     
+    task:{
+      title:title,
+      start:start,
+      end:end,
+      priority:priority
+    }      
+  }  
+
+  const onSubmit = (evt) => {   
+    // evt.preventDefault();
+    // console.log(data)
+    // console.log(task)   
+    dispatch(update(task));    
+    dispatch(get(data))
+    // console.log(TaskList)   
   }  
 
   return (
