@@ -11,8 +11,8 @@ export const UserInfo = () => {
   const name = profile.name;
   const firstLetter = name[0].toLocaleUpperCase();
 
-  const url= profile.userPhoto;
-  
+  const url = profile.userPhoto;
+
   const toggleModal = () => {
     setShowModal(!showModal);
   };
@@ -32,7 +32,7 @@ export const UserInfo = () => {
       )}  */}
       {showModal && (
         <ModalUser>
-          <ModalUserInfo toggleModal={toggleModal} profile={profile.name} />
+          <ModalUserInfo toggleModal={toggleModal} profile={profile} />
         </ModalUser>
       )}
     </>
