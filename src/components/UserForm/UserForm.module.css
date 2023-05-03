@@ -189,6 +189,7 @@
   }
   .plus_icon {
   position: absolute;
+  cursor: pointer;
   right: 24%;
   bottom: 10%;
   width: 24px;
