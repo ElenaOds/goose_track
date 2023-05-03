@@ -1,5 +1,5 @@
 import { useDate } from 'hooks/useDate';
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { get, update } from 'redux/tasks/tasks.operations';
 import { ReactComponent as Icon } from '../../../icons/move.svg';
@@ -8,14 +8,12 @@ const { format, addMonths } = require('date-fns');
 
 export const Modal = ({ onClose, id, task }) => {
   const urlDate = useDate();
+  const modalRef = useRef(null);
 
   const from = format(urlDate, 'yyyy-MM-dd');
   const to = format(addMonths(urlDate, 1), 'yyyy-MM-dd');
 
   const dispatch = useDispatch();
-  // const currentDate = Date.now();
-  // const from = format(currentDate, 'yyyy-MM-dd');
-  // const to = format(addMonths(currentDate, 1), 'yyyy-MM-dd');
   const data = {
     from,
     to,
@@ -25,54 +23,58 @@ export const Modal = ({ onClose, id, task }) => {
   const otherColumns = columns.filter(column => column !== task.column);
 
   useEffect(() => {
-    const handleKeyDown = event => {
-      if (event.code === 'Escape') {
+    const handleClickOutside = event => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
         onClose();
       }
     };
 
-    window.addEventListener('keydown', handleKeyDown);
+    const handleEscapeKey = event => {
+      if (event.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleEscapeKey);
 
     return () => {
-      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEscapeKey);
     };
   }, [onClose]);
 
-  const handleBackdropClick = event => {
-    if (event.currentTarget === event.target) {
-      onClose();
-    }
+  const handleUpdate = async updateData => {
+    await dispatch(update(updateData));
+    await dispatch(get(data));
   };
 
   return (
-    <div className={styles.Overlay} onClick={handleBackdropClick}>
-      <div className={styles.modalContent}>
-        {otherColumns.map(column => {
-          const updatedTask = {
-            column: column,
-          };
+    <div className={styles.modalContent} ref={modalRef}>
+      {otherColumns.map(column => {
+        const updatedTask = {
+          column,
+        };
 
-          const updateData = {
-            id: id,
-            updatedTask: updatedTask,
-          };
+        const updateData = {
+          id,
+          updatedTask,
+        };
 
-          return (
-            <button
-              key={column}
-              className={styles.btn}
-              onClick={() => {
-                onClose();
-                dispatch(update(updateData));
-                dispatch(get(data));
-              }}
-            >
-              {column}
-              <Icon className={styles.icon} />
-            </button>
-          );
-        })}
-      </div>
+        return (
+          <button
+            key={column}
+            className={styles.btn}
+            onClick={() => {
+              handleUpdate(updateData);
+              onClose();
+            }}
+          >
+            {column}
+            <Icon className={styles.icon} />
+          </button>
+        );
+      })}
     </div>
   );
 };
