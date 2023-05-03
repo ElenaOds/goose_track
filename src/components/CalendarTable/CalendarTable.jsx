@@ -7,12 +7,8 @@ import { selectTaskList } from 'redux/tasks/tasks.selectors';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 // import { useDate } from 'hooks/useDate';
-const { getDate, format } = require('date-fns');
 
-export default function CalendarTable({ weeksList }) {
-  // const dispatch = useDispatch();
-  const navigate = useNavigate();
-
+// закоментированая функция внутри компонента
   // const urlDate = useDate();
 
   // const from = format(Date.now(urlDate), 'yyyy-MM-dd');
@@ -26,6 +22,14 @@ export default function CalendarTable({ weeksList }) {
   //   dispatch(get(data));
   // }, [dispatch, from, to]);
 
+const { getDate, format, isSameDay } = require('date-fns');
+
+export default function CalendarTable({ weeksList }) 
+  {
+  // const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const today = new Date();
+
   const select = useSelector(selectTaskList);
 
   const handleClick = date => {
@@ -34,7 +38,10 @@ export default function CalendarTable({ weeksList }) {
     const result = formattedDate.charAt(0) + formattedDate.slice(1);
     console.log('result', result);
     navigate(`/calendar/day/${result}`);
+    
+    
   };
+  
 
   return (
     <div className={styles.container}>
@@ -43,7 +50,6 @@ export default function CalendarTable({ weeksList }) {
           <div key={week} className={styles.week}>
             {week.map(day => {
               const numberDay = getDate(day);
-
               const task = select.find(task => {
                 const date = new Date(task.date);
                 const days = date.getUTCDate();
@@ -56,6 +62,24 @@ export default function CalendarTable({ weeksList }) {
               };
               let taskColor = priorityColors[task?.priority];
               const taskStyle = { backgroundColor: taskColor };
+
+              let isActiveDay = isSameDay(day,today);
+              const dayStyle = isActiveDay ? {
+                
+                backgroundColor: '#3e85f3',
+                borderRadius:'6px',
+                padding: '4px 6px',
+                width: '20px',
+                height: '20px',
+                color: '#FFFFFF',
+                display: 'flex',
+                justifyContent: 'center',
+                // position: 'absolute',
+                
+                // left: '75%',
+                // top: '-27px',
+                } : {};
+
               return (
                 <div
                   className={styles.oneDay}
@@ -63,8 +87,8 @@ export default function CalendarTable({ weeksList }) {
                   onClick={() => handleClick(day)}
                 >
                   {day ? (
-                    <div>
-                      <p className={styles.datesInCalendar_date}>{numberDay}</p>
+                    <div className={styles.ActiveDay}>
+                      <p className={styles.datesInCalendar_date} style={dayStyle}>{numberDay}</p>
                       <div className={styles.task} style={taskStyle}>
                         {task && (
                           <p className={styles.task_text}>{task.title}</p>
