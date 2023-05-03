@@ -1,6 +1,6 @@
 import styles  from './TaskFormUpDate.module.css';
 import { useSelector,useDispatch } from 'react-redux';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { ReactComponent as Close } from '../../icons/x-close.svg';
 import { ReactComponent as Pencil } from '../../icons/pencil-01.svg';
 import {update} from '../../redux/tasks/tasks.operations';
@@ -8,12 +8,20 @@ import {get} from '../../redux/tasks/tasks.operations';
 import { selectTaskList } from 'redux/tasks/tasks.selectors';
 const { format, addMonths } = require('date-fns');
 
-
 export const TaskFormUpDate =({id,onClose})=> {
   const dispatch = useDispatch(); 
   const TaskList = useSelector(selectTaskList); 
   const TaskNew={} 
- 
+
+  useEffect(() => {    
+    const isActivRadioButton= document.getElementsByName('priority'); 
+    for (let i=0; i<isActivRadioButton.length;i+=1){   
+      if(isActivRadioButton[i].id===TaskNew.priority){
+        isActivRadioButton[i].setAttribute("checked", 'on')
+      }    
+    } 
+  });  
+
   for (let i=0; i<TaskList.length;i+=1){   
     if(TaskList[i]._id===id){
       TaskNew.title=TaskList[i].title
@@ -59,7 +67,6 @@ export const TaskFormUpDate =({id,onClose})=> {
     setIsTitle('');
     setIsStart('');
     setIsEnd('');
-    setIsPriority(''); 
   }  
 
   return (
