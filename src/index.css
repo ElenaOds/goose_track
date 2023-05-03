@@ -20,6 +20,7 @@
   --low-priority-bgd: #ceeefd;
   --task-button-color: #e3f3ff;
   --active-calendar-color: #cae8ff;
+  --normal-input-state: rgba(17, 17, 17, 0.15);
   --error-input-state: #e74a3b;
   --error-msg: #db1414;
   --correct-input-state: #3cbc81;
