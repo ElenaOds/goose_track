@@ -110,8 +110,8 @@ export const CalendarTable = ({ totalDays }) => {
                           : ''
                       }`}
                     >
-                      {title.slice(0, 4)}
-                      {title.length > 5 && '...'}
+                      {title.slice(0, 9)}
+                      {title.length > 9 && '...'}
                     </p>
                   ))}
                 </li>
