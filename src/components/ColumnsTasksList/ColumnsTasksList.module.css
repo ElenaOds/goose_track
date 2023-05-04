@@ -2,7 +2,7 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: flex-start;
   gap: 14px;
   margin-bottom: 32px;
   padding-right: 7px;
