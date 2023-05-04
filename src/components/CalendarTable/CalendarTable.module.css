@@ -70,6 +70,7 @@
   font-weight: 700;
   font-size: 12px;
   line-height: 1.17;
+  
 }
 
 @media screen and (min-width: 768px) {
@@ -143,4 +144,22 @@
   border-radius: 8px;
   color: var(--color-task-high-priority);
   background-color: var(--bgc-task-high-priority);
+}
+
+
+.current_day{
+  display: flex;
+  align-self: flex-end;
+  align-items: center;
+  justify-content: center;
+  background-color: var(  --button-bgd-color) ;
+  text-decoration: #fff;
+  width: 27px;
+  height: 26px;
+  margin-left: auto;
+  border-radius: 8px;
+  padding: 0;
+}
+.current_day p{
+color: #fff;
 }

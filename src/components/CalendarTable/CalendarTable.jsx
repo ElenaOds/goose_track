@@ -51,12 +51,13 @@
 import { selectTaskList } from 'redux/tasks/tasks.selectors';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { format } from 'date-fns';
+import { format, isToday } from 'date-fns';
 import styles from './CalendarTable.module.css';
 
 export const CalendarTable = ({ totalDays }) => {
   const navigate = useNavigate();
   const taskList = useSelector(selectTaskList);
+
 
   const handleClick = date => {
     date = new Date(date);
@@ -74,14 +75,14 @@ export const CalendarTable = ({ totalDays }) => {
           const currentMonth = date.getMonth();
           return currentDay === taskDay && currentMonth === taskMonth;
         });
-
+        const isCurrentDay = isToday(date); // перевіряємо, чи ця дата є сьогоднішньою
         return (
           <div
             className={styles.cell}
             key={index}
             onClick={() => handleClick(date)}
           >
-            <div className={styles.day_number_wrapper}>
+            <div className={`${styles.day_number_wrapper} ${isCurrentDay ? styles.current_day : ''}`}>
               <p className={styles.day_number}>{format(date, 'd')}</p>
             </div>
             <ul className={styles.task_wrapper}>
