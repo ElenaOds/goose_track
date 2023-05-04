@@ -1,82 +1,146 @@
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  box-sizing: border-box;
+  border: 1px solid var(--calendar-border-color);
+  border-radius: 8px;
+  background-color: var(--calendar-bg-color);
+  grid-auto-rows: minmax(94px, auto);
+  grid-gap: 1px;
+}
 
-.container {
-  display: flex;
-  flex-direction: column;
+@media screen and (min-width: 768px) {
+  .calendar {
+    grid-auto-rows: minmax(144px, auto);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .calendar {
+    grid-auto-rows: minmax(125px, auto);
+  }
+}
+
+.cell {
+  border: 1px solid var(--calendar-border-color);
+  cursor: pointer;
+  padding: 2px;
+  transition: transform 0.2s linear;
+}
+
+@media screen and (min-width: 768px) {
+  .cell {
+    padding: 4px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .cell {
+    padding: 8px;
+  }
+}
+
+.cell:hover {
+  transform: scale(1.03);
+}
+
+.day_number_wrapper {
+  margin-top: 8px;
+  margin-right: 4px;
+  margin-bottom: 8px;
+  padding: 4px 6px;
+  display: block;
   text-align: right;
-  border: 1px solid rgba(220, 227, 229, 0.5);
   border-radius: 8px;
 }
 
-
-.week {
-  display: flex;
+@media screen and (min-width: 768px) {
+  .day_number_wrapper {
+    margin-top: 14px;
+    margin-right: 14px;
+    margin-bottom: 14px;
+    padding: 4px 8px;
+  }
 }
 
-.oneDay {
-  width: calc(100%  / 7); 
-  border: 1px solid rgba(220, 227, 229, 0.8);
-  height: 94px;
-  text-align: right;
-  background-color: var(--calendar-bdg-color);
-  cursor: pointer; 
-} 
-
- @media (min-width: 768px) {
-  .oneDay {
-    height: 100px;
-  }
-}  
-
-@media (min-width: 1280px) {
-  .oneDay {
-    max-height: 125px;
-  }
-}  
-
-.datesInCalendar_date {
-  margin-top: 12px;
-  margin-right: 10px;
+.day_number {
+  color: var(--user-name-color);
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-size: 12px;
   line-height: 1.17;
-  color: var(--date-text-color);
-  
 }
 
-@media (min-width: 768px) {
-  .datesInCalendar_date {
+@media screen and (min-width: 768px) {
+  .day_number {
     font-size: 16px;
     line-height: 1.12;
-    
   }
-  
-}  
+}
+
+.task_wrapper {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 2px;
+}
 
 .task {
-  margin-top: 22px;
-  display: flex;
-  justify-content: center;
-  background: var(--low-priority-bgd);
+  text-align: center;
+  margin-right: 2px;
+  margin-left: 2px;
   border-radius: 8px;
-  margin-left: 8px;
-  margin-right: 8px;
+  height: 22px;
+  width: auto;
 }
 
 .task_text {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 1.29;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 80px;
 }
 
-.ActiveDay{
-  position: relative;
+.task_title {
+  font-size: 10px;
+}
+
+@media (min-width: 768px) {
+  .task_title {
+    font-size: 14px;
+  }
+}
+
+.task_point {
+  width: 4px;
+  height: 4px;
+  margin-right: 2px;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .task_point {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.task_low {
+  padding: 4px;
+  border-radius: 8px;
+  color: var(--color-task-low-priority);
+  background-color: var(--bgc-task-low-priority);
+}
+
+.task_medium {
+  padding: 4px;
+  border-radius: 8px;
+  color: var(--color-task-medium-priority);
+  background-color: var(--bgc-task-medium-priority);
+}
+
+.task_high {
+  padding: 4px;
+
+  border-radius: 8px;
+  color: var(--color-task-high-priority);
+  background-color: var(--bgc-task-high-priority);
 }

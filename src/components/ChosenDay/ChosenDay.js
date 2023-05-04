@@ -78,7 +78,7 @@ const ChosenDay = () => {
         <span className={styles.dayOfWeek}>
           {getDaysOfWeek()[date.getDay()]}
         </span>
-        <span className={`${isDaySelected ? styles.selectedDay : ''} `}>
+        <span className={`${isDaySelected ? styles.selectedDay : styles.date} `}>
           {date.getDate()}
         </span>
       </div>

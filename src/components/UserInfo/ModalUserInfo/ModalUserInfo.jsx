@@ -39,7 +39,7 @@ export const ModalUserInfo = ({ toggleModal, profile }) => {
     }
   };
 
-  const name = profile.split(' ')[0];
+  const name = profile.name.split(' ')[0];
   const firstLetter = name[0].toLocaleUpperCase();
 
   return (

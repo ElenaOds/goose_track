@@ -34,7 +34,7 @@ const tasksSlice = createSlice({
       .addCase(update.pending, (state, _) => {
         state.isLoading = true;
       })
-      .addCase(update.fulfilled, (state, action) => {
+      .addCase(update.fulfilled, (state, __) => {
         state.isLoading = false;
       })
       .addCase(update.rejected, (state, _) => {

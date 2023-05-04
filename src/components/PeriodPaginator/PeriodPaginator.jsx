@@ -1,4 +1,4 @@
-import { format, subDays, addDays } from 'date-fns';
+import { format, subDays, addDays, addMonths, subMonths } from 'date-fns';
 import { useState } from 'react';
 import { ReactComponent as IconArrowRight } from '../../icons/icon-arrow-right.svg';
 import { ReactComponent as IconArrowLeft } from '../../icons/icon-arrow-left.svg';
@@ -8,8 +8,6 @@ import { useDate } from 'hooks/useDate';
 
 export const PeriodPaginator = ({
   isActivePage,
-  handleLeftClick,
-  handleRightClick,
 }) => {
   const [activeBtn, setActiveBtn] = useState('');
 
@@ -31,6 +29,20 @@ export const PeriodPaginator = ({
     navigate(`/calendar/day/${format(date, 'ddMMMyyyy')}`);
   };
 
+  const handleNextMonth = () => {
+    setActiveBtn('next');
+
+    const date = addMonths(urlDate, 1);
+    navigate(`/calendar/month/${format(date, 'MMMyyyy')}`);
+  };
+
+  const handlePrevMonth = () => {
+    setActiveBtn('prev');
+
+    const date = subMonths(urlDate, 1);
+    navigate(`/calendar/month/${format(date, 'MMMyyyy')}`);
+  };
+
   return (
     <div className={styles.wrapper}>
       {isActivePage ? (
@@ -42,7 +54,7 @@ export const PeriodPaginator = ({
             <button
               className={`${styles.button} ${styles.button_left}`}
               type="button"
-              onClick={handleLeftClick}
+              onClick={handlePrevMonth}
             >
               <IconArrowLeft
                 className={
@@ -56,7 +68,7 @@ export const PeriodPaginator = ({
               className={`${styles.button} ${styles.button_right}`}
               type="button"
               id={'2'}
-              onClick={handleRightClick}
+              onClick={handleNextMonth}
             >
               <IconArrowRight
                 className={
