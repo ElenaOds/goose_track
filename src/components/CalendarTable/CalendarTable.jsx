@@ -138,7 +138,7 @@ export const CalendarTable = ({ totalDays }) => {
                   ))}
                 </li>
               )}
-            </ul>
+            </ul> 
           </div>
         );
       })}
