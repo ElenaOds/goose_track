@@ -12,17 +12,17 @@ export const UserInfo = () => {
   const name = profile.name;
   const firstLetter = name[0].toLocaleUpperCase();
 
-  const {
-    user: { userPhoto },
-  } = useSelector(selectUser);
+  const {userPhoto} = profile;
+  console.log("🚀 ~ UserInfo ~ userPhoto:", userPhoto)
 
   const toggleModal = () => {
     setShowModal(!showModal);
   };
 
   useEffect(() => {
-    setPhoto(profile.userPhoto);
-  }, [useSelector(selectUser)]);
+    setPhoto(userPhoto);
+    console.log(photo,'photo')
+  }, [userPhoto,photo]);
 
   return (
     <>
