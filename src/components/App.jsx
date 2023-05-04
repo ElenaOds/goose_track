@@ -1,6 +1,6 @@
 import { useEffect, lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import ChosenMonth from './ChosenMonth/ChosenMonth';
+import { ChosenMonth } from './ChosenMonth/ChosonMonth';
 import ChosenDay from './ChosenDay/ChosenDay';
 import { ToastContainer } from 'react-toastify';
 import { refreshUser, setAuthHeader } from 'redux/auth/auth.operations';
