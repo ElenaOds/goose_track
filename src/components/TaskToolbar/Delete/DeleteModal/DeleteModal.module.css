@@ -1,0 +1,38 @@
+.dltButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 80px;
+  padding: 14px;
+
+  border: none;
+  background: var(--button-bgd-color);
+  box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
+  border-radius: 16px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+
+  letter-spacing: -0.02em;
+
+  color: var(--white-color);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.title {
+  margin: 20px 10px 40px 10px;
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--secondary-text-color);
+}
