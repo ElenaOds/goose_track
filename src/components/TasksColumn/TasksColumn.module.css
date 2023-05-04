@@ -4,7 +4,7 @@
     flex-direction: column;
     border-radius: 8px;
     border: 1px solid var(--column-border-color);
-    padding: 18px;
+    padding: 18px 8px 18px 18px;
     overflow: auto;
     min-width: calc(100% - 40px);
 }
