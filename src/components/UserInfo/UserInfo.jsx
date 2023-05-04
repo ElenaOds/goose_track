@@ -21,7 +21,8 @@ export const UserInfo = () => {
 
   useEffect(() => {
     setPhoto(userPhoto);
-    console.log(photo,'photo')
+    console.log(photo,'photo');
+    return;
   }, [userPhoto,photo]);
 
   return (
