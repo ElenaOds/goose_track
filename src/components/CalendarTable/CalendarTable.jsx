@@ -51,12 +51,14 @@
 import { selectTaskList } from 'redux/tasks/tasks.selectors';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { format } from 'date-fns';
+import { format, isSameMonth, isWeekend } from 'date-fns';
 import styles from './CalendarTable.module.css';
+import { useDate } from 'hooks/useDate';
 
 export const CalendarTable = ({ totalDays }) => {
   const navigate = useNavigate();
   const taskList = useSelector(selectTaskList);
+  const urlDate = useDate();
 
   const handleClick = date => {
     date = new Date(date);
@@ -82,14 +84,26 @@ export const CalendarTable = ({ totalDays }) => {
             onClick={() => handleClick(date)}
           >
             <div className={styles.day_number_wrapper}>
-              <p className={styles.day_number}>{format(date, 'd')}</p>
+              <p
+                className={`  ${
+                  isWeekend(date, urlDate)
+                    ? `${styles.day_number} ${styles.day_weekend}`
+                    : `${styles.day_number}`
+                }  ${
+                  isSameMonth(date, urlDate)
+                    ? `${styles.day_number}`
+                    : `${styles.day_number} ${styles.day_number_special}`
+                }`}
+              >
+                {format(date, 'd')}
+              </p>
             </div>
             <ul className={styles.task_wrapper}>
               {tasks.length <= 2 && (
                 <li>
-                  {tasks.map(({ id, title, priority }) => (
+                  {tasks.map(({ _id, title, priority }) => (
                     <p
-                      key={id}
+                      key={_id}
                       className={`${styles.task_title} ${
                         priority === 'low'
                           ? styles.task_low
@@ -100,17 +114,17 @@ export const CalendarTable = ({ totalDays }) => {
                           : ''
                       }`}
                     >
-                      {title.slice(0, 4)}
-                      {title.length > 5 && '...'}
+                      {title.slice(0, 9)}
+                      {title.length > 9 && '...'}
                     </p>
                   ))}
                 </li>
               )}
               {tasks.length > 2 && (
                 <li>
-                  {tasks.map(({ id, priority }) => (
+                  {tasks.map(({ _id, priority }) => (
                     <div
-                      key={id}
+                      key={_id}
                       className={`${styles.task_point} ${
                         priority === 'low'
                           ? styles.task_low
@@ -124,7 +138,7 @@ export const CalendarTable = ({ totalDays }) => {
                   ))}
                 </li>
               )}
-            </ul>
+            </ul> 
           </div>
         );
       })}

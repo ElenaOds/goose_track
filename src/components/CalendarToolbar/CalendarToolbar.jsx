@@ -1,15 +1,29 @@
+import { useLocation } from 'react-router-dom';
 import { PeriodPaginator } from '../PeriodPaginator/PeriodPaginator';
 import { PeriodTypeSelect } from '../PeriodTypeSelect/PeriodTypeSelect';
 import styles from './CalendarToolbar.module.css';
 
-const CalendarToolbar = ({ isActivePage, doActiveMonth, doActiveDate, handleRightClick,handleLeftClick,currentDate, setState}) => {
+const CalendarToolbar = () => {
+  const location = useLocation();
+
+  const activePage = arr => {
+    let active;
+    arr.map(page => {
+      if (location.pathname.includes(page)) {
+        active = page;
+      }
+      return active;
+    });
+
+    return active;
+  };
+
+  const pages = ['month', 'day'];
+
   return (
     <div className={styles.wrapper}>
-      <PeriodPaginator setState = {setState} currentDate = {currentDate} isActivePage={isActivePage} handleRightClick = {handleRightClick} handleLeftClick = {handleLeftClick} />
-      <PeriodTypeSelect
-        doActiveMonth={doActiveMonth}
-        doActiveDate={doActiveDate}
-      />
+      <PeriodPaginator activePage={activePage(pages)} />
+      <PeriodTypeSelect activePage={activePage(pages)} />
     </div>
   );
 };
