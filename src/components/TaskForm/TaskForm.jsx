@@ -32,10 +32,11 @@ export const TaskForm =({date,onClose,column})=> {
     if(name==='priority'){setIsPriority(id)};  
   };
 
-  const onSubmit = (evt)=> { 
-    // evt.preventDefault()
-    dispatch(create({title,start,end,priority,date,column}));
-    dispatch(get(data));    
+  const onSubmit = async(evt)=> { 
+    evt.preventDefault()
+    await dispatch(create({title,start,end,priority,date,column}));
+    await dispatch(get(data));
+    onClose()   
   }  
 
   return (
