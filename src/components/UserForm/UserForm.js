@@ -46,10 +46,10 @@ const UserForm = () => {
     validateOnChange: true,
     onSubmit: () => {
       Object.keys(formData).forEach(key => {
+        console.log(formData[key]);
         formDataObj.append(key, formData[key]);
       });
       dispatch(updateUser(formDataObj));
-
       setIsChanged(false);
     },
   });
@@ -82,7 +82,7 @@ const UserForm = () => {
       onSubmit={formik.handleSubmit}
     >
       <div className={css.plus_container}>
-        <label htmlFor='userPhoto'>
+        <label htmlFor="userPhoto">
           <label className={css.uploader__label}>
             {userPhoto || uploadedFileURL ? (
               <img
@@ -176,6 +176,7 @@ const UserForm = () => {
               onChange={onChangeDatePicker}
               calendarStartDay={1}
               dateFormat="dd/MM/yyyy"
+              formatWeekDay={weekdayShort => weekdayShort.charAt(0)}
             />
             {formik.touched.birthday && formik.errors.birthday ? (
               <>
