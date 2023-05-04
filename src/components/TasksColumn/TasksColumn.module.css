@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     border-radius: 8px;
-    border: 1px solid #DCE3E5CC;
+    border: 1px solid var(--column-border-color);
     padding: 18px;
     overflow: auto;
     min-width: calc(100% - 40px);
