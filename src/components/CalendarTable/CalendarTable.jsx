@@ -51,12 +51,14 @@
 import { selectTaskList } from 'redux/tasks/tasks.selectors';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { format } from 'date-fns';
+import { format, isSameMonth, isWeekend } from 'date-fns';
 import styles from './CalendarTable.module.css';
+import { useDate } from 'hooks/useDate';
 
 export const CalendarTable = ({ totalDays }) => {
   const navigate = useNavigate();
   const taskList = useSelector(selectTaskList);
+  const urlDate = useDate();
 
   const handleClick = date => {
     date = new Date(date);
@@ -82,49 +84,61 @@ export const CalendarTable = ({ totalDays }) => {
             onClick={() => handleClick(date)}
           >
             <div className={styles.day_number_wrapper}>
-              <p className={styles.day_number}>{format(date, 'd')}</p>
+              <p
+                className={`  ${
+                  isWeekend(date, urlDate)
+                    ? `${styles.day_number} ${styles.day_weekend}`
+                    : `${styles.day_number}`
+                }  ${
+                  isSameMonth(date, urlDate)
+                    ? `${styles.day_number}`
+                    : `${styles.day_number} ${styles.day_number_special}`
+                }`}
+              >
+                {format(date, 'd')}
+              </p>
             </div>
-            {/* <div className={styles.task_wrapper}> */}
-            {tasks.length <= 2 && (
-              <ul>
-                {tasks.map(({ id, title, priority }) => (
-                  <li
-                    key={id}
-                    className={`${styles.task_title} ${
-                      priority === 'low'
-                        ? styles.task_low
-                        : priority === 'medium'
-                        ? styles.task_medium
-                        : priority === 'high'
-                        ? styles.task_high
-                        : ''
-                    }`}
-                  >
-                    {title.slice(0, 4)}
-                    {title.length > 5 && '...'}
-                  </li>
-                ))}
-              </ul>
-            )}
-            {tasks.length > 2 && (
-              <ul>
-                {tasks.map(({ id, priority }) => (
-                  <li
-                    key={id}
-                    className={`${styles.task_point} ${
-                      priority === 'low'
-                        ? styles.task_low
-                        : priority === 'medium'
-                        ? styles.task_medium
-                        : priority === 'high'
-                        ? styles.task_high
-                        : ''
-                    }`}
-                  />
-                ))}
-              </ul>
-            )}
-            {/* </div> */}
+            <ul className={styles.task_wrapper}>
+              {tasks.length <= 2 && (
+                <li>
+                  {tasks.map(({ _id, title, priority }) => (
+                    <p
+                      key={_id}
+                      className={`${styles.task_title} ${
+                        priority === 'low'
+                          ? styles.task_low
+                          : priority === 'medium'
+                          ? styles.task_medium
+                          : priority === 'high'
+                          ? styles.task_high
+                          : ''
+                      }`}
+                    >
+                      {title.slice(0, 9)}
+                      {title.length > 9 && '...'}
+                    </p>
+                  ))}
+                </li>
+              )}
+              {tasks.length > 2 && (
+                <li>
+                  {tasks.map(({ _id, priority }) => (
+                    <div
+                      key={_id}
+                      className={`${styles.task_point} ${
+                        priority === 'low'
+                          ? styles.task_low
+                          : priority === 'medium'
+                          ? styles.task_medium
+                          : priority === 'high'
+                          ? styles.task_high
+                          : ''
+                      }`}
+                    />
+                  ))}
+                </li>
+              )}
+            </ul> 
           </div>
         );
       })}

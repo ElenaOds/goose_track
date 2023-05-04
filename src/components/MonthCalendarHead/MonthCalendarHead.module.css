@@ -29,3 +29,7 @@
     line-height: 1.12;
     color: var(--input-text-color);
   }
+
+  .days_text_weekend {
+    color: var(--button-bgd-color)
+  }
