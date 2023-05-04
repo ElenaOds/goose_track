@@ -78,7 +78,7 @@ export const CalendarTable = ({ totalDays }) => {
         return (
           <div
             className={styles.cell}
-            key={index}
+            key={date}
             onClick={() => handleClick(date)}
           >
             <div className={styles.day_number_wrapper}>
@@ -87,9 +87,9 @@ export const CalendarTable = ({ totalDays }) => {
             <ul className={styles.task_wrapper}>
               {tasks.length <= 2 && (
                 <li>
-                  {tasks.map(({ id, title, priority }) => (
+                  {tasks.map(({ _id, title, priority }) => (
                     <p
-                      key={id}
+                      key={_id}
                       className={`${styles.task_title} ${
                         priority === 'low'
                           ? styles.task_low
