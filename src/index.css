@@ -88,7 +88,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--basic-bgd-color);
+  background-color: var(--mobile-bdg-color);
   color: var(--basic-text-color);
   box-sizing: content-box;
 }
