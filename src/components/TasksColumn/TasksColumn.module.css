@@ -15,7 +15,7 @@
     }
   }
   
-  @media (min-width: 1440px) {
+  @media (min-width: 1280px) {
     .wrapper {
         min-width: calc(33.33% - 56px);
     }

@@ -8,8 +8,6 @@ import { useDate } from 'hooks/useDate';
 
 export const PeriodPaginator = ({
   isActivePage,
-  handleLeftClick,
-  handleRightClick,
 }) => {
   const [activeBtn, setActiveBtn] = useState('');
 
