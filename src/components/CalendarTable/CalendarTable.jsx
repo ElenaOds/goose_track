@@ -86,7 +86,7 @@ export const CalendarTable = ({ totalDays }) => {
             </div>
             <ul className={styles.task_wrapper}>
               {tasks.length <= 2 && (
-                <li className={styles.two_tasks}>
+                <li>
                   {tasks.map(({ id, title, priority }) => (
                     <p
                       key={id}
@@ -107,7 +107,7 @@ export const CalendarTable = ({ totalDays }) => {
                 </li>
               )}
               {tasks.length > 2 && (
-                <li className={styles.many_tasks}>
+                <li>
                   {tasks.map(({ id, priority }) => (
                     <div
                       key={id}
