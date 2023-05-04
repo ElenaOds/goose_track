@@ -51,7 +51,7 @@
 import { selectTaskList } from 'redux/tasks/tasks.selectors';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { format, isSameMonth } from 'date-fns';
+import { format, isSameMonth, isWeekend } from 'date-fns';
 import styles from './CalendarTable.module.css';
 import { useDate } from 'hooks/useDate';
 
@@ -85,11 +85,15 @@ export const CalendarTable = ({ totalDays }) => {
           >
             <div className={styles.day_number_wrapper}>
               <p
-                className={
+                className={`  ${
+                  isWeekend(date, urlDate)
+                    ? `${styles.day_number} ${styles.day_weekend}`
+                    : `${styles.day_number}`
+                }  ${
                   isSameMonth(date, urlDate)
                     ? `${styles.day_number}`
                     : `${styles.day_number} ${styles.day_number_special}`
-                }
+                }`}
               >
                 {format(date, 'd')}
               </p>

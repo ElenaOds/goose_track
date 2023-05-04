@@ -71,10 +71,15 @@
   font-size: 12px;
   line-height: 1.17;
 }
+.day_weekend {
+  color: var(--button-bgd-color);
+}
 
 .day_number_special {
   opacity: 50%;
 }
+
+
 
 @media screen and (min-width: 768px) {
   .day_number {
