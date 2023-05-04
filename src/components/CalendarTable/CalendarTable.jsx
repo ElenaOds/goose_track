@@ -84,47 +84,47 @@ export const CalendarTable = ({ totalDays }) => {
             <div className={styles.day_number_wrapper}>
               <p className={styles.day_number}>{format(date, 'd')}</p>
             </div>
-            <ul className={styles.task_wrapper}>
-              {tasks.length <= 2 && (
-                <li>
-                  {tasks.map(({ id, title, priority }) => (
-                    <p
-                      key={id}
-                      className={`${styles.task_title} ${
-                        priority === 'low'
-                          ? styles.task_low
-                          : priority === 'medium'
-                          ? styles.task_medium
-                          : priority === 'high'
-                          ? styles.task_high
-                          : ''
-                      }`}
-                    >
-                      {title.slice(0, 4)}
-                      {title.length > 5 && '...'}
-                    </p>
-                  ))}
-                </li>
-              )}
-              {tasks.length > 2 && (
-                <li>
-                  {tasks.map(({ id, priority }) => (
-                    <div
-                      key={id}
-                      className={`${styles.task_point} ${
-                        priority === 'low'
-                          ? styles.task_low
-                          : priority === 'medium'
-                          ? styles.task_medium
-                          : priority === 'high'
-                          ? styles.task_high
-                          : ''
-                      }`}
-                    />
-                  ))}
-                </li>
-              )}
-            </ul>
+            {/* <div className={styles.task_wrapper}> */}
+            {tasks.length <= 2 && (
+              <ul>
+                {tasks.map(({ id, title, priority }) => (
+                  <li
+                    key={id}
+                    className={`${styles.task_title} ${
+                      priority === 'low'
+                        ? styles.task_low
+                        : priority === 'medium'
+                        ? styles.task_medium
+                        : priority === 'high'
+                        ? styles.task_high
+                        : ''
+                    }`}
+                  >
+                    {title.slice(0, 4)}
+                    {title.length > 5 && '...'}
+                  </li>
+                ))}
+              </ul>
+            )}
+            {tasks.length > 2 && (
+              <ul>
+                {tasks.map(({ id, priority }) => (
+                  <li
+                    key={id}
+                    className={`${styles.task_point} ${
+                      priority === 'low'
+                        ? styles.task_low
+                        : priority === 'medium'
+                        ? styles.task_medium
+                        : priority === 'high'
+                        ? styles.task_high
+                        : ''
+                    }`}
+                  />
+                ))}
+              </ul>
+            )}
+            {/* </div> */}
           </div>
         );
       })}
