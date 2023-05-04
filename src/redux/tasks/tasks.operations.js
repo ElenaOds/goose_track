@@ -35,9 +35,9 @@ export const get = createAsyncThunk('tasks/get', async (date, thunkAPI) => {
 
 export const update = createAsyncThunk(
   'tasks/update',
-  async (id, task, thunkAPI) => {
+  async (id, updatedTask, thunkAPI) => {
     try {
-      const { data } = await updateTask(id, task);
+      const { data } = await updateTask(id, updatedTask);
       toast.success('Task has been updated');
       return data;
     } catch (error) {

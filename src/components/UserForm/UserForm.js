@@ -82,7 +82,7 @@ const UserForm = () => {
       onSubmit={formik.handleSubmit}
     >
       <div className={css.plus_container}>
-        <label htmlFor='userPhoto'>
+        <label htmlFor="userPhoto">
           <label className={css.uploader__label}>
             {userPhoto || uploadedFileURL ? (
               <img
