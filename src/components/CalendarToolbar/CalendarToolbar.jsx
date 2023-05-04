@@ -5,20 +5,25 @@ import styles from './CalendarToolbar.module.css';
 
 const CalendarToolbar = () => {
   const location = useLocation();
-  let activePage;
 
-  if (location.pathname.includes('month')) {
-    activePage = 'month';
-  }
+  const activePage = arr => {
+    let active;
+    arr.map(page => {
+      if (location.pathname.includes(page)) {
+        active = page;
+      }
+      return active;
+    });
 
-  if (location.pathname.includes('day')) {
-    activePage = 'day';
-  }
+    return active;
+  };
+
+  const pages = ['month', 'day'];
 
   return (
     <div className={styles.wrapper}>
-      <PeriodPaginator activePage={activePage} />
-      <PeriodTypeSelect activePage={activePage} />
+      <PeriodPaginator activePage={activePage(pages)} />
+      <PeriodTypeSelect activePage={activePage(pages)} />
     </div>
   );
 };
