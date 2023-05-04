@@ -3,20 +3,21 @@
   flex-direction: row;
   overflow: auto;
   gap: 16px;
-  max-height: 50vh;
+  max-height: 52vh;
   padding-bottom: 34px;
 
   @media (min-width: 768px) {
-    max-height: 568px;
+    max-height: 59vh;
+
 
   padding-bottom: 150px;
   gap: 16px;
 
   }
   @media (min-width: 1280px) {
-    max-height: 70vh;
+    max-height: 58vh;
 
-  padding-bottom: 50px;
+  padding-bottom: 0;
   gap: 27px;
 
   }
