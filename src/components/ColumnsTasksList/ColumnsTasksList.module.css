@@ -5,10 +5,9 @@
   justify-content: flex-start;
   gap: 14px;
   margin-bottom: 32px;
-  padding-right: 9px;
-  margin-right: -9px;
-
-  
+  padding-right: 6px;
+  margin-right: -12px;
+  height: 100%;
 
 }
 
