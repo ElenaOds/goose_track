@@ -7,7 +7,7 @@ import { ReactComponent as LogoHeader} from '../../icons/logoheader.svg';
 import PropTypes from 'prop-types';
 import { selectTaskList } from 'redux/tasks/tasks.selectors';
 import { useDate } from 'hooks/useDate';
-// import {Loading} from '../Loading/Loading'
+import {selectIsLoadingTask} from '../../redux/tasks/tasks.selectors';
 
 
 export const Header = ({isActivPage,toggleSidebar}) => {
@@ -15,7 +15,7 @@ export const Header = ({isActivPage,toggleSidebar}) => {
   const TaskListDay=[];
   const  date = useDate()
   const  output = date.getFullYear()+'-'+ String(date.getMonth() + 1).padStart(2, '0') + '-'+ String(date.getDate()).padStart(2, '0')+'T00:00:00.000Z'
-   
+  const isLoading=useSelector(selectIsLoadingTask);
  
   console.log(TaskListAll)
  
@@ -36,7 +36,7 @@ export const Header = ({isActivPage,toggleSidebar}) => {
           </button>   
         </div>        
       {isActivPage === false 
-      ?( TaskListDay.length===0
+      ?( TaskListDay.length===0 && !isLoading
         ?<div>        
           <div className={styles.warning}>
             <LogoHeader className={styles.logo_header} /> 
