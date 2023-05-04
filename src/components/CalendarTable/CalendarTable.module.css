@@ -24,6 +24,24 @@
 .cell {
   border: 1px solid var(--calendar-border-color);
   cursor: pointer;
+  padding: 2px;
+  transition: transform 0.2s linear;
+}
+
+@media screen and (min-width: 768px) {
+  .cell {
+    padding: 4px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .cell {
+    padding: 8px;
+  }
+}
+
+.cell:hover {
+  transform: scale(1.03);
 }
 
 .day_number_wrapper {
@@ -79,4 +97,50 @@
 
 .task_text {
   text-overflow: ellipsis;
+}
+
+.task_title {
+  font-size: 10px;
+}
+
+@media (min-width: 768px) {
+  .task_title {
+    font-size: 14px;
+  }
+}
+
+.task_point {
+  width: 4px;
+  height: 4px;
+  margin-right: 2px;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .task_point {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.task_low {
+  padding: 4px;
+  border-radius: 8px;
+  color: var(--color-task-low-priority);
+  background-color: var(--bgc-task-low-priority);
+}
+
+.task_medium {
+  padding: 4px;
+  border-radius: 8px;
+  color: var(--color-task-medium-priority);
+  background-color: var(--bgc-task-medium-priority);
+}
+
+.task_high {
+  padding: 4px;
+
+  border-radius: 8px;
+  color: var(--color-task-high-priority);
+  background-color: var(--bgc-task-high-priority);
 }

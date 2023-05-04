@@ -27,6 +27,12 @@
   --hover-bgc-submit: #2b78ef;
   --task-priority-marker: #f7f6f9;
   --datepicker-line: rgba(255, 255, 255, 0.2);
+  --color-task-low-priority: #3e85f3;
+  --bgc-task-low-priority: #ceeefd;
+  --color-task-medium-priority: #f3b249;
+  --bgc-task-medium-priority: #fcf0d4;
+  --color-task-high-priority: #ea3d65;
+  --bgc-task-high-priority: #ffd2dd;
 }
 
 html[data-theme='dark'] {
@@ -45,9 +51,9 @@ html[data-theme='dark'] {
   --user-nav-btn-bg: #3e85f3;
   --user-name-color: #ffffff;
   --user-form-lable-color: rgba(250, 250, 250, 0.3);
-  --period-select-bg-color: #21222C;
-  --period-select-bg-active-color: #3E85F3;
-  --calendar-bg-color: #22232D;
+  --period-select-bg-color: #21222c;
+  --period-select-bg-active-color: #3e85f3;
+  --calendar-bg-color: #22232d;
   --calendar-border-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -67,9 +73,9 @@ html[data-theme='light'] {
   --user-nav-btn-bg: #e3f3ff;
   --user-name-color: #343434;
   --user-form-lable-color: #616161;
-  --period-select-bg-color: #E3F3FF;
-  --period-select-bg-active-color: #CAE8FF;
-  --calendar-bg-color: #FFFFFF;
+  --period-select-bg-color: #e3f3ff;
+  --period-select-bg-active-color: #cae8ff;
+  --calendar-bg-color: #ffffff;
   --calendar-border-color: rgba(220, 227, 229, 0.5);
 }
 
@@ -82,8 +88,6 @@ body {
   color: var(--basic-text-color);
   box-sizing: content-box;
 }
-
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
