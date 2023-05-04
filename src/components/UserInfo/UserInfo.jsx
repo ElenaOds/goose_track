@@ -1,28 +1,35 @@
 import { useSelector } from 'react-redux';
 import styles from './UserInfo.module.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ModalUserInfo } from './ModalUserInfo/ModalUserInfo';
 import { selectUser } from '../../redux/auth/auth.selectors';
 import { ModalUser } from './ModalUser/ModalUser';
 
 export const UserInfo = () => {
   const [showModal, setShowModal] = useState(false);
+  const [photo, setPhoto] = useState(null);
   const profile = useSelector(selectUser);
   const name = profile.name;
   const firstLetter = name[0].toLocaleUpperCase();
 
-  const url = profile.userPhoto;
+  const {userPhoto} = profile;
+  console.log("🚀 ~ UserInfo ~ userPhoto:", userPhoto)
 
   const toggleModal = () => {
     setShowModal(!showModal);
   };
 
+  useEffect(() => {
+    setPhoto(userPhoto);
+    console.log(photo,'photo')
+  }, [userPhoto,photo]);
+
   return (
     <>
       <div className={styles.container} onClick={toggleModal}>
         <p className={styles.name}>{name}</p>
-        {url !== null ? (
-          <img src={url} alt="" className={styles.avatar} />
+        {photo !== null ? (
+          <img src={photo} alt="" className={styles.avatar} />
         ) : (
           <div className={styles.avatar}>{firstLetter}</div>
         )}
