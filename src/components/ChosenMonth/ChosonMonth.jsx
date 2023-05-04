@@ -14,6 +14,7 @@ import { CalendarTable } from 'components/CalendarTable/CalendarTable';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { get } from 'redux/tasks/tasks.operations';
+// import styles from './ChosenMonth.module.css';
 
 export const ChosenMonth = () => {
   const dispatch = useDispatch();
@@ -40,10 +41,10 @@ export const ChosenMonth = () => {
 
   return (
     <>
-      <div>
+      {/* <div className={styles.container}> */}
         <MonthCalendarHead totalDays={totalDays} />
         <CalendarTable totalDays={totalDays} />
-      </div>
+      {/* </div> */}
     </>
   );
 };

@@ -1,8 +1,8 @@
-import styles from './CalendarTable.module.css';
 import { selectTaskList } from 'redux/tasks/tasks.selectors';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { format } from 'date-fns';
+import styles from './CalendarTable.module.css';
 
 export const CalendarTable = ({ totalDays }) => {
   const navigate = useNavigate();
@@ -31,8 +31,12 @@ export const CalendarTable = ({ totalDays }) => {
             key={date}
             onClick={() => handleClick(date)}
           >
+            <div className={styles.day_number_wrapper}>
             <p className={styles.day_number}>{format(date, 'd')}</p>
-            {task && <p>{task.title}</p>}
+            </div>
+            <ul className={styles.task_wrapper}>
+            {task && <li className={styles.task} priority={task.priority}><p className={styles.task_text}>{task.title}</p></li>}
+            </ul>
           </div>
         );
       })}
