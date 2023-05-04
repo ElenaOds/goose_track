@@ -49,6 +49,8 @@ html[data-theme='dark'] {
   --period-select-bg-active-color: #3E85F3;
   --calendar-bg-color: #22232D;
   --calendar-border-color: rgba(255, 255, 255, 0.15);
+  --column-border-color: rgba(255, 255, 255, 0.15);
+  --circle-color: #ffffff;
 }
 
 html[data-theme='light'] {
@@ -71,6 +73,8 @@ html[data-theme='light'] {
   --period-select-bg-active-color: #CAE8FF;
   --calendar-bg-color: #FFFFFF;
   --calendar-border-color: rgba(220, 227, 229, 0.5);
+  --column-border-color: rgba(220, 227, 229, 0.8);
+  --circle-color: #111111;
 }
 
 body {

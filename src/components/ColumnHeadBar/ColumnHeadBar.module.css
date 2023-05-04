@@ -12,6 +12,7 @@
 }
 
   .circle {
-    stroke: var(--basic-text-color);
+    stroke: var(--circle-color);
+
   }
   
