@@ -72,6 +72,10 @@
   line-height: 1.17;
 }
 
+.day_number_special {
+  opacity: 50%;
+}
+
 @media screen and (min-width: 768px) {
   .day_number {
     font-size: 16px;

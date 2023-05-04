@@ -51,12 +51,14 @@
 import { selectTaskList } from 'redux/tasks/tasks.selectors';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { format } from 'date-fns';
+import { format, isSameMonth } from 'date-fns';
 import styles from './CalendarTable.module.css';
+import { useDate } from 'hooks/useDate';
 
 export const CalendarTable = ({ totalDays }) => {
   const navigate = useNavigate();
   const taskList = useSelector(selectTaskList);
+  const urlDate = useDate();
 
   const handleClick = date => {
     date = new Date(date);
@@ -82,7 +84,15 @@ export const CalendarTable = ({ totalDays }) => {
             onClick={() => handleClick(date)}
           >
             <div className={styles.day_number_wrapper}>
-              <p className={styles.day_number}>{format(date, 'd')}</p>
+              <p
+                className={
+                  isSameMonth(date, urlDate)
+                    ? `${styles.day_number}`
+                    : `${styles.day_number} ${styles.day_number_special}`
+                }
+              >
+                {format(date, 'd')}
+              </p>
             </div>
             <ul className={styles.task_wrapper}>
               {tasks.length <= 2 && (
