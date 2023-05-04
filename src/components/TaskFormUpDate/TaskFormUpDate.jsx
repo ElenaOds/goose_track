@@ -62,7 +62,7 @@ export const TaskFormUpDate = ({ id, onClose }) => {
 
   const task = {
     id,
-    task: {
+    updatedTask: {
       title: title,
       start: start,
       end: end,
@@ -70,13 +70,11 @@ export const TaskFormUpDate = ({ id, onClose }) => {
     },
   };
 
-  const onSubmit = evt => {
-    // evt.preventDefault();
-    // console.log(data)
-    // console.log(task)
-    dispatch(update(task));
-    dispatch(get(data));
-    // console.log(TaskList)
+  const onSubmit = async evt => {
+    evt.preventDefault();
+    await dispatch(update(task));
+    await dispatch(get(data));
+    onClose();
   };
 
   return (
