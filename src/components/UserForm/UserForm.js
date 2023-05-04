@@ -15,7 +15,7 @@ import css from './UserForm.module.css';
 const UserForm = () => {
   const dispatch = useDispatch();
   const {
-    user: { userPhoto, name, birthday, email, phone, skype },
+    user: { userPhoto, name, birthday, email, phone, skype }
   } = useSelector(selectUser);
 
   const formattedDate = birthday ? new Date(birthday) : new Date();

@@ -52,9 +52,8 @@ ul {
 }
 
 button.btn {
- 
   justify-content: center;
- align-items: center;
+  align-items: center;
   color: #ffffff;
   border: none;
   padding: 15.5px 28.5px;
@@ -95,7 +94,12 @@ button.btn {
   color:  #3e85f3;
 }
 
-
+.icon {
+  stroke: #ffff;
+}
+.icon:hover {
+  stroke: #3e85f3;
+}
 /* ========== */
 
 .features{
