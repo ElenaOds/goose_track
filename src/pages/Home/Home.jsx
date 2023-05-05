@@ -7,7 +7,7 @@ const Home = () => {
   const location = useLocation();
   return (
     
-    <container className={style.container}>
+    <div className={style.container}>
 
       <section className={style.hero}>
         <GooseLogo className={style.logo} />
@@ -112,7 +112,7 @@ const Home = () => {
         </div>        
         </div>        
       </section>
-    </container>
+    </div>
 
   );
 };

@@ -7,11 +7,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logout } from 'redux/auth/auth.operations';
 import { selectUser } from 'redux/user/user.selectors';
 
-export const ModalUserInfo = ({ toggleModal, profile }) => {
+export const ModalUserInfo = ({ toggleModal }) => {
   const dispatch = useDispatch();
 
   const {
-    user: { userPhoto },
+    user: { userPhoto, name },
   } = useSelector(selectUser);
 
   const handleLogout = () => {
@@ -39,7 +39,6 @@ export const ModalUserInfo = ({ toggleModal, profile }) => {
     }
   };
 
-  const name = profile.name.split(' ')[0];
   const firstLetter = name[0].toLocaleUpperCase();
 
   return (
