@@ -28,7 +28,10 @@
 .react-datepicker__navigation--previous {
   transform: rotate(180deg);
 }
-
+.react-datepicker__day--outside-month{
+  pointer-events: none;
+  visibility: hidden;
+}
 .react-datepicker__month-container,
 .react-datepicker__header {
   background-color: var(--button-bgd-color);
