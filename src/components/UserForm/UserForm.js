@@ -15,7 +15,7 @@ import css from './UserForm.module.css';
 const UserForm = () => {
   const dispatch = useDispatch();
   const {
-    user: { userPhoto, name, birthday, email, phone, skype }
+    user: { userPhoto, name, birthday, email, phone, skype },
   } = useSelector(selectUser);
 
   const formattedDate = birthday ? new Date(birthday) : new Date();
@@ -80,7 +80,6 @@ const UserForm = () => {
       encType="multipart/form-data"
       className={css.form}
       onSubmit={formik.handleSubmit}
-
     >
       <div className={css.plus_container}>
         <label htmlFor="userPhoto">

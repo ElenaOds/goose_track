@@ -101,7 +101,7 @@
   color: var(--input-text-color);
 }
 
-.datepicker{
+.datepicker {
   background: url(../../icons/chevron-down.svg) no-repeat 95% center;
 }
 
