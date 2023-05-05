@@ -3,12 +3,35 @@
   flex-direction: row;
   overflow: auto;
   gap: 16px;
-  max-height: 58vh;
+  max-height: 52vh;
+  padding-bottom: 34px;
 
-  @media (min-width: 1280px) {
+  @media (min-width: 768px) {
+    max-height: 59vh;
 
-      gap: 27px;
+
+  padding-bottom: 150px;
+  gap: 16px;
 
   }
+  @media (min-width: 1280px) {
+    max-height: 58vh;
+
+  padding-bottom: 0;
+  gap: 27px;
+
+  }
+
+}
+
+.wrapper::-webkit-scrollbar {
+  background-color: #F2F2F2;
+  height: 6px;
+  border-radius: 12px;
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+  background-color: #E7E5E5;
+  border-radius: 12px;
 
 }

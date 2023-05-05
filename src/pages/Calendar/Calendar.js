@@ -40,8 +40,10 @@ const Calendar = () => {
     setIsActivePage(false);
   };
   const doActiveMonth = () => {
+    
     setIsActivePage(true);
-  };
+    };
+
 
   return (
     <div className={styles.container}>

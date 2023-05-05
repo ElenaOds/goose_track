@@ -6,18 +6,13 @@ import styles from './PeriodPaginator.module.css';
 import { useNavigate } from 'react-router-dom';
 import { useDate } from 'hooks/useDate';
 
-export const PeriodPaginator = ({
-  isActivePage,
-  handleLeftClick,
-  handleRightClick,
-}) => {
+export const PeriodPaginator = ({ activePage }) => {
   const [activeBtn, setActiveBtn] = useState('');
 
   const navigate = useNavigate();
-
   const urlDate = useDate();
 
-  const handleNextDay = event => {
+  const handleNextDay = () => {
     setActiveBtn('next');
 
     const date = addDays(urlDate, 1);
@@ -35,19 +30,19 @@ export const PeriodPaginator = ({
     setActiveBtn('next');
 
     const date = addMonths(urlDate, 1);
-    navigate(`/calendar/month/${format(date, 'MMMyyyy')}`);
+    navigate(`/calendar/month/${format(date, 'MMMMyyyy')}`);
   };
 
   const handlePrevMonth = () => {
     setActiveBtn('prev');
 
     const date = subMonths(urlDate, 1);
-    navigate(`/calendar/month/${format(date, 'MMMyyyy')}`);
+    navigate(`/calendar/month/${format(date, 'MMMMyyyy')}`);
   };
 
   return (
     <div className={styles.wrapper}>
-      {isActivePage ? (
+      {activePage === 'month' && (
         <>
           <div className={styles.name_container}>
             <h1 className={styles.name}>{format(urlDate, ' MMM yyyy')}</h1>
@@ -82,7 +77,9 @@ export const PeriodPaginator = ({
             </button>
           </div>
         </>
-      ) : (
+      )}
+
+      {activePage === 'day' && (
         <>
           <div className={styles.name_container}>
             <h1 className={styles.name}>{format(urlDate, 'd MMM yyyy')}</h1>

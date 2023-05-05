@@ -1,29 +1,50 @@
 .day {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 18px;
-
-  text-transform: uppercase;
-
-  color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.selectedDay {
-  background: var(--button-bgd-color) ;
-  border-radius: 8px;
-  padding: 4px 8px;
+.date {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 18px;
+  font-size: 12px;
+  line-height: 1.17;
+  color: var(--user-name-color);
+  margin-top: 6px;
+  padding: 4px 6px;
+}
+
+@media screen and (min-width: 768px) {
+  .date {
+    padding: 4px 8px;
+    margin-top: 4px;
+    font-size: 16px;
+    line-height: 1.12;
+  }
+}
+
+.selectedDay {
+  background: var(--button-bgd-color) ;
+  border-radius: 6px;
+  padding: 4px 6px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.17;
+  margin-top: 6px;
 
   color: #ffffff;
+}
+
+@media screen and (min-width: 768px) {
+  .selectedDay {
+    padding: 4px 8px;
+    margin-top: 4px;
+    font-size: 16px;
+    line-height: 1.12;
+  }
 }
 
 .dayOfWeek {
@@ -31,22 +52,13 @@
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
-  line-height: 18px;
-
+  line-height: 1.12;
   text-transform: uppercase;
-
-  color: #616161;
-  margin-bottom: 6px;
+  color: var(--user-form-lable-color);
 }
 
-.num {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 18px;
-
-  text-transform: uppercase;
-
-  color: #343434;
+@media screen and (min-width: 768px) {
+  .dayOfWeek {
+    line-height: 1.29;
+  }
 }

@@ -10,6 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  object-fit: cover;
 }
 
 @media screen and (min-width: 768px) {
@@ -19,13 +20,13 @@
   }
 }
 .name {
-  font-size: 18px;
+  font-size: 14px;
   color: var(--user-name-color);
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (min-width: 768px) {
   .name {
-    font-size: 14px;
+    font-size: 18px;
   }
 }
 .container {

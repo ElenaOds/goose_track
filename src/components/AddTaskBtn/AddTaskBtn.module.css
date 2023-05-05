@@ -22,4 +22,10 @@
   stroke: var(--basic-text-color);
 }
 
+
+  .circle {
+    stroke: var(--circle-color);
+
+  }
+
   

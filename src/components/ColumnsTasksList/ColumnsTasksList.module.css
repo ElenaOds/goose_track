@@ -2,6 +2,23 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   gap: 14px;
   margin-bottom: 32px;
+  padding-right: 6px;
+  margin-right: -12px;
+  height: 100%;
+
+}
+
+.wrapper::-webkit-scrollbar {
+  background-color: #F2F2F2;
+  width: 6px;
+  border-radius: 12px;
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+  background-color: #E7E5E5;
+  border-radius: 12px;
+
 }

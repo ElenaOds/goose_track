@@ -4,22 +4,30 @@
     background-color: var(--basic-bgd-color);
     font-size:14px;
     font-weight: 600;
-    line-height: 18px;
+    line-height: 18px;  
 }
+@media screen and (min-width: 380px) {
+    .container{
+        flex-wrap: wrap; 
+    }
+}
+
+
 .flex{
-    display: flex;
-    margin-top: 18px;
+    display: flex;    
+    margin-top: 18px;   
 }
+
 .start{
     margin-right: 40px;
 }
-.label{
+.label{  
     color: var(--label-text-color);
     text-align: left;
 }
 
 .input{   
-    width: 97%;
+    width: 95%;
     padding: 14px;
     padding-left: 8px;
     margin-top: 8px;

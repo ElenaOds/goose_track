@@ -7,7 +7,7 @@ const Home = () => {
   const location = useLocation();
   return (
     
-    <container className={style.container}>
+    <div className={style.container}>
 
       <section className={style.hero}>
         <GooseLogo className={style.logo} />
@@ -16,20 +16,20 @@ const Home = () => {
         </h1>
 
         <div className={style.heroBtns}>
-          <button
+            <button
             className={`${style.btn} ${style.btn_register}`}
             type="button"
-          >          
+          >            
             <Link className={style.link} to="register" state={location.state}>
               Sign up
             </Link>             
-          </button>
-          <button className={`${style.btn} ${style.btn_login}`} type="button">
+           </button> 
+           <button className={`${style.btn} ${style.btn_login}`} type="button"> 
             <Link className={style.link} to="login" state={location.state}>
               Log in
-              <LogIn/>
+              <LogIn className={style.icon}/>
             </Link>
-          </button>
+          </button> 
         </div>
       </section>
 
@@ -112,7 +112,7 @@ const Home = () => {
         </div>        
         </div>        
       </section>
-    </container>
+    </div>
 
   );
 };
