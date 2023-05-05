@@ -1,15 +1,17 @@
 import styles from './ColumnHeadBar.module.css';
-import { ReactComponent as PlusCircle } from '../../icons/plus-circle.svg';
+import { AddTaskBtn } from 'components/AddTaskBtn/AddTaskBtn';
 
 
 
-const ColumnHeadBar = ({columnTitle}) => {
+const ColumnHeadBar = ({date, columnTitle}) => {
 
 
 return (
     <div className={styles.wrapper}>
         <p className={styles.title}>{columnTitle}</p>
-        <PlusCircle className={styles.circle}/>
+
+            <AddTaskBtn inColumnHeader date={date} column={columnTitle}></AddTaskBtn>
+
     </div>
 )
 }
