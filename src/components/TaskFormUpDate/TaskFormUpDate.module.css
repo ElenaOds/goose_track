@@ -6,25 +6,29 @@
     font-weight: 600;
     line-height: 18px;  
 }
+@media screen and (min-width: 380px) {
+    .container{
+        flex-wrap: wrap; 
+    }
+}
+
 
 .flex{
     display: flex;
-    margin-top: 18px;  
-    
+    margin-top: 18px;     
 }
 
 .start{
     margin-right: 40px;
 }
-.label{
-    width: 100%;
+.label{   
     color: var(--label-text-color);
     text-align: left;
 }
 .input{
     width: 95%;
     padding: 14px;
-    padding-left: 18px;
+    padding-left: 8px;
     margin-top: 8px;
     border: 1px solid #F7F7F7;
     color: var(--input-text-color);  
