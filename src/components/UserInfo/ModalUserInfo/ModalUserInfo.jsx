@@ -39,8 +39,6 @@ export const ModalUserInfo = ({ toggleModal }) => {
     }
   };
 
-  // const firstLetter = name[0].toUpperCase();
-
   return (
     <div className={styles.overlay} onClick={closeOnClick}>
       <div className={styles.container}>
