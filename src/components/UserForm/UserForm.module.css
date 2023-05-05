@@ -14,6 +14,7 @@
   flex-wrap: wrap;
   padding: 40px 0;
   gap: 18px;
+  flex-direction: column;
 }
 
 .column {
@@ -153,7 +154,7 @@
 
 @media screen and (min-width: 375px) {
   .container {
-    padding: 40px 30%;
+    padding: 40px auto;
   }
   .button {
     width: 195px;
@@ -210,6 +211,7 @@
   .container {
     padding: 40px 5% 80px;
     gap: 50px;
+    flex-direction: row;
   }
   .column {
     gap: 50px 0;
