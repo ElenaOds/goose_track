@@ -15,10 +15,7 @@ export const Header = ({isActivPage,toggleSidebar}) => {
   const TaskListDay=[];
   const  date = useDate()
   const  output = date.getFullYear()+'-'+ String(date.getMonth() + 1).padStart(2, '0') + '-'+ String(date.getDate()).padStart(2, '0')+'T00:00:00.000Z'
-  const isLoading=useSelector(selectIsLoadingTask);
- 
-  console.log(TaskListAll)
- 
+  const isLoading=useSelector(selectIsLoadingTask); 
  
   for (let i=0; i<TaskListAll.length;i+=1){   
     if(TaskListAll[i].date===output){
