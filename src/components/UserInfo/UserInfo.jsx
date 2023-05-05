@@ -2,8 +2,9 @@ import { useSelector } from 'react-redux';
 import styles from './UserInfo.module.css';
 import { useState } from 'react';
 import { ModalUserInfo } from './ModalUserInfo/ModalUserInfo';
+// import { selectUser } from '../../redux/auth/auth.selectors';
+import { selectUser } from '../../redux/user/user.selectors';
 import { ModalUser } from './ModalUser/ModalUser';
-import { selectUser } from 'redux/user/user.selectors';
 
 export const UserInfo = () => {
   const [showModal, setShowModal] = useState(false);
