@@ -163,7 +163,7 @@ const UserForm = () => {
           >
             <p>Birthday</p>
             <DatePicker
-              className={`${css.input} ${
+              className={`${css.input} ${css.datepicker} ${
                 formik.touched.birthday && formik.errors.birthday
                   ? css.errorInput
                   : formik.touched.birthday && !formik.errors.birthday

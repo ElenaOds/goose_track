@@ -101,7 +101,12 @@
   color: var(--input-text-color);
 }
 
+.datepicker{
+  background: url(../../icons/chevron-down.svg) no-repeat 95% center;
+}
+
 .errorInput {
+  background: none;
   border: 1px solid var(--error-input-state);
 }
 
@@ -118,6 +123,7 @@
 }
 
 .successInput {
+  background: none;
   border: 1px solid var(--correct-input-state);
 }
 
@@ -146,7 +152,7 @@
 }
 
 @media screen and (min-width: 375px) {
-  .container{
+  .container {
     padding: 40px 30%;
   }
   .button {
