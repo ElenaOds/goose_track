@@ -13,7 +13,7 @@ export const UserInfo = () => {
     user: { userPhoto, name },
   } = useSelector(selectUser);
 
-  const firstLetter = name[0].toLocaleUpperCase();
+  // const firstLetter = name[0].toLocaleUpperCase();
 
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -25,7 +25,7 @@ export const UserInfo = () => {
         {userPhoto !== null ? (
           <img src={userPhoto} alt="userPhoto" className={styles.avatar} />
         ) : (
-          <div className={styles.avatar}>{firstLetter}</div>
+          <div className={styles.avatar}>{name[0].toLocaleUpperCase()}</div>
         )}
       </div>
       {showModal && (
