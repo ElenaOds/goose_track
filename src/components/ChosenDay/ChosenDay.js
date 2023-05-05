@@ -16,8 +16,7 @@ const ChosenDay = () => {
   const dispatch = useDispatch();
   // const formattedDate = (currentDate, 'ddMMMMyyyy', new Date());
 
-  console.log(formattedDate);
-  console.log(currentDate);
+ 
 
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
