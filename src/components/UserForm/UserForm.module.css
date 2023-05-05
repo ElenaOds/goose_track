@@ -53,7 +53,7 @@
   opacity: 0.18;
 }
 
-.plus_container{
+.plus_container {
   position: relative;
 }
 
@@ -101,7 +101,12 @@
   color: var(--input-text-color);
 }
 
+.datepicker {
+  background: url(../../icons/chevron-down.svg) no-repeat 95% center;
+}
+
 .errorInput {
+  background: none;
   border: 1px solid var(--error-input-state);
 }
 
@@ -118,6 +123,7 @@
 }
 
 .successInput {
+  background: none;
   border: 1px solid var(--correct-input-state);
 }
 
@@ -125,11 +131,11 @@
   position: absolute;
   right: 18px;
   bottom: 14px;
-} 
- 
+}
+
 .button {
   height: 48px;
-  width: 100%;
+  width: 70%;
   border: none;
   border-radius: 16px;
   color: var(--white-color);
@@ -146,6 +152,9 @@
 }
 
 @media screen and (min-width: 375px) {
+  .container {
+    padding: 40px 30%;
+  }
   .button {
     width: 195px;
   }
@@ -166,7 +175,7 @@
 
 @media screen and (min-width: 768px) {
   .container {
-    padding: 40px 175px;
+    padding: 40px 20%;
     gap: 24px;
   }
   .column {
@@ -188,21 +197,21 @@
     margin-bottom: 20px;
   }
   .plus_icon {
-  position: absolute;
-  cursor: pointer;
-  right: 24%;
-  bottom: 10%;
-  width: 24px;
-  height: 24px;
-}
+    position: absolute;
+    cursor: pointer;
+    right: 24%;
+    bottom: 10%;
+    width: 24px;
+    height: 24px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
   .container {
-    padding: 40px 164px 80px;
+    padding: 40px 5% 80px;
     gap: 50px;
   }
   .column {
     gap: 50px 0;
   }
-}  
+}

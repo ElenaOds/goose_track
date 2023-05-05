@@ -15,7 +15,7 @@ import css from './UserForm.module.css';
 const UserForm = () => {
   const dispatch = useDispatch();
   const {
-    user: { userPhoto, name, birthday, email, phone, skype }
+    user: { userPhoto, name, birthday, email, phone, skype },
   } = useSelector(selectUser);
 
   const formattedDate = birthday ? new Date(birthday) : new Date();
@@ -46,10 +46,10 @@ const UserForm = () => {
     validateOnChange: true,
     onSubmit: () => {
       Object.keys(formData).forEach(key => {
+        console.log(formData[key]);
         formDataObj.append(key, formData[key]);
       });
       dispatch(updateUser(formDataObj));
-
       setIsChanged(false);
     },
   });
@@ -80,7 +80,6 @@ const UserForm = () => {
       encType="multipart/form-data"
       className={css.form}
       onSubmit={formik.handleSubmit}
-
     >
       <div className={css.plus_container}>
         <label htmlFor="userPhoto">
@@ -163,7 +162,7 @@ const UserForm = () => {
           >
             <p>Birthday</p>
             <DatePicker
-              className={`${css.input} ${
+              className={`${css.input} ${css.datepicker} ${
                 formik.touched.birthday && formik.errors.birthday
                   ? css.errorInput
                   : formik.touched.birthday && !formik.errors.birthday
@@ -177,6 +176,7 @@ const UserForm = () => {
               onChange={onChangeDatePicker}
               calendarStartDay={1}
               dateFormat="dd/MM/yyyy"
+              formatWeekDay={weekdayShort => weekdayShort.charAt(0)}
             />
             {formik.touched.birthday && formik.errors.birthday ? (
               <>

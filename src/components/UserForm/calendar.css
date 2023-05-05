@@ -1,5 +1,6 @@
 .react-datepicker {
   border: none;
+  font-family: 'Inter';
 }
 
 .react-datepicker__month-container {
@@ -8,6 +9,24 @@
 
 .react-datepicker__month {
   border-top: 1px solid var(--datepicker-line);
+}
+
+.react-datepicker__current-month {
+  font-weight: 600;
+  font-size: 16px;
+  padding-bottom: 4px;
+}
+
+.react-datepicker__navigation-icon::before {
+  display: none;
+}
+
+.react-datepicker__navigation {
+  background: center url(../../icons//chevron-left.svg) no-repeat;
+}
+
+.react-datepicker__navigation--previous {
+  transform: rotate(180deg);
 }
 
 .react-datepicker__month-container,
