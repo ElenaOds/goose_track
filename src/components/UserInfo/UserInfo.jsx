@@ -22,7 +22,7 @@ export const UserInfo = () => {
       <div className={styles.container} onClick={toggleModal}>
         <p className={styles.name}>{name}</p>
         {userPhoto !== null ? (
-          <img src={userPhoto} alt="" className={styles.avatar} />
+          <img src={userPhoto} alt="userPhoto" className={styles.avatar} />
         ) : (
           <div className={styles.avatar}>{firstLetter}</div>
         )}
