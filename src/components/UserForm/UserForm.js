@@ -80,6 +80,7 @@ const UserForm = () => {
       encType="multipart/form-data"
       className={css.form}
       onSubmit={formik.handleSubmit}
+
     >
       <div className={css.plus_container}>
         <label htmlFor="userPhoto">
