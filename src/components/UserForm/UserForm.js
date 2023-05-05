@@ -45,7 +45,6 @@ const UserForm = () => {
     validateOnChange: true,
     onSubmit: () => {
       Object.keys(formData).forEach(key => {
-        console.log(formData[key]);
         formDataObj.append(key, formData[key]);
       });
       dispatch(updateUser(formDataObj));
