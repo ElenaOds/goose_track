@@ -1,5 +1,6 @@
 .react-datepicker {
   border: none;
+  border-radius: 16px;
   font-family: 'Inter';
 }
 

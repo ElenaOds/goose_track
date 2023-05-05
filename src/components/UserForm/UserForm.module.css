@@ -27,7 +27,7 @@
   display: none;
 }
 
-.uploader__label {
+.uploader_label {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,7 +47,7 @@
   object-fit: cover;
 }
 
-.userletter {
+.userLetter {
   font-size: 3rem;
   font-weight: 400;
   color: var(--button-bgd-color);
@@ -79,16 +79,16 @@
   max-width: 354px;
 }
 
-.errorLabel {
+.error_label {
   color: var(--error-input-state);
 }
 
-.errorMsg {
+.error_msg {
   color: var(--error-msg);
   font-size: 12px;
 }
 
-.successLabel {
+.success_label {
   color: var(--correct-input-state);
 }
 
@@ -106,7 +106,11 @@
   background: url(../../icons/chevron-down.svg) no-repeat 95% center;
 }
 
-.errorInput {
+.datepicker_container {
+  height: 45px;
+}
+
+.error_input {
   background: none;
   border: 1px solid var(--error-input-state);
 }
@@ -123,7 +127,7 @@
   bottom: 12px;
 }
 
-.successInput {
+.success_input {
   background: none;
   border: 1px solid var(--correct-input-state);
 }
@@ -192,7 +196,7 @@
     width: 124px;
     height: 124px;
   }
-  .uploader__label {
+  .uploader_label {
     width: 124px;
     height: 124px;
     margin-bottom: 20px;

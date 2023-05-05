@@ -7,7 +7,6 @@ import UserFormSchema from './UserFormSchema';
 import DatePicker from 'react-datepicker';
 import { ReactComponent as Error } from '../../icons/error-icon.svg';
 import { ReactComponent as Success } from '../../icons/success-icon.svg';
-// import { ReactComponent as Chevron } from '../../icons/chevron-down.svg';
 import { ReactComponent as Plus } from '../../icons/add-photo-icon.svg';
 import './calendar.css';
 import css from './UserForm.module.css';
@@ -83,7 +82,7 @@ const UserForm = () => {
     >
       <div className={css.plus_container}>
         <label htmlFor="userPhoto">
-          <label className={css.uploader__label}>
+          <label className={css.uploader_label}>
             {userPhoto || uploadedFileURL ? (
               <img
                 className={css.userPhoto}
@@ -91,7 +90,7 @@ const UserForm = () => {
                 alt="Userphoto"
               />
             ) : (
-              <h3 className={css.userletter}>{name[0]}</h3>
+              <h3 className={css.userLetter}>{name[0]}</h3>
             )}
             <input
               className={css.uploader}
@@ -117,9 +116,9 @@ const UserForm = () => {
           <label
             className={`${css.label} ${
               formik.touched.name && formik.errors.name
-                ? css.errorLabel
+                ? css.error_label
                 : formik.touched.name && !formik.errors.name
-                ? css.successLabel
+                ? css.success_label
                 : ''
             }`}
             htmlFor="name"
@@ -128,9 +127,9 @@ const UserForm = () => {
             <input
               className={`${css.input} ${
                 formik.touched.name && formik.errors.name
-                  ? css.errorInput
+                  ? css.error_input
                   : formik.touched.name && !formik.errors.name
-                  ? css.successInput
+                  ? css.success_input
                   : ''
               }`}
               type="text"
@@ -143,7 +142,7 @@ const UserForm = () => {
             {formik.touched.name && formik.errors.name ? (
               <>
                 <Error className={css.error_icon} />
-                <div className={css.errorMsg}>{formik.errors.name}</div>
+                <div className={css.error_msg}>{formik.errors.name}</div>
               </>
             ) : formik.touched.name && !formik.errors.name ? (
               <Success className={css.success_icon} />
@@ -153,35 +152,37 @@ const UserForm = () => {
           <label
             className={`${css.label} ${
               formik.touched.birthday && formik.errors.birthday
-                ? css.errorLabel
+                ? css.error_label
                 : formik.touched.birthday && !formik.errors.birthday
-                ? css.successLabel
+                ? css.success_label
                 : ''
             }`}
             htmlFor="birthday"
           >
             <p>Birthday</p>
-            <DatePicker
-              className={`${css.input} ${css.datepicker} ${
-                formik.touched.birthday && formik.errors.birthday
-                  ? css.errorInput
-                  : formik.touched.birthday && !formik.errors.birthday
-                  ? css.successInput
-                  : ''
-              }`}
-              id="birthday"
-              name="birthday"
-              selected={formik.values.birthday}
-              maxDate={new Date()}
-              onChange={onChangeDatePicker}
-              calendarStartDay={1}
-              dateFormat="dd/MM/yyyy"
-              formatWeekDay={weekdayShort => weekdayShort.charAt(0)}
-            />
+            <div className={css.datepicker_container}>
+              <DatePicker
+                className={`${css.input} ${css.datepicker} ${
+                  formik.touched.birthday && formik.errors.birthday
+                    ? css.error_input
+                    : formik.touched.birthday && !formik.errors.birthday
+                    ? css.success_input
+                    : ''
+                }`}
+                id="birthday"
+                name="birthday"
+                selected={formik.values.birthday}
+                maxDate={new Date()}
+                onChange={onChangeDatePicker}
+                calendarStartDay={1}
+                dateFormat="dd/MM/yyyy"
+                formatWeekDay={weekdayShort => weekdayShort.charAt(0)}
+              />
+            </div>
             {formik.touched.birthday && formik.errors.birthday ? (
               <>
                 <Error className={css.error_icon} />
-                <div className={css.errorMsg}>{formik.errors.birthday}</div>
+                <div className={css.error_msg}>{formik.errors.birthday}</div>
               </>
             ) : formik.touched.birthday && !formik.errors.birthday ? (
               <Success className={css.success_icon} />
@@ -191,9 +192,9 @@ const UserForm = () => {
           <label
             className={`${css.label} ${
               formik.touched.email && formik.errors.email
-                ? css.errorLabel
+                ? css.error_label
                 : formik.touched.email && !formik.errors.email
-                ? css.successLabel
+                ? css.success_label
                 : ''
             }`}
             htmlFor="email"
@@ -202,9 +203,9 @@ const UserForm = () => {
             <input
               className={`${css.input} ${
                 formik.touched.email && formik.errors.email
-                  ? css.errorInput
+                  ? css.error_input
                   : formik.touched.email && !formik.errors.email
-                  ? css.successInput
+                  ? css.success_input
                   : ''
               }`}
               type="email"
@@ -217,7 +218,7 @@ const UserForm = () => {
             {formik.touched.email && formik.errors.email ? (
               <>
                 <Error className={css.error_icon} />
-                <div className={css.errorMsg}>{formik.errors.email}</div>
+                <div className={css.error_msg}>{formik.errors.email}</div>
               </>
             ) : formik.touched.email && !formik.errors.email ? (
               <Success className={css.success_icon} />
@@ -229,9 +230,9 @@ const UserForm = () => {
           <label
             className={`${css.label} ${
               formik.touched.phone && formik.errors.phone
-                ? css.errorLabel
+                ? css.error_label
                 : formik.touched.phone && !formik.errors.phone
-                ? css.successLabel
+                ? css.success_label
                 : ''
             }`}
             htmlFor="phone"
@@ -240,9 +241,9 @@ const UserForm = () => {
             <input
               className={`${css.input} ${
                 formik.touched.phone && formik.errors.phone
-                  ? css.errorInput
+                  ? css.error_input
                   : formik.touched.phone && !formik.errors.phone
-                  ? css.successInput
+                  ? css.success_input
                   : ''
               }`}
               type="tel"
@@ -255,7 +256,7 @@ const UserForm = () => {
             {formik.touched.phone && formik.errors.phone ? (
               <>
                 <Error className={css.error_icon} />
-                <div className={css.errorMsg}>{formik.errors.phone}</div>
+                <div className={css.error_msg}>{formik.errors.phone}</div>
               </>
             ) : formik.touched.phone && !formik.errors.phone ? (
               <Success className={css.success_icon} />
@@ -265,9 +266,9 @@ const UserForm = () => {
           <label
             className={`${css.label} ${
               formik.touched.skype && formik.errors.skype
-                ? css.errorLabel
+                ? css.error_label
                 : formik.touched.skype && !formik.errors.skype
-                ? css.successLabel
+                ? css.success_label
                 : ''
             }`}
             htmlFor="skype"
@@ -276,9 +277,9 @@ const UserForm = () => {
             <input
               className={`${css.input} ${
                 formik.touched.skype && formik.errors.skype
-                  ? css.errorInput
+                  ? css.error_input
                   : formik.touched.skype && !formik.errors.skype
-                  ? css.successInput
+                  ? css.success_input
                   : ''
               }`}
               type="text"
@@ -291,7 +292,7 @@ const UserForm = () => {
             {formik.touched.skype && formik.errors.skype ? (
               <>
                 <Error className={css.error_icon} />
-                <div className={css.errorMsg}>{formik.errors.skype}</div>
+                <div className={css.error_msg}>{formik.errors.skype}</div>
               </>
             ) : formik.touched.skype && !formik.errors.skype ? (
               <Success className={css.success_icon} />
