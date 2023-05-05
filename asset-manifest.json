@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/goose_track/static/css/main.e6f1ea8b.css",
-    "main.js": "/goose_track/static/js/main.2e3c1361.js",
+    "main.js": "/goose_track/static/js/main.f8f83678.js",
     "static/css/936.edc1d598.chunk.css": "/goose_track/static/css/936.edc1d598.chunk.css",
     "static/js/936.62f36078.chunk.js": "/goose_track/static/js/936.62f36078.chunk.js",
-    "static/css/280.9cce4e71.chunk.css": "/goose_track/static/css/280.9cce4e71.chunk.css",
+    "static/css/280.aab3f4b1.chunk.css": "/goose_track/static/css/280.aab3f4b1.chunk.css",
     "static/js/280.0a84d8fb.chunk.js": "/goose_track/static/js/280.0a84d8fb.chunk.js",
     "static/css/199.ac996a8a.chunk.css": "/goose_track/static/css/199.ac996a8a.chunk.css",
     "static/js/199.5eea3679.chunk.js": "/goose_track/static/js/199.5eea3679.chunk.js",
@@ -58,10 +58,10 @@
     "static/media/icon-arrow-right.svg": "/goose_track/static/media/icon-arrow-right.233a7e6d57bab1a1f79b37a572c08ff9.svg",
     "static/media/plus.svg": "/goose_track/static/media/plus.d557e5f870a00548676deca894446b65.svg",
     "main.e6f1ea8b.css.map": "/goose_track/static/css/main.e6f1ea8b.css.map",
-    "main.2e3c1361.js.map": "/goose_track/static/js/main.2e3c1361.js.map",
+    "main.f8f83678.js.map": "/goose_track/static/js/main.f8f83678.js.map",
     "936.edc1d598.chunk.css.map": "/goose_track/static/css/936.edc1d598.chunk.css.map",
     "936.62f36078.chunk.js.map": "/goose_track/static/js/936.62f36078.chunk.js.map",
-    "280.9cce4e71.chunk.css.map": "/goose_track/static/css/280.9cce4e71.chunk.css.map",
+    "280.aab3f4b1.chunk.css.map": "/goose_track/static/css/280.aab3f4b1.chunk.css.map",
     "280.0a84d8fb.chunk.js.map": "/goose_track/static/js/280.0a84d8fb.chunk.js.map",
     "199.ac996a8a.chunk.css.map": "/goose_track/static/css/199.ac996a8a.chunk.css.map",
     "199.5eea3679.chunk.js.map": "/goose_track/static/js/199.5eea3679.chunk.js.map",
@@ -77,6 +77,6 @@
   },
   "entrypoints": [
     "static/css/main.e6f1ea8b.css",
-    "static/js/main.2e3c1361.js"
+    "static/js/main.f8f83678.js"
   ]
 }
