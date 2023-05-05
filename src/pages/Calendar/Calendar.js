@@ -12,23 +12,6 @@ const Calendar = () => {
   const location = useLocation();
   const formattedCurrentDate = format(urlDate, 'MMMMu');
 
-  // const handleLeftClick = () => {
-  //   setState(prevState => ({
-  //     ...prevState,
-  //     currentDate: addMonths(prevState.currentDate, -1),
-  //     month: prevState.month - 1,
-  //   }));
-  //   navigate(`/calendar/month/${format(state.currentDate, 'MMMyyyy')}`);
-  // };
-  // const handleRightClick = () => {
-  //   setState(prevState => ({
-  //     ...prevState,
-  //     currentDate: addMonths(prevState.currentDate, 1),
-  //     month: prevState.month + 1,
-  //   }));
-  //   navigate(`/calendar/month/${format(state.currentDate, 'MMMyyyy')}`);
-  // };
-
   useEffect(() => {
     if (location.pathname === '/calendar') {
       navigate(`/calendar/month/${formattedCurrentDate}`);

@@ -5,11 +5,7 @@ import { ReactComponent as Plus } from '../../icons/plus.svg';
 import { ReactComponent as PlusCircle } from '../../icons/plus-circle.svg';
 
 
-
-
 export const AddTaskBtn = ({ inColumnHeader, date, column }) => {
-
-
 
   const [isOpen, setIsModalOpen] = useState(false);
   return (

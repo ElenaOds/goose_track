@@ -5,8 +5,6 @@ import { ReactComponent as GooseLogo } from '../../icons/goosesidebar.svg';
 import { ReactComponent as IconClose } from '../../icons/icon-close.svg';
 import PropTypes from 'prop-types';
 
-// import { TestTaskRequests } from 'components/TestTasksRequests/TestTasksRequests';
-
 const SideBar = ({doActiveCalendar,doActiveAccount,toggleSidebar,isOpenSidebarMobile }) => { 
 
   const className = isOpenSidebarMobile ? styles.container_1 : styles.container_2;
@@ -33,8 +31,6 @@ const SideBar = ({doActiveCalendar,doActiveAccount,toggleSidebar,isOpenSidebarMo
 
           <UserNav doActiveCalendar={doActiveCalendar} doActiveAccount={doActiveAccount} toggleSidebar={toggleSidebar} />
         </div>
-
-        {/* <TestTaskRequests /> */}
 
         <LogoutBtn className={styles.lgButton} />
       </div>

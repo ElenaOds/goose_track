@@ -2,7 +2,6 @@ import { Outlet } from 'react-router-dom';
 import { Suspense, useEffect, useState } from 'react';
 import { Header } from 'components/Header/Header';
 import SideBar from 'components/SideBar/SideBar';
-import styles from './MainLayout.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from '../../redux/auth/auth.selectors';
 import { getUser } from '../../redux/user/user.operations';
@@ -30,7 +29,7 @@ const MainLayout = () => {
   };
 
   return (
-    <div className={styles.flex}>
+    <div>
       <SideBar
         doActiveCalendar={doActiveCalendar}
         doActiveAccount={doActiveAccount}

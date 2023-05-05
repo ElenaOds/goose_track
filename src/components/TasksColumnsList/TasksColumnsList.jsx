@@ -5,9 +5,6 @@ import { selectTaskList } from "redux/tasks/tasks.selectors";
 import { useDate } from "hooks/useDate";
 
 
-
-
-
 const TasksColumnsList = () => {
 
   const urlDate = useDate();

@@ -9,14 +9,9 @@ import { get } from 'redux/tasks/tasks.operations';
 import { useDate } from 'hooks/useDate';
 
 const ChosenDay = () => {
-  // const { currentDate } = useParams();
   const formattedDate = useDate();
-  const currentDate = format(useDate(), 'ddMMMyyyy');
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  // const formattedDate = (currentDate, 'ddMMMMyyyy', new Date());
-
- 
 
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 

@@ -8,12 +8,10 @@ export const UpDateTaskBtn = ({ id, task }) => {
 
   return (
     <>
-      {/* <button className={styles.btn} > */}
       <Pencil
         className={styles.logo}
         onClick={() => setIsTaskModalUpDate(true)}
       />
-      {/* </button> */}
       {isOpenModal && (
         <TaskModalUpDate
           onClose={() => setIsTaskModalUpDate(false)}

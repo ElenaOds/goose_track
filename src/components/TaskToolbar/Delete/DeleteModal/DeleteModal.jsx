@@ -18,8 +18,8 @@ export const DeleteModal = ({ id, onClose }) => {
   const dispatch = useDispatch();
 
   const handleDelete = async () => {
-    await dispatch(deleteItem(id));
-    await dispatch(get(data));
+     dispatch(deleteItem(id));
+     dispatch(get(data));
   };
 
   return (

@@ -45,8 +45,8 @@ export const Modal = ({ onClose, id, task }) => {
   }, [onClose]);
 
   const handleUpdate = async updateData => {
-    await dispatch(update(updateData));
-    await dispatch(get(data));
+     dispatch(update(updateData));
+     dispatch(get(data));
   };
 
   return (

@@ -1,5 +1,3 @@
-
-
 import TaskColumnCard from 'components/TaskColumnCard/TaskColumnCard';
 import styles from './ColumnsTasksList.module.css';
 import { useSelector } from 'react-redux';

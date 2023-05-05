@@ -44,25 +44,6 @@
   transform: scale(1.03);
 }
 
-/* .day_number_wrapper {
-  margin-top: 8px;
-  margin-right: 4px;
-  margin-bottom: 8px;
-  padding: 4px 6px;
-  display: block;
-  text-align: right;
-  border-radius: 8px;
-} */
-
-/* @media screen and (min-width: 768px) {
-  .day_number_wrapper {
-    margin-top: 14px;
-    margin-right: 14px;
-    margin-bottom: 14px;
-    padding: 4px 8px;
-  }
-} */
-
 .day_number {
   color: var(--user-name-color);
   font-family: 'Inter';

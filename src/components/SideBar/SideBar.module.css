@@ -19,12 +19,6 @@
   display: flex;
   z-index: 200;
 }
-/* 
-@media screen and (max-width: 767px) {
-  .container {
-    width: 225px;
-  }
-} */
 
 .container_2 {
   box-sizing: border-box;
@@ -54,7 +48,6 @@
 
     background: var(--basic-bgd-color);
     padding: 20px;
-    /* padding-bottom: 200px; */
     flex-direction: column;
 
     justify-content: space-between;
