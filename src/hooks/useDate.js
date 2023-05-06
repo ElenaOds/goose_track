@@ -1,4 +1,4 @@
-const { useParams } = require('react-router-dom');
+import { useParams } from 'react-router-dom';
 
 export const useDate = () => {
   const params = useParams();
