@@ -11,7 +11,7 @@
 	<li>Spinners</li>
   <li>Date-fns</li>
   <li>Datepicker</li>
-  <li>Yupr</li>
+  <li>Yup</li>
 </ul>
 
 ## Links
@@ -29,7 +29,6 @@
 	<li><a href="https://github.com/ElenaOds">Elena Pedko</li>
 	<li><a href="https://github.com/KarlAnna">Anna Karlina</li>
 	<li><a href="https://github.com/NastyonaSavina">Anastasiia Savina</li>
-  <li><a href="https://github.com/Vlasova1983">Anastasiia Savina</li>
   <li><a href="https://github.com/Vlasova1983">Yuliia Vlasova</li>
   <li><a href="https://github.com/edbx">Eduard Bolma</li>
   <li><a href="https://github.com/dimadimaya">Dmytro Samoilik</li>
