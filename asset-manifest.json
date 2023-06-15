@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/goose_track/static/css/main.38ffd3e9.css",
-    "main.js": "/goose_track/static/js/main.46c769fa.js",
-    "static/css/936.edc1d598.chunk.css": "/goose_track/static/css/936.edc1d598.chunk.css",
-    "static/js/936.62f36078.chunk.js": "/goose_track/static/js/936.62f36078.chunk.js",
+    "main.js": "/goose_track/static/js/main.fdc1da7b.js",
+    "static/css/936.13091b7e.chunk.css": "/goose_track/static/css/936.13091b7e.chunk.css",
+    "static/js/936.24ce987e.chunk.js": "/goose_track/static/js/936.24ce987e.chunk.js",
     "static/css/280.36e3e75e.chunk.css": "/goose_track/static/css/280.36e3e75e.chunk.css",
     "static/js/280.263cda9c.chunk.js": "/goose_track/static/js/280.263cda9c.chunk.js",
     "static/css/199.ac996a8a.chunk.css": "/goose_track/static/css/199.ac996a8a.chunk.css",
@@ -58,9 +58,9 @@
     "static/media/icon-arrow-right.svg": "/goose_track/static/media/icon-arrow-right.233a7e6d57bab1a1f79b37a572c08ff9.svg",
     "static/media/plus.svg": "/goose_track/static/media/plus.d557e5f870a00548676deca894446b65.svg",
     "main.38ffd3e9.css.map": "/goose_track/static/css/main.38ffd3e9.css.map",
-    "main.46c769fa.js.map": "/goose_track/static/js/main.46c769fa.js.map",
-    "936.edc1d598.chunk.css.map": "/goose_track/static/css/936.edc1d598.chunk.css.map",
-    "936.62f36078.chunk.js.map": "/goose_track/static/js/936.62f36078.chunk.js.map",
+    "main.fdc1da7b.js.map": "/goose_track/static/js/main.fdc1da7b.js.map",
+    "936.13091b7e.chunk.css.map": "/goose_track/static/css/936.13091b7e.chunk.css.map",
+    "936.24ce987e.chunk.js.map": "/goose_track/static/js/936.24ce987e.chunk.js.map",
     "280.36e3e75e.chunk.css.map": "/goose_track/static/css/280.36e3e75e.chunk.css.map",
     "280.263cda9c.chunk.js.map": "/goose_track/static/js/280.263cda9c.chunk.js.map",
     "199.ac996a8a.chunk.css.map": "/goose_track/static/css/199.ac996a8a.chunk.css.map",
@@ -77,6 +77,6 @@
   },
   "entrypoints": [
     "static/css/main.38ffd3e9.css",
-    "static/js/main.46c769fa.js"
+    "static/js/main.fdc1da7b.js"
   ]
 }
