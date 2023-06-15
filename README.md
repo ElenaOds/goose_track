@@ -1,5 +1,7 @@
 # Goose_track
 
+<p> Fullstack application available for registered users which allows to add/change personal data, maintain tasks in calendar (add/change/delete/move to another column depending on the status).</p>
+
 ## Technology stack
 <ul>
 	<li>HTML/CSS</li>

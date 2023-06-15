@@ -51,32 +51,6 @@ ul {
   font-style: italic;
 }
 
-button.btn {
-  justify-content: center;
-  align-items: center;
-  color: #ffffff;
-  border: none;
-  padding: 15.5px 28.5px;
-  font-family: 'Inter';
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 18px;
-  letter-spacing: 0em;
-  text-align: left;  
-  text-decoration: none;
-  
-}
-
-.btn:hover {
-  color: #3e85f3;
-  min-width: 121px;
-
-  background: #ffffff;
-  box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
-  border-radius: 16px;
-  border: none;  
-}
-
 .heroBtns{
   display: flex;
   flex-direction: column;  
@@ -89,18 +63,30 @@ button.btn {
   justify-content: center;
   text-align: center;
   align-items: center;
-}
-.link:hover{
-  color:  #3e85f3;
-}
-
-.icon {
+  color: #ffffff;
+  border: none;
+  padding: 15.5px 28.5px;
+  font-family: 'Inter';
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0em;
   stroke: #ffff;
 }
-.icon:hover {
+
+.link:hover{
+  color:  #3e85f3;
   stroke: #3e85f3;
+  background-color: #fff;
+  box-shadow: 4px 2px 16px rgba(136, 165, 191, 0.48);
+  border-radius: 16px;
+  border: none; 
 }
-/* ========== */
+ .icon {
+  margin-left: 2px;
+} 
+
+/* ==========*/
 
 .features{
   display: flex;
